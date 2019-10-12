@@ -4,6 +4,8 @@
 
 - [Home](/doc/home)
 
+<br>
+
 - [Overview](/doc/overview)
 - [Brain](/doc/brain)
 - [Defender](/doc/defender)
@@ -13,6 +15,8 @@
 - [Activities](/doc/activities)
 - [Logs](/doc/logs)
 - [Settings](/doc/settings)
+
+<br>
 
 - [Conqueror](/doc/conqueror)
 - [Empire](/doc/empire)
