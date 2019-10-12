@@ -1254,6 +1254,15 @@ SendMessage(playerID int, message string) error
 SendMessage(1234567, "Sup!")
 ```
 
+### SendMessageAlliance
+```go
+// Sends a message to associationID
+SendMessageAlliance(associationID int, message string) error
+```
+```go
+SendMessageAlliance(537, "Sup!")
+```
+
 ### GetCelestial
 ```go
 // GetCelestial get the player's planet/moon
