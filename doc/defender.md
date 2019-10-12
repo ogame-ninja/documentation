@@ -45,13 +45,13 @@ When one of your moon is being attack with "destroy" mission, and different logi
 The bot will send your fleet on another moon if you have one, or a different planet.  
 You can choosed the speed of the fleet with **Evacuation speed on destroy attacks**.  
 
-###### [Evacuate seconds before attack]<a name="evacuate-secs-before-attack"></a>
+##### [Evacuate seconds before attack]<a name="evacuate-secs-before-attack"></a>
 Defines how much time before the attack we want to evacuate the planet.  
 
-###### [Recall seconds after attack]<a name="recall-after-attack"></a>
+##### [Recall seconds after attack]<a name="recall-after-attack"></a>
 If ticked, defines how much time after the attack before the fleet is recalled.  
 
-###### [Dump remaining resources in defenses]<a name="dump-resources"></a>
+##### [Dump remaining resources in defenses]<a name="dump-resources"></a>
 If ticked, the bot will spend remaining resources on defenses.
 
 ###### [activate for moon ?]<a name="moon-dump-resources"></a>
