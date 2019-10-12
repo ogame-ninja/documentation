@@ -4,7 +4,7 @@
 
 An email will be sent to you when you are attacked.
 For this feature to work:  
-- **(Self-host only)** you need to first <a href="/admin/settings">setup your SMTP settings</a> in the admin panel.
+- **(Self-host only)** you need to first <a href="/admin/settings">setup your SMTP settings</a> in the admin panel.  
 - Set the "Email for notifications" in bot settings tab.  
 - The defender checkbox must also be checked (Defender active).  
 
@@ -12,7 +12,7 @@ For this feature to work:
 
 An telegram message will be sent to you when you are attacked.  
 For this feature to work:  
-- **(Self-host only)** you need to first <a href="/admin/settings">setup your telegram bot api token</a> in the admin panel.
+- **(Self-host only)** you need to first <a href="/admin/settings">setup your telegram bot api token</a> in the admin panel.  
 - Set the "Telegram chat id for notifications" in the bot settings tab.  
 - The defender checkbox must also be checked (Defender active).   
 
