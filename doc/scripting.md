@@ -1767,6 +1767,19 @@ BuildTechnology(celestial.GetID(), ENERGYTECHNOLOGY) // Build next MetalMine
 celestial.BuildTechnology(ENERGYTECHNOLOGY) // Build next MetalMine
 ```
 
+### TearDown
+```go
+// TearDown tears down any ogame building
+TearDown(celestialID CelestialID, buildingID ID) error
+```
+```go
+celestial = GetCachedCelestial("1:2:3")
+TearDown(celestial.GetID(), METALMINE)
+
+// This also work
+celestial.TearDown(METALMINE)
+```
+
 ### CancelBuilding
 ```go
 // CancelBuilding cancel the construction of a building on a specified planet
