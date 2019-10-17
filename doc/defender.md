@@ -62,6 +62,11 @@ When a new attack is detected, the bot will verify that the same player is not a
 If that's the case, the bot will send him a chat message of the like: "Hey bro, I'm online"  
 The message is randomly selected from an hardcoded list. (the messages are going to be configurable in the future)  
 
-##### [Randomize planet/moon that checks for activity]<a name="randomize-planet"></a>
+##### Activities generted on
 Every time the defender look for attacks, it generates activities on the current active planet/moon.
-If this option is selected, the bot will select a random planet/moon to check for incoming attacks. 
+###### Randomize planet/moon that checks for activity
+If this option is selected, the bot will select a random planet/moon to check for incoming attacks.
+###### Checks for activity from homeworld
+If this option is selected, the bot will select HomeWorld check for incoming attacks.
+###### Checks for activity from latest active planet/moon
+If this option is selected, the bot will use the last active planet/moon to check for incoming attacks.
