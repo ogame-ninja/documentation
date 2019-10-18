@@ -70,3 +70,6 @@ If this option is selected, the bot will select a random planet/moon to check fo
 If this option is selected, the bot will select HomeWorld check for incoming attacks.
 ###### Checks for activity from latest active planet/moon
 If this option is selected, the bot will use the last active planet/moon to check for incoming attacks.
+
+##### [Notify small fleet attacks (< 1/3 firepower)]<a name="notify-small-fleet"></a>
+The bot will send notification for non dangerous attacks. Fleet that have less than 1/3 of our firepower.
