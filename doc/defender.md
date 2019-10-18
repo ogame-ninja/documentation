@@ -1,21 +1,5 @@
 # Defender
 
-##### [Email alert when attacked]<a name="email-alert"></a>
-
-An email will be sent to you when you are attacked.
-For this feature to work:  
-- **(Self-host only)** you need to first <a href="/admin/settings">setup your SMTP settings</a> in the admin panel.  
-- Set the "Email for notifications" in bot settings tab.  
-- The defender checkbox must also be checked (Defender active).  
-
-##### [Telegram alert when attacked]<a name="telegram-alert"></a>
-
-An telegram message will be sent to you when you are attacked.  
-For this feature to work:  
-- **(Self-host only)** you need to first <a href="/admin/settings">setup your telegram bot api token</a> in the admin panel.  
-- Set the "Telegram chat id for notifications" in the bot settings tab.  
-- The defender checkbox must also be checked (Defender active).   
-
 ##### [Repatriate resources]<a name="repatriate-resources"></a>
 
 If you active this feature, all the planets are going to send their resources to the selected planet/moon.  
@@ -71,5 +55,27 @@ If this option is selected, the bot will select HomeWorld check for incoming att
 ###### Checks for activity from latest active planet/moon
 If this option is selected, the bot will use the last active planet/moon to check for incoming attacks.
 
+##### [Email alert when attacked]<a name="email-alert"></a>
+An email will be sent to you when you are attacked.
+For this feature to work:  
+- **(Self-host only)** you need to first <a href="/admin/settings">setup your SMTP settings</a> in the admin panel.  
+- Set the "Email for notifications" in bot settings tab.  
+- The defender checkbox must also be checked (Defender active).  
+
+##### [Telegram alert when attacked]<a name="telegram-alert"></a>
+An telegram message will be sent to you when you are attacked.  
+For this feature to work:  
+- **(Self-host only)** you need to first <a href="/admin/settings">setup your telegram bot api token</a> in the admin panel.  
+- Set the "Telegram chat id for notifications" in the bot settings tab.  
+- The defender checkbox must also be checked (Defender active).   
+
+
 ##### [Notify small fleet attacks (< 1/3 firepower)]<a name="notify-small-fleet"></a>
-The bot will send notification for non dangerous attacks. Fleet that have less than 1/3 of our firepower.
+By default the bot will not send email/telegram notifications for small attacking fleet.  
+If enabled, the bot will send notifications for non dangerous attacking fleet. Fleet that have less than 1/3 of our firepower.
+
+## Evacuation configs<a name="evacuation-configs"></a>
+Evacuation mode can be set per planet.  
+**Dangerous mode**: Will only evacuation when the attacking fleet is considered dangerous. (has more than 1/3 of our firepower)  
+**Always mode**: Will always evacuate the planet/moon no matter the size of the attacking fleet.  
+**Never mode**: Will never evacuation the planet/moon.
