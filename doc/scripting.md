@@ -744,6 +744,30 @@ OnError(clb func(error)) *FleetBuilder
 OnSuccess(clb func(Fleet)) *FleetBuilder
 ```
 
+### FarmSessionBuilder
+```go
+type FarmSessionBuilder struct {
+}
+
+// Methods
+SetOrigin(v interface{}) *FarmSessionBuilder
+SetRange(galaxy, systemFrom, systemTo int) *FarmSessionBuilder
+SetProbes(nbProbes int) *FarmSessionBuilder
+SetAdditionalCargo(pctCargo int) *FarmSessionBuilder
+SetMinimumResourcesToAttack(minimumResourcesToAttack int) *FarmSessionBuilder
+SetMinimumDefensesToIgnore(minimumDefensesToIgnore int) *FarmSessionBuilder
+SetMinimumStorageToIgnore(metal, crystal, deuterium int) *FarmSessionBuilder
+SetMinimumPlayerRank(rank int) *FarmSessionBuilder
+SetEspionageProbeRaids(enabled bool) *FarmSessionBuilder
+SetFastAttacking(enabled bool) *FarmSessionBuilder
+SetDeleteCombatReports(enabled bool) *FarmSessionBuilder
+SetAttackFromNearestPlanet(enabled bool) *FarmSessionBuilder
+SetAttackFromNearestMoon(enabled bool) *FarmSessionBuilder
+SetFarmSpeed(speed ogame.Speed) *FarmSessionBuilder
+SetPriorityRatio(metal, crystal, deuterium float64) *FarmSessionBuilder
+BuildFarmSession() (*FarmSession, error)
+```
+
 ### ACSFlightTime
 ```go
 type ACSFlightTime struct {
@@ -1481,15 +1505,6 @@ StopFarmingBot()
 IsRunningFarmingBot() bool
 ```
 
-### NewFarmingSession
-```go
-// Returns true in case Farming Bot is running, otherwise false
-NewFarmingSession(celestialID ogame.CelestialID, galaxy, from, to, nbProbes, pctCargo, minimumResourcesToAttack, 
-        minimumDefensesToIgnore, MinimumMetalStorage, MinimumCrystalStorage, minimumDeuteriumTank, minimumPlayerRank int, 
-        espionageProbeRaids, fastAttacking, attackFromNearestPlanet, attackFromNearestMoon bool,
-        farmSpeed ogame.Speed, metalRatio, crystalRatio, deuteriumRatio float64)
-```
-
 ### AbortAllFarmingSessions
 ```go
 // Abort all farming sessions
@@ -1643,6 +1658,33 @@ f.SetAllShips()
 fourHours = 4 * 60 * 60
 f.SetRecallIn(fourHours)
 f.SendNow()
+```
+
+### NewFarmSession
+```go
+// Return a farm session builder
+NewFarmSession() *FarmSessionBuilder
+```
+```go
+origin = GetCachedCelestials()[0]
+f = NewFarmSession()
+f.SetOrigin(origin)
+f.SetRange(4, 1, 497)
+f.SetProbes(6)
+f.SetAdditionalCargo(11)
+f.SetMinimumResourcesToAttack(300000)
+f.SetMinimumDefensesToIgnore(0)
+f.SetMinimumStorageToIgnore(0, 0, 0)
+f.SetMinimumPlayerRank(0)
+f.SetEspionageProbeRaids(false)
+f.SetFastAttacking(true)
+f.SetAttackFromNearestPlanet(false)
+f.SetAttackFromNearestMoon(false)
+f.SetDeleteCombatReports(true)
+f.SetFarmSpeed(HUNDRED_PERCENT)
+f.SetPriorityRatio(1, 1, 1)
+session, err = f.BuildFarmSession()
+Print(session.ID, err)
 ```
 
 ### NewACS
