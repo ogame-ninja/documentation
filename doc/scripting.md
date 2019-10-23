@@ -1499,10 +1499,40 @@ StartFarmingBot()
 StopFarmingBot()
 ```
 
+### PauseFarmingBot
+```go
+// Pause farming bot
+StopFarmingBot()
+```
+
+### ResumeFarmingBot
+```go
+// Resume farming bot
+StopFarmingBot()
+```
+
 ### IsRunningFarmingBot
 ```go
 // Returns true in case Farming Bot is running, otherwise false
 IsRunningFarmingBot() bool
+```
+
+### IsPausedFarmingBot
+```go
+// Returns true in case Farming Bot is paused, otherwise false
+IsPausedFarmingBot() bool
+```
+
+### IsFarmSessionOngoing
+```go
+// Returns true if the bot is currently working on a farm session
+IsFarmSessionOngoing() bool
+```
+
+### FarmingBotSessionsCount
+```go
+// Returns a count of active farm sessions including the one being processed
+FarmingBotSessionsCount() bool
 ```
 
 ### AbortAllFarmingSessions
