@@ -739,6 +739,7 @@ AddShips(id ID, nbr int) *FleetBuilder
 SetShips(ships ShipsInfos) *FleetBuilder
 SetAllShips() *FleetBuilder
 SetRecallIn(secs int) *FleetBuilder
+FlightTime() (secs, fuel int)
 SendNow() (Fleet, error)
 OnError(clb func(error)) *FleetBuilder
 OnSuccess(clb func(Fleet)) *FleetBuilder
