@@ -414,7 +414,7 @@ type AttackEvent struct {
 	Origin       Coordinate
 	Destination  Coordinate
 	ArrivalTime  time.Time
-    AttackerName string
+	AttackerName string
 	AttackerID   int
 	Missiles     int
 	Ships        *ShipsInfos
