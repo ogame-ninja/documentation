@@ -1505,13 +1505,13 @@ StopFarmingBot()
 ### PauseFarmingBot
 ```go
 // Pause farming bot
-StopFarmingBot()
+PauseFarmingBot()
 ```
 
 ### ResumeFarmingBot
 ```go
 // Resume farming bot
-StopFarmingBot()
+ResumeFarmingBot()
 ```
 
 ### IsRunningFarmingBot
@@ -1560,11 +1560,6 @@ StopDefenderBot()
 ```go
 // Returns true in case Defender Bot is running, otherwise false
 IsRunningDefenderBot() bool
-```
-
-```go
-planet, _ = GetCelestial("P:1:431:8")
-NewFarmingSession(planet.GetID(), 1, 123, 456, 5, 0, 30000, 0, 0, 0, 0, 0, true, true, false, false, HUNDRED_PERCENT, 1, 2, 3)
 ```
 
 ### ParseCoord
