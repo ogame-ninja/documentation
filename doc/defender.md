@@ -41,11 +41,6 @@ If ticked, the bot will spend remaining resources on defenses.
 ###### [activate for moon ?]<a name="moon-dump-resources"></a>
 moon can take a very long time to build defenses, so you have to activate the feature for moon if you want it.  
 
-##### [Send message to attackers]<a name="send-message-to-attackers"></a>
-When a new attack is detected, the bot will verify that the same player is not already attacking us.  
-If that's the case, the bot will send him a chat message of the like: "Hey bro, I'm online"  
-The message is randomly selected from an hardcoded list. (the messages are going to be configurable in the future)  
-
 ##### Activities generted on
 Every time the defender look for attacks, it generates activities on the current active planet/moon.
 ###### Randomize planet/moon that checks for activity
@@ -73,6 +68,11 @@ For this feature to work:
 ##### [Notify small fleet attacks (< 1/3 firepower)]<a name="notify-small-fleet"></a>
 By default the bot will not send email/telegram notifications for small attacking fleet.  
 If enabled, the bot will send notifications for non dangerous attacking fleet. Fleet that have less than 1/3 of our firepower.
+
+##### [Send message to attackers]<a name="send-message-to-attackers"></a>
+When a new attack is detected, the bot will verify that the same player is not already attacking us.  
+If that's the case, the bot will send him a chat message of the like: "Hey bro, I'm online"  
+The message is randomly selected from the textbox. Each line is a message.  
 
 ## Evacuation configs<a name="evacuation-configs"></a>
 Evacuation mode can be set per planet.  
