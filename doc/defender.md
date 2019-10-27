@@ -64,6 +64,13 @@ For this feature to work:
 - Set the "Telegram chat id for notifications" in the bot settings tab.  
 - The defender checkbox must also be checked (Defender active).   
 
+##### [Desktop notification when attacked]<a name="desktop-notification"></a>
+If the browser is open, an html5 desktop notification will be sent when a new attack is detected.
+
+##### [Play sound when attacked]<a name="sound-notification"></a>
+If the browser is open, an html5 audio notification will be sent when a new attack is detected.  
+The sound will play for 21 seconds.  
+**WARNING**: This is **LOUD**  
 
 ##### [Notify small fleet attacks (< 1/3 firepower)]<a name="notify-small-fleet"></a>
 By default the bot will not send email/telegram notifications for small attacking fleet.  
