@@ -94,6 +94,33 @@ Should actually be something like:
 planet = GetPlanet("1:2:3")
 ```
 
+### no member named 'xxx' for struct
+```go
+23:56:42 ERROR [[29:12] no member named 'max' for struct]
+```
+This occurs when you try to get a property that does not exists.  
+```go
+planet, _ = GetPlanet("1:2:3")
+Print(planet.Temperature.max) // Triggers error: no member named 'max' for struct
+Print(planet.Temperature.Max) // This is the correct name
+```
+
+### function wants argument type X but received type Y
+```go
+00:02:03 ERROR [[73:40] function wants argument type func() but received type bool]
+```
+This happens when the wrong type of argument is given to a function.  
+```go
+func callback() {
+    return true
+}
+ExecIn(1000, callback()) // Trigger error: function wants argument type func() but received type bool
+                         // In this example, you are actually calling the callback function and giving
+                         // "true" as a parameter to ExecIn.
+ExecIn(1000, callback)   // This is the correct way.
+Sleep(2000)
+```
+
 # Scripting API
 
 ## Constants
