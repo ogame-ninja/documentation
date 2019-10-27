@@ -46,7 +46,11 @@ This is another option that will force the bot to start attacking sooner than th
 When you check this option the bot will send an attack as soon as a planet goes into "spied" state.
 
 ##### [Attack from nearest planet]
-When selected, the bot will send the attack from the planet that is closest to the target.
+When selected, the bot will send the attack from the moon OR planet that is closest to the target.  
+The moon is preferred to the planet if they have the same distance.   
+
+##### [Attack from nearest moon]
+Same as "Attack from nearest planet", but only moons are considered and the farming origin if it is a planet.  
 
 ##### [Priority calculation]
 This option is only useful when "fast-attack" is **not** selected.  

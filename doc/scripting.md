@@ -61,6 +61,39 @@ for shipID in ShipsArr {
 }
 ```
 
+## How to debug errors
+
+### syntax error
+
+If you receive a message that looks like:  
+```go
+22:20:11 ERROR [[9:24] syntax error]
+```
+It means that you have a syntax error at line **9**, character **24**.  
+
+### does not support member operation
+```go
+22:36:13 ERROR [[46:34] type invalid does not support member operation]
+```
+Means that you are trying to call a "method" on a variable that is not an "object".  
+It would usually look like `notAnObject.method()`.  
+One way to know what's going on is to `Print(notAnObject)`,
+and rerun the script to know what's the value of `notAnObject`.  
+
+### function wants X arguments but received Y
+```go
+23:10:21 ERROR [[24:23] function wants 1 arguments but received 3]
+```
+This happens when you call a function that only takes X argument, but you are giving it Y.  
+Example:  
+```go
+planet = GetPlanet(1, 2, 3) // Triggers error: function wants 1 arguments but received 3
+```
+Should actually be something like:  
+```go
+planet = GetPlanet("1:2:3")
+```
+
 # Scripting API
 
 ## Constants
@@ -1295,11 +1328,20 @@ SendMessageAlliance(537, "Sup!")
 // GetCelestial get the player's planet/moon
 GetCelestial(interface{}) (Celestial, error)
 ```
+```go
+coord = NewCoordinate(1, 2, 3, PLANET_TYPE)
+celestial, err = GetCelestial(coord)
+Print(celestial.GetName())
+```
 
 ### GetCelestials
 ```go
 // GetCelestial get the player's planets & moons
 GetCelestials() ([]Celestial, error)
+```
+```go
+celestials, err = GetCelestials()
+Print("We have " + len(celestials) + " celestials")
 ```
 
 ### GetPlanet
@@ -1307,11 +1349,20 @@ GetCelestials() ([]Celestial, error)
 // GetPlanet get the player's planet
 GetPlanet(interface{}) (Planet, error)
 ```
+```go
+coord = NewCoordinate(1, 2, 3, PLANET_TYPE)
+planet, err = GetPlanet(coord)
+Print(planet.GetName())
+```
 
 ### GetPlanets
 ```go
 // GetPlanets get the player's planets
 GetPlanets() []Planet
+```
+```go
+planets = GetPlanets()
+Print("We have " + len(planets) + " planets")
 ```
 
 ### GetMoon
@@ -1319,11 +1370,20 @@ GetPlanets() []Planet
 // GetMoon get the player's planets
 GetMoon(interface{}) (Moon, error)
 ```
+```go
+coord = NewCoordinate(1, 2, 3, MOON_TYPE)
+moon, err = GetMoon(coord)
+Print(moon.GetName())
+```
 
 ### GetMoons
 ```go
 // GetMoon get the player's moons
 GetMoons() []Moon
+```
+```go
+moons = GetMoons()
+Print("We have " + len(moons) + " moons")
 ```
 
 ### GetCachedPlanets
@@ -2127,6 +2187,10 @@ NewResourceSettings(metalMine, crystalMine, deuteriumSynthesizer, solarPlant, fu
 ```go
 // Represent an ogame coordinate
 NewCoordinate(galaxy, system, position int, celestialType CelestialType) Coordinate
+```
+```go
+myCoordinate = NewCoordinate(1, 2, 3, PLANET_TYPE)
+Print(myCoordinate)
 ```
 
 ### NewTemperature
