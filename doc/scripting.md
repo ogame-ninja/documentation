@@ -1045,6 +1045,24 @@ LogError(args ...interface{})
 ClearOut()
 ```
 
+### AddItemToQueue
+```go
+// Add something into a planet/moon build queue
+// The "nbr" parameter is only useful for ships and defenses.
+AddItemToQueue(celestialID CelestialID, id ID, nbr int) error
+```
+
+```go
+err = AddItemToQueue(planet.GetID(), SOLARPLANT, 0)
+Print(err)
+err = AddItemToQueue(planet.GetID(), BOMBER, 1)
+Print(err)
+err = AddItemToQueue(planet.GetID(), ROCKETLAUNCHER, 2)
+Print(err)
+err = AddItemToQueue(planet.GetID(), BOMBER, 0)
+Print(err)
+```
+
 ### GetPrice
 ```go
 // Returns the price of 'entity'. 'nbr' is either a building/research level or a defense/ship quantity.
