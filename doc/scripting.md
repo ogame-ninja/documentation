@@ -1053,6 +1053,7 @@ AddItemToQueue(celestialID CelestialID, id ID, nbr int) error
 ```
 
 ```go
+planet = GetCachedPlanets()[0]
 err = AddItemToQueue(planet.GetID(), SOLARPLANT, 0)
 Print(err)
 err = AddItemToQueue(planet.GetID(), BOMBER, 1)
