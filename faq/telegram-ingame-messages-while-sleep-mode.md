@@ -7,5 +7,5 @@ chat messages.
 
 ##### Does that mean I will be shown "online" all the time ?
 
-No. According to my tests, it takes around 15 minutes of inactivity and then the green dot turns dark (offline).  
+No. It takes around 15 minutes of inactivity and then the green dot turns dark (offline).  
 So you will be shown offline to your alliance and buddies.  
