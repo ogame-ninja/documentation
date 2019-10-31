@@ -1641,7 +1641,7 @@ IsFarmSessionOngoing() bool
 ### FarmingBotSessionsCount
 ```go
 // Returns a count of active farm sessions including the one being processed
-FarmingBotSessionsCount() bool
+FarmingBotSessionsCount() int
 ```
 
 ### AbortAllFarmingSessions
