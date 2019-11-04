@@ -11,3 +11,4 @@ Tips, tricks and answers to common questions about configuring and using Ninja b
 - [What is the "Hunter" ?](/faq/what-is-the-hunter)
 - [How can I reach you ?](/faq/contact-us)
 - [I receive telegram ingame messages while in sleep mode, normal ?](/faq/telegram-ingame-messages-while-sleep-mode)
+- [How to delete a bot ?](/faq/how-to-delete-bot)
