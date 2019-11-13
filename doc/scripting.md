@@ -35,6 +35,10 @@ name = "Johny"
 name = "Tommy" 
 ```
 
+## Special Scripts
+
+You can create a script with the exact name *!global.ank* any variable or function inside will be available from any of your scripts
+
 ## Loops
 
 ```go
@@ -1154,7 +1158,7 @@ if IsAllianceIgnored(1234567) {
 
 ### ExecIn
 ```go
-// Schedules an execution after 'execIn' milliseconds
+// Schedules an execution after 'execIn' milliseconds. Execution will be asynchronous!
 ExecIn(milliseconds int, clb func()) context.CancelFunc
 ```
 ```go
@@ -1170,6 +1174,20 @@ ExecIn(5 * 60 * 1000, callback) // callback will be called after 5min
 cancelFn = ExecIn(5 * 60 * 1000, callback)
 Sleep(5 * 1000)
 cancelFn() // Cancel the job, callback won't be executed
+```
+
+```go
+// call function with sleep from a loop
+func callback() {
+    Print("5min passed")
+    Sleep(60*1000)
+    Print("6min passed")
+}
+
+for {
+    ExecIn(Random(30*1000, 60*1000), callback)
+    Sleep(10*1000)
+}
 ```
 
 ### IntervalExec
