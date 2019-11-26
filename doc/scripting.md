@@ -440,7 +440,7 @@ type ShipsInfos struct {
 }
 
 // Methods
-Cargo(techs Researches) int
+Cargo(techs Researches, bool probeRaids) int, bool // probeRaids determines if spys in your uni have cargo or not
 Has(v ShipsInfos) bool
 FleetValue() int
 FleetCost() Resources
