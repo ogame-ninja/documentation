@@ -788,6 +788,7 @@ type ResourceSettings struct {
 	SolarPlant           int
 	FusionReactor        int
 	SolarSatellite       int
+    Crawler              int
 }
 
 // Methods
@@ -1697,6 +1698,30 @@ IsRunningDefenderBot() bool
 ```go
 // Set the defender check interval (in minutes)
 SetDefenderCheckInterval(min, max int)
+```
+
+### DBGetResourceBuildings
+```go
+// Get resources buildings from database
+DBGetResourceBuildings(CelestialID) (ResourcesBuildings, error)
+```
+
+### DBGetResourceSettings
+```go
+// Get resources settings from database
+DBGetResourceSettings(CelestialID) (ResourceSettings, error)
+```
+
+### DBGetFacilities
+```go
+// Get Facilities from database
+DBGetFacilities(CelestialID) (Facilities, error)
+```
+
+### DBGetShips
+```go
+// Get Ships from database
+DBGetShips(CelestialID) (ShipsInfos, error)
 ```
 
 ### ParseCoord
