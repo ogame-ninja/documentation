@@ -1724,6 +1724,12 @@ DBGetFacilities(CelestialID) (Facilities, error)
 DBGetShips(CelestialID) (ShipsInfos, error)
 ```
 
+### DBGetResearches
+```go
+// Get Ships from database
+DBGetResearches() Researches
+```
+
 ### Put
 ```go
 // Put data into storage
