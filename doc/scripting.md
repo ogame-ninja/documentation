@@ -1693,6 +1693,12 @@ StopDefenderBot()
 IsRunningDefenderBot() bool
 ```
 
+### SetDefenderCheckInterval
+```go
+// Set the defender check interval (in minutes)
+SetDefenderCheckInterval(min, max int)
+```
+
 ### ParseCoord
 ```go
 // Parse a string into a coordinate
