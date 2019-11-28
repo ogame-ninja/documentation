@@ -1724,6 +1724,30 @@ DBGetFacilities(CelestialID) (Facilities, error)
 DBGetShips(CelestialID) (ShipsInfos, error)
 ```
 
+### Put
+```go
+// Put data into storage
+Put(key string, val interface{}) error
+```
+
+### Get
+```go
+// Get data from storage
+Get(key string) (interface{}, error)
+```
+
+### Has
+```go
+// Has returns if the key exists in storage
+Has(key string) bool
+```
+
+### Delete
+```go
+// Delete a key/value pair from storage
+Delete(key string) bool
+```
+
 ### ParseCoord
 ```go
 // Parse a string into a coordinate
