@@ -496,9 +496,14 @@ String() string
 ```go
 // SystemInfos planets information for a specific system
 type SystemInfos struct {
-	galaxy  int
-	system  int
-	planets [15]*PlanetInfos
+	galaxy           int
+	system           int
+	planets          [15]*PlanetInfos
+    ExpeditionDebris struct {
+        Metal             int
+        Crystal           int
+        PathfindersNeeded int
+    }
 }
 
 // Methods
