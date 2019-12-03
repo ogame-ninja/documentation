@@ -1747,10 +1747,22 @@ DBGetResearches() Researches
 Put(key string, val interface{}) error
 ```
 
+```go
+Put("key1", 123)
+Put("key2", "Hello world!")
+Put("key3", true)
+Put("key4", [1, 2, 3])
+```
+
 ### Get
 ```go
 // Get data from storage
 Get(key string) (interface{}, error)
+```
+
+```go
+val, err = Get("key1")
+Print(val, err)
 ```
 
 ### Has
