@@ -1959,6 +1959,19 @@ a.AddGroup(10, HUNDRED_PERCENT, *group2)
 Print(a.ExecuteAsync())
 ```
 
+### CreateUnion
+```go
+// CreateUnion creates a union
+CreateUnion(Fleet) (int, error)
+```
+
+```go
+f = NewFleet().SetOrigin("M:1:2:3").SetDestination("M:1:2:4").SetMission(PARK).SetAllShips()
+fleet, _ = f.SendNow()
+unionID, _ = CreateUnion(fleet)
+Print("Union ID: " + unionID)
+```
+
 ### Notify
 ```go
 // Display a desktop notification
