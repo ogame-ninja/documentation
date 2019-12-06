@@ -180,11 +180,11 @@ OGAME_SERVER = (ogame server information)
 ### ID
 ```go
 // ID represent an ogame id
-type ID int
+type ID int64
 
 // Methods
 IsSet() bool
-Int() int
+Int64() int64
 String() string
 IsFacility() bool
 IsResourceBuilding() bool
@@ -206,15 +206,15 @@ type Celestial interface {
     GetResources() (Resources, error)
     GetResourcesDetails() (ResourcesDetails, error)
     GetFacilities() (Facilities, error)
-    SendFleet([]Quantifiable, Speed, Coordinate, MissionID, Resources, int) (Fleet, error)
-    EnsureFleet([]Quantifiable, Speed, Coordinate, MissionID, Resources, int) (Fleet, error)
+    SendFleet([]Quantifiable, Speed, Coordinate, MissionID, Resources, int64) (Fleet, error)
+    EnsureFleet([]Quantifiable, Speed, Coordinate, MissionID, Resources, int64) (Fleet, error)
     GetDefense() (DefensesInfos, error)
     GetShips() (ShipsInfos, error)
-    BuildDefense(defenseID ID, nbr int) error
-    ConstructionsBeingBuilt() (ID, int, ID, int)
+    BuildDefense(defenseID ID, nbr int64) error
+    ConstructionsBeingBuilt() (ID, int64, ID, int64)
     GetProduction() ([]Quantifiable, error)
     GetResourcesBuildings() (ResourcesBuildings, error)
-    Build(id ID, nbr int) error
+    Build(id ID, nbr int64) error
     BuildBuilding(buildingID ID) error
     BuildTechnology(technologyID ID) error
     CancelResearch() error
@@ -230,7 +230,7 @@ type Planet struct {
 	Img         string
 	ID          PlanetID
 	Name        string
-	Diameter    int
+	Diameter    int64
 	Coordinate  Coordinate
 	Fields      Fields
 	Temperature Temperature
@@ -241,10 +241,10 @@ type Planet struct {
 // all methods of Celestial interface
 BuildCancelable(id ID) error
 GetResourceSettings() (ResourceSettings, error)
-BuildShips(shipID ID, nbr int) error
+BuildShips(shipID ID, nbr int64) error
 GetResourcesProductions() (Resources, error)
-FlightTime(destination Coordinate, speed Speed, ships ShipsInfos) (secs, fuel int)
-SendIPM(planetID PlanetID, coord Coordinate, nbr int, priority ID) (int, error)
+FlightTime(destination Coordinate, speed Speed, ships ShipsInfos) (secs, fuel int64)
+SendIPM(planetID PlanetID, coord Coordinate, nbr int64, priority ID) (int64, error)
 ```
 
 ### Moon
@@ -255,7 +255,7 @@ type Moon struct {
 	ID         MoonID
 	Img        string
 	Name       string
-	Diameter   int
+	Diameter   int64
 	Coordinate Coordinate
 	Fields     Fields
 }
@@ -268,7 +268,7 @@ Phalanx(coord Coordinate) ([]Fleet, error)
 ### CelestialType
 Type of celestial object (planet/moon/debris)
 ```go
-type CelestialType int
+type CelestialType int64
 ```
 ```go
 PLANET_TYPE // 1
@@ -278,7 +278,7 @@ MOON_TYPE   // 3
 
 ### EspionageReportType
 ```go
-type EspionageReportType int
+type EspionageReportType int64
 ```
 ```go
 // Action message received when an enemy is seen near your planet
@@ -291,9 +291,9 @@ const Report EspionageReportType = 1
 ### Coordinate
 ```go
 type Coordinate struct {
-	Galaxy   int
-	System   int
-	Position int
+	Galaxy   int64
+	System   int64
+	Position int64
 	Type     CelestialType
 }
 
@@ -320,32 +320,32 @@ Print("coordinate1 is in galaxy " + coordinate1.Galaxy)
 ```go
 // Temperature planet temperature values
 type Temperature struct {
-	Min int
-	Max int
+	Min int64
+	Max int64
 }
 
 // Methods
-Mean() int
+Mean() int64
 ```
 
 ### Resources
 ```go
 type Resources struct {
-	Metal      int
-	Crystal    int
-	Deuterium  int
-	Energy     int
-	Darkmatter int
+	Metal      int64
+	Crystal    int64
+	Deuterium  int64
+	Energy     int64
+	Darkmatter int64
 }
 
 // Methods
 String() string
-Total() int
-Value() int
+Total() int64
+Value() int64
 Sub(v Resources) Resources
 Add(v Resources) Resources
-Mul(scalar int) Resources
-Div(price Resources) int
+Mul(scalar int64) Resources
+Div(price Resources) int64
 CanAfford(cost Resources) bool
 Gte(val Resources) bool
 Lte(val Resources) bool
@@ -369,29 +369,29 @@ Print("Div: ", NewResources(9, 9, 9).Div(res1)) // Div: 3
 ```go
 type ResourcesDetails struct {
 	Metal struct {
-		Available         int
-		StorageCapacity   int
-		CurrentProduction int
+		Available         int64
+		StorageCapacity   int64
+		CurrentProduction int64
 	}
 	Crystal struct {
-		Available         int
-		StorageCapacity   int
-		CurrentProduction int
+		Available         int64
+		StorageCapacity   int64
+		CurrentProduction int64
 	}
 	Deuterium struct {
-		Available         int
-		StorageCapacity   int
-		CurrentProduction int
+		Available         int64
+		StorageCapacity   int64
+		CurrentProduction int64
 	}
 	Energy struct {
-		Available         int
-		CurrentProduction int
-		Consumption       int
+		Available         int64
+		CurrentProduction int64
+		Consumption       int64
 	}
 	Darkmatter struct {
-		Available int
-		Purchased int
-		Found     int
+		Available int64
+		Purchased int64
+		Found     int64
 	}
 }
 
@@ -411,10 +411,10 @@ type Fleet struct {
 	Origin         Coordinate
 	Destination    Coordinate
 	Ships          ShipsInfos
-	ArriveIn       int
-	BackIn         int
-	UnionID        int
-	TargetPlanetID int
+	ArriveIn       int64
+	BackIn         int64
+	UnionID        int64
+	TargetPlanetID int64
 }
 ```
 
@@ -422,57 +422,57 @@ type Fleet struct {
 ```go
 // ShipsInfos represent a planet ships information
 type ShipsInfos struct {
-	LightFighter   int
-	HeavyFighter   int
-	Cruiser        int
-	Battleship     int
-	Battlecruiser  int
-	Bomber         int
-	Destroyer      int
-	Deathstar      int
-	SmallCargo     int
-	LargeCargo     int
-	ColonyShip     int
-	Recycler       int
-	EspionageProbe int
-	SolarSatellite int
-	Crawler        int
-	Reaper         int
-	Pathfinder     int
+	LightFighter   int64
+	HeavyFighter   int64
+	Cruiser        int64
+	Battleship     int64
+	Battlecruiser  int64
+	Bomber         int64
+	Destroyer      int64
+	Deathstar      int64
+	SmallCargo     int64
+	LargeCargo     int64
+	ColonyShip     int64
+	Recycler       int64
+	EspionageProbe int64
+	SolarSatellite int64
+	Crawler        int64
+	Reaper         int64
+	Pathfinder     int64
 }
 
 // Methods
-Cargo(techs Researches, bool probeRaids) int, bool // probeRaids determines if spys in your uni have cargo or not
+Cargo(techs Researches, bool probeRaids) int64, bool // probeRaids determines if spys in your uni have cargo or not
 Has(v ShipsInfos) bool
-FleetValue() int
+FleetValue() int64
 FleetCost() Resources
-ByID(id ID) int
+ByID(id ID) int64
 String() string
 ToPtr() *ShipsInfos
 Add(v ShipsInfos)
-Set(id ID, val int)
+Set(id ID, val int64)
 ```
 
 ### DefensesInfos
 ```go
 // DefensesInfos represent a planet defenses information
 type DefensesInfos struct {
-	RocketLauncher         int
-	LightLaser             int
-	HeavyLaser             int
-	GaussCannon            int
-	IonCannon              int
-	PlasmaTurret           int
-	SmallShieldDome        int
-	LargeShieldDome        int
-	AntiBallisticMissiles  int
-	InterplanetaryMissiles int
+	RocketLauncher         int64
+	LightLaser             int64
+	HeavyLaser             int64
+	GaussCannon            int64
+	IonCannon              int64
+	PlasmaTurret           int64
+	SmallShieldDome        int64
+	LargeShieldDome        int64
+	AntiBallisticMissiles  int64
+	InterplanetaryMissiles int64
 }
 
 // Methods
 String() string
-ByID(id ID) int
-Set(id ID, val int)
+ByID(id ID) int64
+Set(id ID, val int64)
 ```
 
 ### AttackEvent
@@ -483,10 +483,10 @@ type AttackEvent struct {
 	Origin       Coordinate
 	Destination  Coordinate
 	ArrivalTime  time.Time
-	ArriveIn     int
+	ArriveIn     int64
 	AttackerName string
-	AttackerID   int
-	Missiles     int
+	AttackerID   int64
+	Missiles     int64
 	Ships        *ShipsInfos
 }
 
@@ -498,20 +498,20 @@ String() string
 ```go
 // SystemInfos planets information for a specific system
 type SystemInfos struct {
-	galaxy           int
-	system           int
+	galaxy           int64
+	system           int64
 	planets          [15]*PlanetInfos
     ExpeditionDebris struct {
-        Metal             int
-        Crystal           int
-        PathfindersNeeded int
+        Metal             int64
+        Crystal           int64
+        PathfindersNeeded int64
     }
 }
 
 // Methods
-Galaxy() int
-System() int
-Position(idx int) *PlanetInfos
+Galaxy() int64
+System() int64
+Position(idx int64) *PlanetInfos
 ```
 
 
@@ -519,8 +519,8 @@ Position(idx int) *PlanetInfos
 ```go
 // PlanetInfos public information of a planet in the galaxy page
 type PlanetInfos struct {
-	ID              int
-	Activity        int
+	ID              int64
+	Activity        int64
 	Name            string
 	Img             string
 	Coordinate      Coordinate
@@ -532,15 +532,15 @@ type PlanetInfos struct {
 	HonorableTarget bool
 	Banned          bool
 	Debris          struct {
-		Metal           int
-		Crystal         int
-		RecyclersNeeded int
+		Metal           int64
+		Crystal         int64
+		RecyclersNeeded int64
 	}
 	Moon   *MoonInfos
 	Player struct {
-		ID         int
+		ID         int64
 		Name       string
-		Rank       int
+		Rank       int64
 		IsBandit   bool
 		IsStarlord bool
 	}
@@ -552,10 +552,10 @@ type PlanetInfos struct {
 ```go
 // AllianceInfos public information of an alliance in the galaxy page
 type AllianceInfos struct {
-	ID     int
+	ID     int64
 	Name   string
-	Rank   int
-	Member int
+	Rank   int64
+	Member int64
 }
 ```
 
@@ -563,9 +563,9 @@ type AllianceInfos struct {
 ```go
 // MoonInfos public information of a moon in the galaxy page
 type MoonInfos struct {
-	ID       int
-	Diameter int
-	Activity int
+	ID       int64
+	Diameter int64
+	Activity int64
 }
 ```
 
@@ -573,21 +573,21 @@ type MoonInfos struct {
 ```go
 // Facilities represent a planet facilities information
 type Facilities struct {
-	RoboticsFactory int
-	Shipyard        int
-	ResearchLab     int
-	AllianceDepot   int
-	MissileSilo     int
-	NaniteFactory   int
-	Terraformer     int
-	SpaceDock       int
-	LunarBase       int
-	SensorPhalanx   int
-	JumpGate        int
+	RoboticsFactory int64
+	Shipyard        int64
+	ResearchLab     int64
+	AllianceDepot   int64
+	MissileSilo     int64
+	NaniteFactory   int64
+	Terraformer     int64
+	SpaceDock       int64
+	LunarBase       int64
+	SensorPhalanx   int64
+	JumpGate        int64
 }
 
 // Methods
-ByID(id ID) int
+ByID(id ID) int64
 String() string
 ```
 
@@ -595,26 +595,26 @@ String() string
 ```go
 // Researches represent player's researches
 type Researches struct {
-	EnergyTechnology             int
-	LaserTechnology              int
-	IonTechnology                int
-	HyperspaceTechnology         int
-	PlasmaTechnology             int
-	CombustionDrive              int
-	ImpulseDrive                 int
-	HyperspaceDrive              int
-	EspionageTechnology          int
-	ComputerTechnology           int
-	Astrophysics                 int
-	IntergalacticResearchNetwork int
-	GravitonTechnology           int
-	WeaponsTechnology            int
-	ShieldingTechnology          int
-	ArmourTechnology             int
+	EnergyTechnology             int64
+	LaserTechnology              int64
+	IonTechnology                int64
+	HyperspaceTechnology         int64
+	PlasmaTechnology             int64
+	CombustionDrive              int64
+	ImpulseDrive                 int64
+	HyperspaceDrive              int64
+	EspionageTechnology          int64
+	ComputerTechnology           int64
+	Astrophysics                 int64
+	IntergalacticResearchNetwork int64
+	GravitonTechnology           int64
+	WeaponsTechnology            int64
+	ShieldingTechnology          int64
+	ArmourTechnology             int64
 }
 
 // Methods
-ByID(id ID) int
+ByID(id ID) int64
 String() string
 ```
 
@@ -622,19 +622,19 @@ String() string
 ```go
 // ResourcesBuildings represent a planet resource buildings
 type ResourcesBuildings struct {
-	MetalMine            int
-	CrystalMine          int
-	DeuteriumSynthesizer int
-	SolarPlant           int
-	FusionReactor        int
-	SolarSatellite       int
-	MetalStorage         int
-	CrystalStorage       int
-	DeuteriumTank        int
+	MetalMine            int64
+	CrystalMine          int64
+	DeuteriumSynthesizer int64
+	SolarPlant           int64
+	FusionReactor        int64
+	SolarSatellite       int64
+	MetalStorage         int64
+	CrystalStorage       int64
+	DeuteriumTank        int64
 }
 
 // Methods
-ByID(id ID) int
+ByID(id ID) int64
 String() string
 ```
 
@@ -642,7 +642,7 @@ String() string
 ```go
 // EspionageReportSummary summary of espionage report
 type EspionageReportSummary struct {
-	ID     int
+	ID     int64
 	Type   EspionageReportType
 	From   string
 	Target Coordinate
@@ -653,16 +653,16 @@ type EspionageReportSummary struct {
 ```go
 // CombatReportSummary summary of combat report
 type CombatReportSummary struct {
-	ID           int
+	ID           int64
 	Origin       *Coordinate
 	Destination  Coordinate
 	AttackerName string
 	DefenderName string
-	Loot         int
-	Metal        int
-	Crystal      int
-	Deuterium    int
-	DebrisField  int
+	Loot         int64
+	Metal        int64
+	Crystal      int64
+	Deuterium    int64
+	DebrisField  int64
 	CreatedAt    time.Time
 }
 ```
@@ -672,10 +672,10 @@ type CombatReportSummary struct {
 // EspionageReport detailed espionage report
 type EspionageReport struct {
 	Resources
-	ID                           int
+	ID                           int64
 	Username                     string
-	LastActivity                 int
-	CounterEspionage             int
+	LastActivity                 int64
+	CounterEspionage             int64
 	APIKey                       string
 	HasFleet                     bool
 	HasDefenses                  bool
@@ -758,29 +758,29 @@ type EspionageReport struct {
 // OGame server information
 type Server struct {
 	Language      string
-	Number        int
+	Number        int64
 	Name          string
-	PlayerCount   int
-	PlayersOnline int
+	PlayerCount   int64
+	PlayersOnline int64
 	Opened        string
 	StartDate     string
 	EndDate       *string
-	ServerClosed  int
-	Prefered      int
-	SignupClosed  int
+	ServerClosed  int64
+	Prefered      int64
+	SignupClosed  int64
 	Settings      struct {
-		AKS                      int
-		FleetSpeed               int
-		WreckField               int
+		AKS                      int64
+		FleetSpeed               int64
+		WreckField               int64
 		ServerLabel              string
-		EconomySpeed             int
-		PlanetFields             int
-		UniverseSize             int // Nb of galaxies
+		EconomySpeed             int64
+		PlanetFields             int64
+		UniverseSize             int64 // Nb of galaxies
 		ServerCategory           string
-		EspionageProbeRaids      int
-		PremiumValidationGift    int
-		DebrisFieldFactorShips   int
-		DebrisFieldFactorDefence int
+		EspionageProbeRaids      int64
+		PremiumValidationGift    int64
+		DebrisFieldFactorShips   int64
+		DebrisFieldFactorDefence int64
 	}
 }
 ```
@@ -789,13 +789,13 @@ type Server struct {
 ```go
 // ResourceSettings represent a planet resource settings
 type ResourceSettings struct {
-	MetalMine            int
-	CrystalMine          int
-	DeuteriumSynthesizer int
-	SolarPlant           int
-	FusionReactor        int
-	SolarSatellite       int
-    Crawler              int
+	MetalMine            int64
+	CrystalMine          int64
+	DeuteriumSynthesizer int64
+	SolarPlant           int64
+	FusionReactor        int64
+	SolarSatellite       int64
+    Crawler              int64
 }
 
 // Methods
@@ -814,13 +814,13 @@ SetSpeed(speed Speed) *FleetBuilder
 SetResources(resources Resources) *FleetBuilder
 SetAllResources() *FleetBuilder
 SetMission(mission MissionID) *FleetBuilder
-SetDuration(expeditiontime int) *FleetBuilder
-SetUnionID(unionID int) *FleetBuilder
-AddShips(id ID, nbr int) *FleetBuilder
+SetDuration(expeditiontime int64) *FleetBuilder
+SetUnionID(unionID int64) *FleetBuilder
+AddShips(id ID, nbr int64) *FleetBuilder
 SetShips(ships ShipsInfos) *FleetBuilder
 SetAllShips() *FleetBuilder
-SetRecallIn(secs int) *FleetBuilder
-FlightTime() (secs, fuel int)
+SetRecallIn(secs int64) *FleetBuilder
+FlightTime() (secs, fuel int64)
 SendNow() (Fleet, error)
 OnError(clb func(error)) *FleetBuilder
 OnSuccess(clb func(Fleet)) *FleetBuilder
@@ -833,13 +833,13 @@ type FarmSessionBuilder struct {
 
 // Methods
 SetOrigin(v interface{}) *FarmSessionBuilder
-SetRange(galaxy, systemFrom, systemTo int) *FarmSessionBuilder
-SetProbes(nbProbes int) *FarmSessionBuilder
-SetAdditionalCargo(pctCargo int) *FarmSessionBuilder
-SetMinimumResourcesToAttack(minimumResourcesToAttack int) *FarmSessionBuilder
-SetMinimumDefensesToIgnore(minimumDefensesToIgnore int) *FarmSessionBuilder
-SetMinimumStorageToIgnore(metal, crystal, deuterium int) *FarmSessionBuilder
-SetMinimumPlayerRank(rank int) *FarmSessionBuilder
+SetRange(galaxy, systemFrom, systemTo int64) *FarmSessionBuilder
+SetProbes(nbProbes int64) *FarmSessionBuilder
+SetAdditionalCargo(pctCargo int64) *FarmSessionBuilder
+SetMinimumResourcesToAttack(minimumResourcesToAttack int64) *FarmSessionBuilder
+SetMinimumDefensesToIgnore(minimumDefensesToIgnore int64) *FarmSessionBuilder
+SetMinimumStorageToIgnore(metal, crystal, deuterium int64) *FarmSessionBuilder
+SetMinimumPlayerRank(rank int64) *FarmSessionBuilder
 SetEspionageProbeRaids(enabled bool) *FarmSessionBuilder
 SetFastAttacking(enabled bool) *FarmSessionBuilder
 SetDeleteCombatReports(enabled bool) *FarmSessionBuilder
@@ -853,11 +853,11 @@ BuildFarmSession() (*FarmSession, error)
 ### ACSFlightTime
 ```go
 type ACSFlightTime struct {
-	ArriveIn      int
+	ArriveIn      int64
 	HumanArriveIn string
 	ArriveAt      time.Time
 	HumanArriveAt string
-	Fuel          int
+	Fuel          int64
 	Groups        []ACSFlightTimeGroup
 }
 ```
@@ -869,22 +869,22 @@ type ACS struct {
 
 // Methods
 GetFlightTimes() ACSFlightTime
-AddGroup(delaySecs int, speed Speed, ships ShipsInfos) *ACS
+AddGroup(delaySecs int64, speed Speed, ships ShipsInfos) *ACS
 Execute()
 ExecuteAsync()
-GetUnionID() int
+GetUnionID() int64
 GetFleetIDs() []FleetID
 ```
 
 ### ChatMsg
 ```go
 type ChatMsg struct {
-	SenderID      int
+	SenderID      int64
 	SenderName    string
-	AssociationID int
+	AssociationID int64
 	Text          string
-	ID            int
-	Date          int
+	ID            int64
+	Date          int64
 }
 ```
 
@@ -892,7 +892,7 @@ type ChatMsg struct {
 ### TelegramMessage
 ```go
 type TelegramMessage struct {
-	MessageID int
+	MessageID int64
 	From      struct {
 		ID           int64
 		IsBot        bool
@@ -999,7 +999,7 @@ for {
 ### Sleep
 ```go
 // Sleeps a defined number of milliseconds
-Sleep(milliseconds int)
+Sleep(milliseconds int64)
 ```
 ```go
 Print("Before")
@@ -1010,7 +1010,7 @@ Print("After")
 ### Random
 ```go
 // Random generates a number between min and max inclusively
-Random(min, max int)
+Random(min, max int64)
 ```
 ```go
 randomDelay = Random(1000, 5000)
@@ -1068,7 +1068,7 @@ ClearOut()
 ```go
 // Add something into a planet/moon build queue
 // The "nbr" parameter is only useful for ships and defenses.
-AddItemToQueue(celestialID CelestialID, id ID, nbr int) error
+AddItemToQueue(celestialID CelestialID, id ID, nbr int64) error
 ```
 
 ```go
@@ -1086,7 +1086,7 @@ Print(err)
 ### GetPrice
 ```go
 // Returns the price of 'entity'. 'nbr' is either a building/research level or a defense/ship quantity.
-GetPrice(entityID ogame.ID, nbr int) (ogame.Resources)
+GetPrice(entityID ogame.ID, nbr int64) (ogame.Resources)
 ```
 ```go
 price = GetPrice(LIGHTFIGHTER, 5)
@@ -1099,7 +1099,7 @@ Print("The price of metal mine level 3 is ", price) // [135|33|0]
 ### SolarSatelliteProduction
 ```go
 // Returns the energy production of solar satellite.
-SolarSatelliteProduction(temp Temperature, nbr int) (energy int)
+SolarSatelliteProduction(temp Temperature, nbr int64) (energy int64)
 ```
 ```go
 temp = NewTemperature(-12, 40)
@@ -1114,7 +1114,7 @@ Print("Energy produced is ", energy)
 ### IgnorePlanet
 ```go
 // Adds a planet to the avoid list
-IgnorePlanet(int) error
+IgnorePlanet(int64) error
 ```
 ```go
 IgnorePlanet(1234567)
@@ -1123,7 +1123,7 @@ IgnorePlanet(1234567)
 ### IgnorePlayer
 ```go
 // Adds a player to the avoid list
-IgnorePlayer(int) error
+IgnorePlayer(int64) error
 ```
 ```go
 IgnorePlayer(1234567)
@@ -1132,7 +1132,7 @@ IgnorePlayer(1234567)
 ### IgnoreAlliance
 ```go
 // Adds an alliance to the avoid list
-IgnoreAlliance(int) error
+IgnoreAlliance(int64) error
 ```
 ```go
 IgnoreAlliance(1234567)
@@ -1141,7 +1141,7 @@ IgnoreAlliance(1234567)
 ### IsPlanetIgnored
 ```go
 // True if planet id is in ignored list
-IsPlanetIgnored(int) bool
+IsPlanetIgnored(int64) bool
 ```
 ```go
 if IsPlanetIgnored(1234567) {
@@ -1152,7 +1152,7 @@ if IsPlanetIgnored(1234567) {
 ### IsPlayerIgnored
 ```go
 // True if player id is in ignored list
-IsPlayerIgnored(int) bool
+IsPlayerIgnored(int64) bool
 ```
 ```go
 if IsPlayerIgnored(1234567) {
@@ -1163,7 +1163,7 @@ if IsPlayerIgnored(1234567) {
 ### IsAllianceIgnored
 ```go
 // True if alliance id is in ignored list
-IsAllianceIgnored(int) bool
+IsAllianceIgnored(int64) bool
 ```
 ```go
 if IsAllianceIgnored(1234567) {
@@ -1174,7 +1174,7 @@ if IsAllianceIgnored(1234567) {
 ### ExecIn
 ```go
 // Schedules an execution after 'execIn' milliseconds. Execution will be asynchronous!
-ExecIn(milliseconds int, clb func()) context.CancelFunc
+ExecIn(milliseconds int64, clb func()) context.CancelFunc
 ```
 ```go
 func callback() {
@@ -1208,7 +1208,7 @@ for {
 ### IntervalExec
 ```go
 // Schedules an execution on regular intervals
-IntervalExec(milliseconds int, clb func()) context.CancelFunc
+IntervalExec(milliseconds int64, clb func()) context.CancelFunc
 ```
 ```go
 func callback() {
@@ -1256,7 +1256,7 @@ RemoveCron(entryID) // Remove scheduled cronjob
 ### Clock
 ```go
 // Return the current time
-Clock() (hour, min, sec int)
+Clock() (hour, min, sec int64)
 ```
 ```go
 hour, min, sec = Clock()
@@ -1268,7 +1268,7 @@ if hour >= 15 && min >= 43 {
 ### Date
 ```go
 // Return the current date
-Date() (year, month, day int)
+Date() (year, month, day int64)
 ```
 ```go
 year, month, day = Date()
@@ -1278,7 +1278,7 @@ Print("Today's date is "+year+"-"+month+"-"+day)
 ### Weekday
 ```go
 // Return the week day (Sunday = 0, Monday = 1... Saturday = 6)
-Weekday() int
+Weekday() int64
 ```
 ```go
 Print("Today's week day is "+Weekday())
@@ -1387,7 +1387,7 @@ Print(isUnderAttack)
 ### SendMessage
 ```go
 // Sends a message to playerID
-SendMessage(playerID int, message string) error
+SendMessage(playerID int64, message string) error
 ```
 ```go
 SendMessage(1234567, "Sup!")
@@ -1396,7 +1396,7 @@ SendMessage(1234567, "Sup!")
 ### SendMessageAlliance
 ```go
 // Sends a message to associationID
-SendMessageAlliance(associationID int, message string) error
+SendMessageAlliance(associationID int64, message string) error
 ```
 ```go
 SendMessageAlliance(537, "Sup!")
@@ -1547,7 +1547,7 @@ for attack in attacks {
 ### GalaxyInfos
 ```go
 // GalaxyInfos get information of all planets and moons of a solar system
-GalaxyInfos(galaxy, system int) (SystemInfos, error)
+GalaxyInfos(galaxy, system int64) (SystemInfos, error)
 ```
 ```go
 systemInfo, _ = GalaxyInfos(4, 116)
@@ -1556,7 +1556,7 @@ systemInfo, _ = GalaxyInfos(4, 116)
 ### Dotify
 ```go
 // Pretty print a large number using dot as thousand separator
-Dotify(in int) string
+Dotify(in int64) string
 ```
 ```go
 Print(Dotify(1000000)) // 1.000.000
@@ -1585,7 +1585,7 @@ Print(ID2Str(METALMINE)) // MetalMine
 ### Atoi
 ```go
 // Convert a string to an integer
-Atoi(string) int
+Atoi(string) int64
 ```
 ```go
 Print(1 + Atoi("2")) // 3
@@ -1594,7 +1594,7 @@ Print(1 + Atoi("2")) // 3
 ### Itoa
 ```go
 // Convert a integer to a string
-Itoa(int) string
+Itoa(int64) string
 ```
 ```go
 Print(Itoa(123) + "4") // 1234
@@ -1674,7 +1674,7 @@ IsFarmSessionOngoing() bool
 ### FarmingBotSessionsCount
 ```go
 // Returns a count of active farm sessions including the one being processed
-FarmingBotSessionsCount() int
+FarmingBotSessionsCount() int64
 ```
 
 ### AbortAllFarmingSessions
@@ -1704,7 +1704,7 @@ IsRunningDefenderBot() bool
 ### SetDefenderCheckInterval
 ```go
 // Set the defender check interval (in minutes)
-SetDefenderCheckInterval(min, max int)
+SetDefenderCheckInterval(min, max int64)
 ```
 
 ### DBGetResourceBuildings
@@ -1798,7 +1798,7 @@ Print(ParseCoord("[D:1:2:3]")) // [D:1:2:3]
 ### CalcCargo
 ```go
 // Calculate how many small cargo OR how many large cargo you need to transport a total amount of resources
-CalcCargo(resourcesTotal int) (largeCargoNeeded, smallCargoNeeded int)
+CalcCargo(resourcesTotal int64) (largeCargoNeeded, smallCargoNeeded int64)
 ```
 ```go
 resources = NewResources(10000, 20000, 30000)
@@ -1809,7 +1809,7 @@ Print("You need either " + lc + " large cargo OR " + sc + " small cargo")
 ### CalcFastCargo
 ```go
 // Calculate the best combo to transport a total amount of resources according to your available ships.
-CalcFastCargo(lcAvail, scAvail, resourcesTotal int) (largeCargo, smallCargo, cargo int)
+CalcFastCargo(lcAvail, scAvail, resourcesTotal int64) (largeCargo, smallCargo, cargo int64)
 ```
 ```go
 resources = NewResources(10000, 20000, 30000)
@@ -1828,7 +1828,7 @@ Print("You need to send " + lc + " large cargo and " + sc + " small cargo") // Y
 ### GetPlayerCoordinates
 ```go
 // Gets all the coordinates of a player from the local database
-GetPlayerCoordinates(playerID int) []ogame.Coordinate
+GetPlayerCoordinates(playerID int64) []ogame.Coordinate
 ```
 
 ### Base64
@@ -1962,7 +1962,7 @@ Print(a.ExecuteAsync())
 ### CreateUnion
 ```go
 // CreateUnion creates a union
-CreateUnion(Fleet) (int, error)
+CreateUnion(Fleet) (int64, error)
 ```
 
 ```go
@@ -1986,7 +1986,7 @@ Notify("Player online", "Player 'target' was seen online")
 // Play a sound
 // soundID is a value between 1 and 7.
 // volume must be between 0.0 and 1.0
-PlaySound(soundID int, volume float64) error
+PlaySound(soundID int64, volume float64) error
 ```
 ```go
 PlaySound(1, 1.0)
@@ -2007,7 +2007,7 @@ GetEspionageReportFor(Coordinate) (EspionageReport, error)
 ### GetEspionageReport
 ```go
 // Gets a detailed espionage report
-GetEspionageReport(msgID int) (EspionageReport, error)
+GetEspionageReport(msgID int64) (EspionageReport, error)
 ```
 
 ### GetCombatReportSummaryFor
@@ -2019,13 +2019,13 @@ GetCombatReportSummaryFor(Coordinate) (CombatReportSummary, error)
 ### DeleteMessage
 ```go
 // Deletes a message from the mail box
-DeleteMessage(msgID int) error
+DeleteMessage(msgID int64) error
 ```
 
 ### Build
 ```go
 // Builds any ogame objects (building, technology, ship, defence)
-Build(celestialID CelestialID, id ID, nbr int) error
+Build(celestialID CelestialID, id ID, nbr int64) error
 ```
 ```go
 celestial = GetCachedCelestial("1:2:3")
@@ -2202,7 +2202,7 @@ productionLine = celestial.GetProduction()
 
 ```go
 // ConstructionsBeingBuilt returns the building & research being built, and the time remaining (secs)
-ConstructionsBeingBuilt(CelestialID) (buildingID ID, buildingCountdown int, researchID ID, researchCountdown int)
+ConstructionsBeingBuilt(CelestialID) (buildingID ID, buildingCountdown int64, researchID ID, researchCountdown int64)
 ```
 ```go
 celestial = GetCachedCelestial("1:2:3")
@@ -2245,7 +2245,7 @@ Print("Expedition slots total:", slots.ExpTotal)
 ### Distance
 ```go
 // Distance return distance between two coordinates
-Distance(origin, destination Coordinate) int
+Distance(origin, destination Coordinate) int64
 ```
 ```go
 celestial = GetCachedCelestial("1:2:3")
@@ -2257,7 +2257,7 @@ Print("Distance:", dist)
 ### FlightTime
 ```go
 // FlightTime calculate flight time and fuel needed
-FlightTime(origin, destination Coordinate, speed Speed, ships ShipsInfos) (secs, fuel int)
+FlightTime(origin, destination Coordinate, speed Speed, ships ShipsInfos) (secs, fuel int64)
 ```
 ```go
 celestial = GetCachedCelestial("1:2:3")
@@ -2280,7 +2280,7 @@ Print("Fuel:", Dotify(fuel))
 ### SendIPM
 ```go
 // SendIPM sends IPM
-SendIPM(PlanetID, Coordinate, int, ID) (int, error)
+SendIPM(PlanetID, Coordinate, int64, ID) (int64, error)
 ```
 ```go
 celestial = GetCachedCelestial("1:2:3")
@@ -2328,7 +2328,7 @@ Print(err)
 ### GetFleetSlotsReserved
 ```go
 // Returns current fleet slots reserved for player setting
-GetFleetSlotsReserved() int
+GetFleetSlotsReserved() int64
 ```
 ```go
 reserved = GetFleetSlotsReserved()
@@ -2338,25 +2338,25 @@ Print(reserved)
 ### SetFleetSlotsReserved
 ```go
 // Set fleet slots reserved for player setting
-SetFleetSlotsReserved(reserved int)
+SetFleetSlotsReserved(reserved int64)
 ```
 
 ### NewResources
 ```go
 // Represent ogame resources
-NewResources(metal, crystal, deuterium int) Resources
+NewResources(metal, crystal, deuterium int64) Resources
 ```
 
 ### NewResourceSettings
 ```go
 // Represent an ogame ResourceSettings
-NewResourceSettings(metalMine, crystalMine, deuteriumSynthesizer, solarPlant, fusionReactor, solarSatellite int) ResourceSettings
+NewResourceSettings(metalMine, crystalMine, deuteriumSynthesizer, solarPlant, fusionReactor, solarSatellite int64) ResourceSettings
 ```
 
 ### NewCoordinate
 ```go
 // Represent an ogame coordinate
-NewCoordinate(galaxy, system, position int, celestialType CelestialType) Coordinate
+NewCoordinate(galaxy, system, position int64, celestialType CelestialType) Coordinate
 ```
 ```go
 myCoordinate = NewCoordinate(1, 2, 3, PLANET_TYPE)
@@ -2366,7 +2366,7 @@ Print(myCoordinate)
 ### NewTemperature
 ```go
 // Represent an ogame temperature
-NewTemperature(min, max int) Temperature
+NewTemperature(min, max int64) Temperature
 ```
 
 ### NewShipsInfos
