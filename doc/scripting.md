@@ -1064,6 +1064,15 @@ LogError(args ...interface{})
 ClearOut()
 ```
 
+### RepatriateNow
+```go
+// Trigger the repatriate feature now and reset the timer
+RepatriateNow()
+```
+```go
+RepatriateNow()
+```
+
 ### AddItemToQueue
 ```go
 // Add something into a planet/moon build queue
