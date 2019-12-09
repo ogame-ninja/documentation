@@ -1,12 +1,5 @@
 # Defender
 
-##### [Repatriate resources]<a name="repatriate-resources"></a>
-
-If you active this feature, all the planets are going to send their resources to the selected planet/moon.  
-The repatriation process will happen at interval defined by **Repatriate interval** settings.  
-If the **Repatriate moons** setting is ticked, the moons resources will be repatriated as well.  
-If you want to keep a minimum amount of deuterium on your moons, you can configure it with **Min deut on moon**.  
-
 ##### [Defender active]<a name="defender-active"></a>
 
 The bot will check for attacks every X interval of time and evacuate the attacked planet right before the attack.  
@@ -86,3 +79,13 @@ Evacuation mode can be set per planet.
 **Dangerous mode**: Will only evacuation when the attacking fleet is considered dangerous. (has more than 1/3 of our firepower)  
 **Always mode**: Will always evacuate the planet/moon no matter the size of the attacking fleet.  
 **Never mode**: Will never evacuation the planet/moon.
+
+
+## Repatriate configs<a name="repatriate-configs"></a>
+
+If you active this feature, all the "active" planets/moons are going to send their resources to the selected destination.  
+The repatriation process will happen at interval defined by **Repatriate interval** settings.  
+If **Active** checkbox is ticked, the celestial will repatriate it's resources to the selected destination.  
+You can choose which resources to repatriate.  
+If you want to keep a minimum amount of deuterium on the celestial, you can configure it with **Min deut**.  
+
