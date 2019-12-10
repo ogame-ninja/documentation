@@ -88,4 +88,4 @@ The repatriation process will happen at interval defined by **Repatriate interva
 If **Active** checkbox is ticked, the celestial will repatriate it's resources to the selected destination.  
 You can choose which resources to repatriate.  
 If you want to keep a minimum amount of deuterium on the celestial, you can configure it with **Min deut**.  
-
+You can also set all the destinations to the same value at once.  
