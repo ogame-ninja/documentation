@@ -1883,6 +1883,7 @@ SendMail("Attack detected", "I'm under attack at x:x:x", "you@gmail.com")
 SendTelegram(chatID int64, msg string) error
 ```
 ```go
+SendTelegram(TELEGRAM_CHAT_ID, "Attack detected") // use chat id from bot setting
 SendTelegram(1234567, "Attack detected")
 ```
 
