@@ -2202,10 +2202,10 @@ GetProduction(CelestialID) ([]Quantifiable, error)
 ```
 ```go
 celestial = GetCachedCelestial("1:2:3")
-productionLine = GetProduction(celestial.GetID())
+productionLine, _ = GetProduction(celestial.GetID())
 
 // This also work
-productionLine = celestial.GetProduction()
+productionLine, _ = celestial.GetProduction()
 ```
 
 ### ConstructionsBeingBuilt
