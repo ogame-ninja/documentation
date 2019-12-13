@@ -34,10 +34,12 @@ If ticked, the bot will spend remaining resources on defenses.
 ###### [activate for moon ?]<a name="moon-dump-resources"></a>
 moon can take a very long time to build defenses, so you have to activate the feature for moon if you want it.  
 
-##### Activities generted on
+##### Activities generated on
 Every time the defender look for attacks, it generates activities on the current active planet/moon.
 ###### Randomize planet/moon that checks for activity
 If this option is selected, the bot will select a random planet/moon to check for incoming attacks.
+###### Randomize moon that checks for activity
+If this option is selected, the bot will select a random moon to check for incoming attacks.
 ###### Checks for activity from homeworld
 If this option is selected, the bot will select HomeWorld check for incoming attacks.
 ###### Checks for activity from latest active planet/moon
