@@ -37,7 +37,11 @@ name = "Tommy"
 
 ## Special Scripts
 
-You can create a script with the exact name *!global.ank* any variable or function inside will be available from any of your scripts
+You can create a script with the exact name:  
+`!global.ank` any variable or function inside will be available from any of your scripts.  
+`!sleep.ank` will be executed before the bot goes to sleep mode.  
+`!wake.ank` will be executed after the bot exit the sleep mode.  
+
 
 ## Loops
 
@@ -845,7 +849,7 @@ SetFastAttacking(enabled bool) *FarmSessionBuilder
 SetDeleteCombatReports(enabled bool) *FarmSessionBuilder
 SetAttackFromNearestPlanet(enabled bool) *FarmSessionBuilder
 SetAttackFromNearestMoon(enabled bool) *FarmSessionBuilder
-SetFarmSpeed(speed ogame.Speed) *FarmSessionBuilder
+SetFarmSpeed(Speed) *FarmSessionBuilder
 SetPriorityRatio(metal, crystal, deuterium float64) *FarmSessionBuilder
 BuildFarmSession() (*FarmSession, error)
 ```
@@ -916,16 +920,28 @@ type TelegramMessage struct {
 ## Channels (events)
 
 ### OnAttackCh
-Triggered when a new attack is detected
+```go
+// Triggered when a new attack is detected
+OnAttackCh chan AttackEvent
+```
 
 ### OnAttackDoneCh
-Triggered once an attack is done
+```go
+// Triggered once an attack is done
+OnAttackDoneCh chan AttackEvent
+```
 
 ### OnAttackCancelledCh
-Triggered when an attack is cancelled 
+```go
+// Triggered when an attack is cancelled
+OnAttackCancelledCh chan AttackEvent
+```
 
 ### OnQuitCh
-Triggered when `Exit` is called
+```go
+// Triggered when `Exit` is called
+OnQuitCh chan struct{}
+```
 ```go
 ExecIn(2000, func() {
     Exit()
@@ -985,7 +1001,7 @@ for {
 ### OnChatMessageReceivedCh
 ```go
 // Triggered when a private message is received in ogame (unstable)
-OnChatMessageReceivedCh chan ogame.ChatMsg
+OnChatMessageReceivedCh chan ChatMsg
 ```
 ```go
 for {
@@ -1095,7 +1111,7 @@ Print(err)
 ### GetPrice
 ```go
 // Returns the price of 'entity'. 'nbr' is either a building/research level or a defense/ship quantity.
-GetPrice(entityID ogame.ID, nbr int64) (ogame.Resources)
+GetPrice(entityID ID, nbr int64) (Resources)
 ```
 ```go
 price = GetPrice(LIGHTFIGHTER, 5)
@@ -1328,7 +1344,7 @@ OnStateChange(func(botLocked, actor) {
 
 ### GetHomeWorld
 ```go
-GetHomeWorld() ogame.Celestial
+GetHomeWorld() Celestial
 ```
 ```go
 homeworld = GetHomeWorld()
@@ -1584,7 +1600,7 @@ Print(ShortDur(10000)) // 2h46m40s
 ### ID2Str
 ```go
 // Get the string representation of an ogame ID
-ID2Str(id ogame.ID) string
+ID2Str(ID) string
 ```
 ```go
 Print(ID2Str(204))       // LightFighter
@@ -1791,7 +1807,7 @@ Delete(key string) bool
 ### ParseCoord
 ```go
 // Parse a string into a coordinate
-ParseCoord(str string) (coord ogame.Coordinate, err error)
+ParseCoord(str string) (coord Coordinate, err error)
 ```
 ```go
 Print(ParseCoord("1:2:3"))     // [P:1:2:3]
@@ -1837,7 +1853,7 @@ Print("You need to send " + lc + " large cargo and " + sc + " small cargo") // Y
 ### GetPlayerCoordinates
 ```go
 // Gets all the coordinates of a player from the local database
-GetPlayerCoordinates(playerID int64) []ogame.Coordinate
+GetPlayerCoordinates(playerID int64) []Coordinate
 ```
 
 ### Base64
