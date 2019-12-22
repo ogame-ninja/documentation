@@ -216,7 +216,7 @@ type Celestial interface {
     GetShips() (ShipsInfos, error)
     BuildDefense(defenseID ID, nbr int64) error
     ConstructionsBeingBuilt() (ID, int64, ID, int64)
-    GetProduction() ([]Quantifiable, error)
+    GetProduction() ([]Quantifiable, int64, error)
     GetResourcesBuildings() (ResourcesBuildings, error)
     Build(id ID, nbr int64) error
     BuildBuilding(buildingID ID) error
@@ -2214,14 +2214,14 @@ defenses, _ = celestial.GetDefense()
 ```go
 // GetProduction get what is in the production queue.
 // (ships & defense being built)
-GetProduction(CelestialID) ([]Quantifiable, error)
+GetProduction(CelestialID) ([]Quantifiable, int64, error)
 ```
 ```go
 celestial = GetCachedCelestial("1:2:3")
-productionLine, _ = GetProduction(celestial.GetID())
+productionLine, _, _ = GetProduction(celestial.GetID())
 
 // This also work
-productionLine, _ = celestial.GetProduction()
+productionLine, _, _ = celestial.GetProduction()
 ```
 
 ### ConstructionsBeingBuilt
