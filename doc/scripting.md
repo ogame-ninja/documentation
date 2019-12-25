@@ -845,6 +845,7 @@ SetMinimumDefensesToIgnore(minimumDefensesToIgnore int64) *FarmSessionBuilder
 SetMinimumStorageToIgnore(metal, crystal, deuterium int64) *FarmSessionBuilder
 SetMinimumPlayerRank(rank int64) *FarmSessionBuilder
 SetEspionageProbeRaids(enabled bool) *FarmSessionBuilder
+SetUsePathfinders(enabled bool) *FarmSessionBuilder
 SetFastAttacking(enabled bool) *FarmSessionBuilder
 SetDeleteCombatReports(enabled bool) *FarmSessionBuilder
 SetAttackFromNearestPlanet(enabled bool) *FarmSessionBuilder
@@ -2311,8 +2312,8 @@ SendIPM(PlanetID, Coordinate, int64, ID) (int64, error)
 ```go
 celestial = GetCachedCelestial("1:2:3")
 target = NewCoordinate(1, 1, 1, PLANET_TYPE)
-SendIPM(celestial.GetID(), target, 10, 0) // Send 10 IPM to target, (0 is random primary target)
-SendIPM(celestial.GetID(), target, 10, LIGHTLASER) // Send 10 IPM to target targetting light laser
+SendIPM(celestial.GetID(), target, 10, 0) // Send 10 IPM to target, (0 is random primary defense target)
+SendIPM(celestial.GetID(), target, 10, LIGHTLASER) // Send 10 IPM to target, targetting light laser
 ```
 
 ### BuyOfferOfTheDay
