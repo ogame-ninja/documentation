@@ -29,6 +29,15 @@ If a planet/moon is tagged as exporter, it will make it's resources available to
 
 ## AI configs
 
+##### Max metal mine level to build
+In AI mode, the bot will build metal mine up this level.
+
+##### Max crystal mine level to build
+In AI mode, the bot will build crystal mine up this level.
+
+##### Max deut synth level to build
+In AI mode, the bot will build deuterium synthesizer up this level.
+
 ##### Max solar plant level to build
 In AI mode, the bot will build solar plant, when energy becomes negative, up this level.
 
