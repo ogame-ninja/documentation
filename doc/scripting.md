@@ -2355,6 +2355,12 @@ err = JumpGate(moon1.GetID(), moon2.GetID(), *ships)
 Print(err)
 ```
 
+### JumpGate2
+```go
+// JumpGate2 sends ships through a jump gate.
+JumpGate2(origin, dest MoonID, ships ShipsInfos) (success bool, rechargeTime int64, err error)
+```
+
 ### GetFleetSlotsReserved
 ```go
 // Returns current fleet slots reserved for player setting
