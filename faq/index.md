@@ -13,3 +13,4 @@ Tips, tricks and answers to common questions about configuring and using Ninja b
 - [I receive telegram ingame messages while in sleep mode, normal ?](/faq/telegram-ingame-messages-while-sleep-mode)
 - [How to delete a bot ?](/faq/how-to-delete-bot)
 - [Farmer isn't doing anything ?](/faq/farmer-not-working)
+- [Farmer doesn't use all the slots ?](/faq/farmer-not-using-all-slots)
