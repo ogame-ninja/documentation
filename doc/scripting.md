@@ -510,6 +510,9 @@ type SystemInfos struct {
         Crystal           int64
         PathfindersNeeded int64
     }
+    Events struct {
+        Darkmatter int64
+    }
 }
 
 // Methods
