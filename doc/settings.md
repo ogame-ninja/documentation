@@ -4,6 +4,7 @@
 
 ##### [Homeworld]
 Celestial that will be considered the homeworld by the bot.  
+Default value will be the first planet in your planets list in ogame.  
 
 ##### [Slots reserved for player]
 Is this amount of fleet slots that the bot will keep available for the player to use.    
