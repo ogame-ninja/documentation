@@ -1355,6 +1355,15 @@ homeworld = GetHomeWorld()
 Print(homeworld.GetName(), homeworld.GetID())
 ```
 
+### SetHomeWorld
+```go
+SetHomeWorld(CelestialID)
+```
+```go
+celestial = GetCachedCelestials()[0]
+SetHomeWorld(celestial.GetID())
+```
+
 ### EnableNJA
 ```go
 EnableNJA()
