@@ -809,6 +809,51 @@ type ResourceSettings struct {
 String() string
 ```
 
+### FarmSession
+```go
+type FarmSession struct {
+	ID                       int64
+	BotID                    int64
+	State                    string
+	PlanetID                 CelestialID
+	RangeGalaxy              int64
+	RangeFrom                int64
+	RangeTo                  int64
+	NbProbes                 int64
+	PctCargo                 int64
+	CreatedAt                time.Time
+	MinimumResourcesToAttack int64
+	MinimumDefensesToIgnore  int64
+	MinimumMetalStorage      int64
+	MinimumCrystalStorage    int64
+	MinimumDeuteriumTank     int64
+	MinimumPlayerRank        int64
+	TotalTargets             int64
+	EspionageProbeRaids      bool
+	Phase                    int64
+	Progress                 int64
+	ProgressAttacks          int64
+	FarmType                 int64
+	FuelConsumption          int64
+	MetalRatio               float64
+	CrystalRatio             float64
+	DeuteriumRatio           float64
+	FarmSpeed                Speed
+	FastAttacking            bool
+	UsePathfinders           bool
+	SkipAfter                int64
+	AttackFromNearestPlanet  bool
+	AttackFromNearestMoon    bool
+	DeleteCombatReports      bool
+	Planet                   BotPlanet
+}
+
+// Methods
+TotalSystems() int64
+Pause()
+Resume()
+```
+
 ### FleetBuilder
 ```go
 type FleetBuilder struct {
