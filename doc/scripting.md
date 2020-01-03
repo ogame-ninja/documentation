@@ -894,6 +894,7 @@ SetMinimumStorageToIgnore(metal, crystal, deuterium int64) *FarmSessionBuilder
 SetMinimumPlayerRank(rank int64) *FarmSessionBuilder
 SetEspionageProbeRaids(enabled bool) *FarmSessionBuilder
 SetUsePathfinders(enabled bool) *FarmSessionBuilder
+SetIgnoreActivity(enabled bool) *FarmSessionBuilder
 SetFastAttacking(enabled bool) *FarmSessionBuilder
 SetDeleteCombatReports(enabled bool) *FarmSessionBuilder
 SetAttackFromNearestPlanet(enabled bool) *FarmSessionBuilder
