@@ -69,6 +69,15 @@ for shipID in ShipsArr {
 }
 ```
 
+## How to sort
+
+```go
+sort = import("sort")
+arr = [["c", 3], ["a", 1], ["b", 2]]
+sort.Slice(arr, func(i, j) { return arr[i][1] < arr[j][1] })
+Print(arr) // [[[a 1] [b 2] [c 3]]]
+```
+
 ## How to debug errors
 
 ### syntax error
