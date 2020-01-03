@@ -40,6 +40,10 @@ If set to 0, all players are valid targets.
 ##### [Minimum level of storage]
 If set (greater than 0), a planet must have at least the minimum level of storage to be considered as a target.
 
+##### [Ignore targets with activity]
+
+If set, a planet must have no recent activity to be considered as a target.
+
 ##### [Fast attacking]
 
 This is another option that will force the bot to start attacking sooner than the end of the scanning range.
