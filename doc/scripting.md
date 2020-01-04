@@ -1918,6 +1918,12 @@ lc, sc, cargo = CalcFastCargo(largeCargoAvailable, smallCargoAvailable, resource
 Print("You need to send " + lc + " large cargo and " + sc + " small cargo") // You need to send 1 large cargo and 4 small cargo
 ```
 
+### CalcFastCargoPF
+```go
+// Calculate the best combo to transport a total amount of resources according to your available ships.
+CalcFastCargo(pfAvail, lcAvail, scAvail, resourcesTotal int64) (pathfinder, largeCargo, smallCargo, cargo int64)
+```
+
 ### GetPlayerCoordinates
 ```go
 // Gets all the coordinates of a player from the local database
