@@ -2503,6 +2503,15 @@ NewTemperature(min, max int64) Temperature
 NewShipsInfos() *ShipsInfos
 ```
 
+### JsonDecode
+```go
+JsonDecode(data []byte) (out interface{}, err error)
+```
+```go
+out, err = JsonDecode(`{"a": 1, b": 2.1, "c": "a string", "d": true}`)
+Print(out, err)
+```
+
 ### Min
 ```go
 // Min returns the smaller of x or y.
