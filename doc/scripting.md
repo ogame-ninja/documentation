@@ -78,6 +78,28 @@ sort.Slice(arr, func(i, j) { return arr[i][1] < arr[j][1] })
 Print(arr) // [[[a 1] [b 2] [c 3]]]
 ```
 
+## How to use json
+
+```go
+json = import("encoding/json")
+s = `{"a": 1, b": 2.1, "c": "a string", "d": true}`
+out = nil
+json.Unmarshal(s, &out)
+Print(out["a"])
+
+out, err = JsonDecode(s) // This would also work
+Print(out, err)
+```
+```go
+fmt = import("fmt")
+json = import("encoding/json")
+s = NewShipsInfos()
+s.Set(SMALLCARGO, 1)
+s.Set(LARGECARGO, 2)
+bytes, _ = json.Marshal(s)
+Print(fmt.Sprintf("%s", bytes))
+```
+
 ## How to debug errors
 
 ### syntax error
