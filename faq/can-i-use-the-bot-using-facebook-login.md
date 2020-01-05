@@ -1,6 +1,7 @@
 ## Can I use the bot using facebook login ?
 
 No. Here is what you can do:
+
 - Login to ogame website using facebook
 - Click "My account", then "Generate Gifting Code" for the account you want to use the bot with
 - Logout
