@@ -72,8 +72,8 @@ By default the bot will not send email/telegram notifications for small attackin
 If enabled, the bot will send notifications for non dangerous attacking fleet. Fleet that have less than 1/3 of our firepower.
 
 ##### [Probe new attackers]<a name="probe-new-attackers"></a>
-When a new attack is detected, the bot will verify that the same player is not already attacking us.
-If that's the case, the bot will send spy probes to the attack origin
+When a new attack is detected, the bot will verify that the same player is not already attacking us.  
+If that's the case, the bot will send spy probes to the attack origin.  
 
 ##### [Send message to attackers]<a name="send-message-to-attackers"></a>
 When a new attack is detected, the bot will verify that the same player is not already attacking us.  
