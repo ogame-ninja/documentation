@@ -10,6 +10,18 @@ Default value will be the first planet in your planets list in ogame.
 Is this amount of fleet slots that the bot will keep available for the player to use.    
 **Exception:** Defender will use them if it needs it. 
 
+##### [Max farmer slots]
+Maximum slots that the farmer will use. 0 means unlimited.
+
+##### [Max brain slots]
+Maximum slots that the brain will use. 0 means unlimited.
+
+##### [Max repatriate slots]
+Maximum slots that the repatriate will use. 0 means unlimited.
+
+##### [Max script slots]
+Maximum slots that the scripts will use. 0 means unlimited.
+
 ##### [Sleep mode]
 When the bot is in sleep mode, no call will ever be made by the bot to the ogame servers.  
 **WARNING:** In sleep mode, the bot will **not** check for incoming attacks.
