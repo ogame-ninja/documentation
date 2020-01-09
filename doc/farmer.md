@@ -24,6 +24,14 @@ you use is sufficient so that you will get ALL the information from the planet. 
 the number of resources in a report, but cannot see the fleet and/or defenses, the Bot will not attack,
 since it does not know the safe amount of ships to send.
 
+##### [Use pathfinders]
+
+The bot will attack using pathfinders to save time. If not enough pathfinders are available, it will fallback on small & large cargos.
+
+##### [Additional cargo]
+
+Additional cargo to send when attacking a target.  
+
 ##### [Min. resources to attack]
 
 Minimum amount of resources a planet must have to be attacked.
@@ -55,6 +63,9 @@ The moon is preferred to the planet if they have the same distance.
 
 ##### [Attack from nearest moon]
 Same as "Attack from nearest planet", but only moons are considered and the farming origin if it is a planet.  
+
+##### [Delete combat reports]
+Either or not you want the bot to delete the combat reports.
 
 ##### [Priority calculation]
 This option is only useful when "fast-attack" is **not** selected.  
