@@ -108,7 +108,7 @@ If you receive a message that looks like:
 ```go
 22:20:11 ERROR [[9:24] syntax error]
 ```
-It means that you have a syntax error at line **9**, character **24**.  
+It means that you have a syntax error at line **9**, charaSendMessagecter **24**.  
 
 ### does not support member operation
 ```go
@@ -227,6 +227,18 @@ IsBuilding() bool
 IsTech() bool
 IsDefense() bool
 IsShip() bool
+```
+
+### CharacterClass
+```go
+type CharacterClass int64
+```
+
+```go
+NO_CLASS   // 0
+COLLECTOR  // 1
+GENERAL    // 2
+DISCOVERER // 3
 ```
 
 ### Celestial
@@ -1501,6 +1513,29 @@ isUnderAttack = IsUnderAttack()
 Print(isUnderAttack)
 ```
 
+### CharacterClass
+```go
+CharacterClass() CharacterClass
+```
+```go
+Print(CharacterClass())
+```
+
+### IsCollector
+```go
+IsCollector() bool
+```
+
+### IsGeneral
+```go
+IsGeneral() bool
+```
+
+### IsDiscoverer
+```go
+IsDiscoverer() bool
+```
+
 ### SendMessage
 ```go
 // Sends a message to playerID
@@ -1910,6 +1945,21 @@ Print(ParseCoord("M:1:2:3"))   // [M:1:2:3]
 Print(ParseCoord("[M:1:2:3]")) // [M:1:2:3]
 Print(ParseCoord("D:1:2:3"))   // [D:1:2:3]
 Print(ParseCoord("[D:1:2:3]")) // [D:1:2:3]
+```
+
+### Cargo
+```go
+Cargo(shipsInfos ShipsInfos) int64
+```
+
+```go
+s1 = NewShipsInfos()
+s1.Set(LARGECARGO, 10)
+Print(Cargo(*s1))
+
+celestial = GetCachedCelestials()[0]
+s2, _ = celestial.GetShips()
+Print(Cargo(s2))
 ```
 
 ### CalcCargo
