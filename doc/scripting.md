@@ -515,15 +515,16 @@ Set(id ID, val int64)
 ```go
 // AttackEvent all information available about an enemy attack
 type AttackEvent struct {
-	MissionType  MissionID
-	Origin       Coordinate
-	Destination  Coordinate
-	ArrivalTime  time.Time
-	ArriveIn     int64
-	AttackerName string
-	AttackerID   int64
-	Missiles     int64
-	Ships        *ShipsInfos
+	MissionType     MissionID
+	Origin          Coordinate
+	Destination     Coordinate
+	DestinationName string
+	ArrivalTime     time.Time
+	ArriveIn        int64
+	AttackerName    string
+	AttackerID      int64
+	Missiles        int64
+	Ships           *ShipsInfos
 }
 
 // Methods
