@@ -458,6 +458,8 @@ type Fleet struct {
 	Origin         Coordinate
 	Destination    Coordinate
 	Ships          ShipsInfos
+    ArrivalTime    time.Time
+    BackTime       time.Time
 	ArriveIn       int64
 	BackIn         int64
 	UnionID        int64
@@ -910,6 +912,9 @@ SetDestination(v interface{}) *FleetBuilder
 SetSpeed(speed Speed) *FleetBuilder
 SetResources(resources Resources) *FleetBuilder
 SetAllResources() *FleetBuilder
+SetAllMetal() *FleetBuilder
+SetAllCrystal() *FleetBuilder
+SetAllDeuterium() *FleetBuilder
 SetMission(mission MissionID) *FleetBuilder
 SetDuration(expeditiontime int64) *FleetBuilder
 SetUnionID(unionID int64) *FleetBuilder
