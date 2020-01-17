@@ -1952,6 +1952,16 @@ Print(ParseCoord("D:1:2:3"))   // [D:1:2:3]
 Print(ParseCoord("[D:1:2:3]")) // [D:1:2:3]
 ```
 
+### ParseNextDatetimeAt
+```go
+// ParseNextDatetimeAt given a string in this format 00:00:00 returns the next Time object at that time.
+ParseNextDatetimeAt(hourMinSec string, clock clockwork.Clock) (time.Time, error)
+```
+```go
+parsedTime, err = ParseNextDatetimeAt("23:20:31")
+Print(parsedTime, err)
+```
+
 ### Cargo
 ```go
 Cargo(shipsInfos ShipsInfos) int64
