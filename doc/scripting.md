@@ -735,6 +735,7 @@ type EspionageReport struct {
 	HasDefenses                  bool
 	HasBuildings                 bool
 	HasResearches                bool
+	HonorableTarget              bool
 	IsBandit                     bool
 	IsStarlord                   bool
 	IsInactive                   bool
