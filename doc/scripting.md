@@ -209,6 +209,9 @@ TELEGRAM_CHAT_ID = (alias to telegram chat id bot setting)
 ```go
 OGAME_SERVER = (ogame server information)
 ```
+```go
+__FILE__ // Name of current script file
+```
 
 ## Internal Types
 
