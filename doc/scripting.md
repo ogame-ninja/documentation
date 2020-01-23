@@ -1966,6 +1966,16 @@ parsedTime, err = ParseNextDatetimeAt("23:20:31")
 Print(parsedTime, err)
 ```
 
+### GetNextDatetimeAt
+```go
+// GetNextDatetimeAt given a hour, minute, second, returns the next Time object at that time.
+GetNextDatetimeAt(hour, min, sec int64) (time.Time, error)
+```
+```go
+nextDatetime, err = ParseNextDatetimeAt(23, 20, 31)
+Print(nextDatetime, err)
+```
+
 ### Cargo
 ```go
 Cargo(shipsInfos ShipsInfos) int64
