@@ -15,6 +15,12 @@ It basically:
 - if the energy become negative, it will build solar plant (or other energy producers according to your settings)
 - if you don't have enough storage, it will build more storage.
 
+For moons:
+- If only one field is available, it will build a Lunar Base.
+- Build Robotic Factory up to level 8.
+- Build Jump Gate if available (up to level 1).
+- Otherwise, build Sensor Phalanx up to level 6.
+
 ##### Queue
 When queue is selected, the brain plugin will build what you inserted in the planet queue.
 
