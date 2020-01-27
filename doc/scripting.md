@@ -449,6 +449,32 @@ type ResourcesDetails struct {
 Available() Resources
 ```
 
+### Auction
+```go
+type Auction struct {
+	HasFinished         bool
+	Endtime             int64
+	NumBids             int64
+	CurrentBid          int64
+	AlreadyBid          int64
+	MinimumBid          int64
+	DeficitBid          int64
+	HighestBidder       string
+	HighestBidderUserID int64
+	CurrentItem         string
+	CurrentItemLong     string
+	Inventory           int64
+	Token               string
+	ResourceMultiplier  struct {
+		Metal     float64
+		Crystal   float64
+		Deuterium float64
+		Honor     int64
+	}
+	Resources map[string]interface{}
+}
+```
+
 ### Fleet
 
 ```go
@@ -2500,6 +2526,18 @@ BuyOfferOfTheDay() error
 ```
 ```go
 Print(BuyOfferOfTheDay())
+```
+
+### GetAuction
+```go
+// GetAuction gets current auction information
+GetAuction() (Auction, error)
+```
+
+### DoAuction
+```go
+// DoAuction make a bid on current auction
+DoAuction(bid map[CelestialID]Resources) error
 ```
 
 ### Phalanx
