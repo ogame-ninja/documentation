@@ -2539,6 +2539,13 @@ GetAuction() (Auction, error)
 // DoAuction make a bid on current auction
 DoAuction(bid map[CelestialID]Resources) error
 ```
+```go
+celestial = GetCachedCelestials()[0]
+bid = {
+    celestial.GetID(): NewResources(2000, 0, 0)
+}
+Print(DoAuction(bid))
+```
 
 ### Phalanx
 ```go
