@@ -449,6 +449,19 @@ type ResourcesDetails struct {
 Available() Resources
 ```
 
+### UserInfos
+```go
+// Currently logged in player information
+type UserInfos struct {
+	PlayerID     int64
+	PlayerName   string
+	Points       int64
+	Rank         int64
+	Total        int64
+	HonourPoints int64
+}
+```
+
 ### Auction
 ```go
 type Auction struct {
@@ -1674,6 +1687,12 @@ GetCachedCelestial(interface{}) Celestial
 ```go
 // GetCachedCelestials get all cached celestials
 GetCachedCelestials() []Celestial
+```
+
+### GetCachedPlayer
+```go
+// GetCachedPlayer returns currently logged in cached player information
+GetCachedPlayer() UserInfos
 ```
 
 ### GetResources
