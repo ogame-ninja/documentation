@@ -2069,7 +2069,7 @@ Print("You need to send " + lc + " large cargo and " + sc + " small cargo") // Y
 ### CalcFastCargoPF
 ```go
 // Calculate the best combo to transport a total amount of resources according to your available ships.
-CalcFastCargo(pfAvail, lcAvail, scAvail, resourcesTotal int64) (pathfinder, largeCargo, smallCargo, cargo int64)
+CalcFastCargoPF(pfAvail, lcAvail, scAvail, resourcesTotal int64) (pathfinder, largeCargo, smallCargo, cargo int64)
 ```
 
 ### GetPlayerCoordinates
