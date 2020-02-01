@@ -1720,6 +1720,16 @@ resourcesDetails, err = GetResourcesDetails(celestial.GetID())
 resourcesDetails, err = celestial.GetResourcesDetails()
 ```
 
+### GetAllResources
+```go
+// GetAllResources gets the resources of all planets and moons
+GetAllResources() (map[CelestialID]Resources, error)
+```
+```go
+resources, _ = GetAllResources()
+Print(resources)
+```
+
 ### Abandon
 ```go
 // Abandon a planet
