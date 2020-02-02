@@ -462,6 +462,43 @@ type UserInfos struct {
 }
 ```
 
+### PlayerData
+```go
+// PlayerData information returned by ogame xml API
+type PlayerData struct {
+	ID                        int64
+	Name                      string
+	Timestamp                 int64
+	PointsTotal               int64
+	PointsEconomy             int64
+	PointsResearch            int64
+	PointsMilitary            int64
+	PointsMilitaryBuilt       int64
+	PointsMilitaryDestroyed   int64
+	PointsMilitaryLost        int64
+	PointsHonor               int64
+	PositionTotal             int64
+	PositionEconomy           int64
+	PositionResearch          int64
+	PositionMilitary          int64
+	PositionMilitaryBuilt     int64
+	PositionMilitaryDestroyed int64
+	PositionMilitaryLost      int64
+	PositionHonor             int64
+	MilitaryShips             int64
+	Celestials                []struct {
+		ID         ogame.CelestialID
+		Name       string
+		Coordinate ogame.Coordinate
+	}
+	Alliance *struct {
+		ID   int64
+		Name string
+		Tag  string
+	}
+}
+```
+
 ### Auction
 ```go
 type Auction struct {
@@ -1693,6 +1730,12 @@ GetCachedCelestials() []Celestial
 ```go
 // GetCachedPlayer returns currently logged in cached player information
 GetCachedPlayer() UserInfos
+```
+
+### PlayerDataByID
+```go
+// Get a player information using ogame xml API
+PlayerDataByID(playerID int64) (PlayerData, error)
 ```
 
 ### GetResources
