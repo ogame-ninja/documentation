@@ -1463,6 +1463,25 @@ Sleep(1000)
 RemoveCron(entryID) // Remove scheduled cronjob 
 ```
 
+### RangeCronExec
+```go
+// Schedule a callback to be executed in a time range.
+// If we currently are in the range, the callback will be scheduled in the remaining time of the range.
+// RangeCronExec("00:00:00", "00:15:00", "Do something", func() {  })
+// Logs if not in range: Do something at 00:00:00 (+ delay up to 15m)
+// Logs if in range:     Do something in 5m10s at 00:05:10
+//     (5m10s later)     Do something
+RangeCronExec(timeString1, timeString2, msg string, callback func()) (EntryID, error)
+```
+```go
+func callback() {
+    Print("Callback executed between 0h and 0h15")
+}
+
+RangeCronExec("00:00:00", "00:15:00", "Do something", callback) // Execute callback between 0h and 0h15 every day
+<-OnQuitCh // Blocks forever so that cronexec can be executed
+```
+
 ### Clock
 ```go
 // Return the current time
