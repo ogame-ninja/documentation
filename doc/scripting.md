@@ -2083,6 +2083,42 @@ Print(ParseCoord("D:1:2:3"))   // [D:1:2:3]
 Print(ParseCoord("[D:1:2:3]")) // [D:1:2:3]
 ```
 
+### NowTimeString
+```go
+// NowTimeString returns time.Now in a time string format "XX:XX:XX"
+NowTimeString() string
+```
+```go
+Print(NowTimeString()) // 01:15:47
+```
+
+### NowInTimeRange
+```go
+// NowInTimeRange returns either or not the current time is in a time range
+NowInTimeRange(timeStr1, timeStr2 string) bool
+```
+```go
+Print(NowInTimeRange("01:00:00", "02:00:00")) // true
+```
+
+### DurationBetweenTimeStrings
+```go
+// DurationBetweenTimeStrings returns the duration between two time strings
+DurationBetweenTimeStrings(timeStr1, timeStr2 string) time.Duration
+```
+```go
+Print(DurationBetweenTimeStrings("01:00:00", "02:00:00")) // 1h0m0s
+```
+
+### MillisecondsBetweenTimeStrings
+```go
+// MillisecondsBetweenTimeStrings returns the duration in milliseconds between two time strings
+MillisecondsBetweenTimeStrings(timeStr1, timeStr2 string) time.Duration
+```
+```go
+Print(MillisecondsBetweenTimeStrings("01:00:00", "02:00:00")) // 3600000
+```
+
 ### ParseNextDatetimeAt
 ```go
 // ParseNextDatetimeAt given a string in this format 00:00:00 returns the next Time object at that time.
