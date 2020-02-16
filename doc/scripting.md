@@ -1445,6 +1445,7 @@ func callback() {
 
 CronExec("0 43 15 * * *", callback) // Execute callback at 15h43 every day
 CronExec("@16h43", callback)        // Execute callback at 16h43 every day
+CronExec("16:43:12", callback)      // Execute callback at 16h43m12s every day
 <-OnQuitCh // Blocks forever so that cronexec can be executed
 ```
 
