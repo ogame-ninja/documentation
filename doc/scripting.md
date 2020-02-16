@@ -212,6 +212,10 @@ OGAME_SERVER = (ogame server information)
 ```go
 __FILE__ // Name of current script file
 ```
+```go
+GALAXIES // Number of galaxies in the universe
+SYSTEMS  // Number of systems in a galaxy
+```
 
 ## Internal Types
 
@@ -1736,6 +1740,30 @@ GetCachedPlayer() UserInfos
 ```go
 // Get a player information using ogame xml API
 PlayerDataByID(playerID int64) (PlayerData, error)
+```
+
+### GetSystemsInRange
+```go
+// GetSystemsInRange returns the systems in a radius around the origin
+GetSystemsInRange(originSystem, radius int64) []int64
+```
+```go
+Print(GetSystemsInRange(3, 0)) // [3]
+Print(GetSystemsInRange(3, 1)) // [2, 3, 4]
+Print(GetSystemsInRange(3, 2)) // [1, 2, 3, 4, 5]
+Print(GetSystemsInRange(3, 3)) // [499, 1, 2, 3, 4, 5, 6]
+```
+
+### GetSystemsInRangeDesc
+```go
+// GetSystemsInRangeDesc returns the systems in a radius around the origin sorted by distance (farther away to closer)
+GetSystemsInRangeDesc(originSystem, radius int64) []int64
+```
+```go
+Print(GetSystemsInRangeDesc(3, 0)) // [3]
+Print(GetSystemsInRangeDesc(3, 1)) // [2, 4, 3]
+Print(GetSystemsInRangeDesc(3, 2)) // [1, 5, 2, 4, 3]
+Print(GetSystemsInRangeDesc(3, 3)) // [499, 6, 1, 5, 2, 4, 3]
 ```
 
 ### GetResources
