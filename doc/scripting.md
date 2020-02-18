@@ -1888,6 +1888,12 @@ Print(ShortDur(121)) // 2m1s
 Print(ShortDur(10000)) // 2h46m40s
 ```
 
+### ShortShipsInfos
+```go
+// Return a short inline description of the ships. eg: "LightFighter: 10, SmallCargo: 3"
+ShortShipsInfos(ships ShipsInfos) string
+```
+
 ### ID2Str
 ```go
 // Get the string representation of an ogame ID
