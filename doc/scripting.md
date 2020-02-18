@@ -382,6 +382,15 @@ type Temperature struct {
 Mean() int64
 ```
 
+### Fields
+```go
+// Fields planet fields stats
+type Fields struct {
+	Built int64
+	Total int64
+}
+```
+
 ### Resources
 ```go
 type Resources struct {
