@@ -588,6 +588,7 @@ Cargo(techs Researches, probeRaids, isCollector bool) int64 // probeRaids determ
 Has(v ShipsInfos) bool
 FleetValue() int64
 FleetCost() Resources
+CountShips() int64
 ByID(id ID) int64
 String() string
 ToPtr() *ShipsInfos
@@ -898,6 +899,11 @@ type EspionageReport struct {
 	Type                         EspionageReportType
 	Date                         time.Time
 }
+
+// Methods
+ShipsInfos() *ShipsInfos
+PlunderRatio(CharacterClass) float64
+Loot(CharacterClass) Resources
 ```
 
 ### Server
