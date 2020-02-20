@@ -1014,6 +1014,7 @@ SetAllResources() *FleetBuilder
 SetAllMetal() *FleetBuilder
 SetAllCrystal() *FleetBuilder
 SetAllDeuterium() *FleetBuilder
+SetMinimumDeuterium(minimumDeuterium int64) *FleetBuilder
 SetMission(mission MissionID) *FleetBuilder
 SetDuration(expeditiontime int64) *FleetBuilder
 SetUnionID(unionID int64) *FleetBuilder
