@@ -60,7 +60,8 @@ Inject many features in the browser
 - And many more...
 
 ##### [Enable TopRaider]
-Inject [TopRaider](http://topraider.eu/) script. (works in browser fullscreen mode only)
+Inject [TopRaider](http://topraider.eu/) script. (works in browser fullscreen mode only)  
+If the email & password are set, spy reports that are imported in Nja are going to be automatically send to topraider.  
 
 ##### [Enable InfoCompte3]
 Inject InfoCompte3 script. (works in browser fullscreen mode only)
