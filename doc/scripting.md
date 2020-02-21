@@ -550,8 +550,8 @@ type Fleet struct {
 	Origin         Coordinate
 	Destination    Coordinate
 	Ships          ShipsInfos
-    ArrivalTime    time.Time
-    BackTime       time.Time
+	ArrivalTime    time.Time
+	BackTime       time.Time
 	ArriveIn       int64
 	BackIn         int64
 	UnionID        int64
