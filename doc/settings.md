@@ -31,6 +31,9 @@ A random delay of 0-15min will be added to selected times.
 If a script named `!sleep.ank` exists, it will be executed before the bot goes to sleep mode.  
 If a script named `!wake.ank` exists, it will be executed after the bot exit the sleep mode.  
 
+##### [Delete spy reports once imported]
+If selected, the in-game spy reports will be deleted once they are locally imported.  
+
 ##### [Email for notifications]
 Email that will be used for notifications for this bot.
 
