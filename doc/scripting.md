@@ -1430,6 +1430,33 @@ for {
 }
 ```
 
+### ExecAt
+```go
+// Schedules a one time callback execution at specific time. ExecAt is asynchronous.
+ExecAt(hourMinSec string, clb func()) context.CancelFunc
+```
+```go
+time = import("time")
+ExecAt("17:23:00", func() {
+    Print("callback is executed at ", time.Now())
+})
+<-OnQuitCh // Blocks forever so that ExecAt can be executed
+```
+
+### ExecAtCh
+```go
+// Schedules a one time callback execution at specific time.
+ExecAtCh(hourMinSec string, clb func()) <-chan struct{}
+```
+```go
+time = import("time")
+Print("Before")
+<-ExecAtCh("17:23:00", func() {
+    Print("callback is executed at ", time.Now())
+}) // Script will block here until callback is done executing at 17h23
+Print("After")
+```
+
 ### IntervalExec
 ```go
 // Schedules an execution on regular intervals
