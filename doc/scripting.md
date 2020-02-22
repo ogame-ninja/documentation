@@ -1321,6 +1321,20 @@ price = GetPrice(METALMINE, 3)
 Print("The price of metal mine level 3 is ", price) // [135|33|0]
 ```
 
+### ConstructionTime
+```go
+// ConstructionTime returns the duration it takes to build a given level.
+// Second argument is either the building level or the number of ships/defences to build
+ConstructionTime(ogame.ID, int64, ogame.Facilities) time.Duration
+```
+```go
+celestial = GetCachedCelestials()[0]
+facilities, _ = celestial.GetFacilities()
+Print(ConstructionTime(METALMINE, 20, facilities))      // 9m4s
+Print(ConstructionTime(LARGECARGO, 20, facilities))     // 16m0s
+Print(ConstructionTime(ROCKETLAUNCHER, 20, facilities)) // 2m40s
+```
+
 ### SolarSatelliteProduction
 ```go
 // Returns the energy production of solar satellite.
