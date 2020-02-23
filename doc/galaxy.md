@@ -15,6 +15,7 @@ If you click on a player's name, you will be redirected to his page.
 From there, you can see the rank of that player over time.  
 You can click "Add to hunter list" to add this player to your hunter targets.  
 You can click "Spy all" button to spy all the planets/moons of this player.  
+You can click "Crawl systems" button to update all planets/moons information of this player.  
 
 ### Alliance page
 
