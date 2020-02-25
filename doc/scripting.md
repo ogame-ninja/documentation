@@ -2799,6 +2799,12 @@ Print(err)
 JumpGate2(origin, dest MoonID, ships ShipsInfos) (success bool, rechargeTime int64, err error)
 ```
 
+### JumpGateDestinations
+```go
+// JumpGateDestinations returns available destinations for jump gate.
+JumpGateDestinations(origin MoonID) (destinations []MoonID, rechargeTime int64, err error)
+```
+
 ### GetFleetSlotsReserved
 ```go
 // Returns current fleet slots reserved for player setting
