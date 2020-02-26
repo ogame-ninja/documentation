@@ -1117,6 +1117,30 @@ type TelegramMessage struct {
 }
 ```
 
+### DMCost
+```go
+// DMCost information for fast build using DM
+type DMCost struct {
+	Cost                int64
+	CanBuy              bool  // Either or not we have enough DM
+	Complete            bool  // false means we will halve the time, true will complete
+	OGameID             ID    // What we are going to build
+	Nbr                 int64 // Either the amount of ships/defences or the building/research level
+	BuyAndActivateToken string
+	Token               string
+}
+```
+
+### DMCosts
+```go
+// DMCosts all information for fast build using DM
+type DMCosts struct {
+	Buildings DMCost
+	Research  DMCost
+	Shipyard  DMCost
+}
+```
+
 ## Channels (events)
 
 ### OnAttackCh
@@ -1882,6 +1906,28 @@ Print(resources)
 ```go
 // Abandon a planet
 Abandon(interface{}) error
+```
+
+### UseDM
+```go
+// GetDMCosts returns fast build with DM information
+GetDMCosts(celestialID CelestialID) (DMCosts, error)
+```
+```go
+c = GetCachedCelestial("1:2:3")
+info, err = GetDMCosts(c.GetID())
+Print(info, err)
+```
+
+### UseDM
+```go
+// UseDM use dark matter to fast build
+// typ can be buildings/research/shipyard
+UseDM(typ string, celestialID CelestialID) error
+```
+```go
+c = GetCachedCelestial("1:2:3")
+UseDM("shipyard", c.GetID())
 ```
 
 ### GetFleets
