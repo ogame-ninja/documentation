@@ -2901,6 +2901,38 @@ NewTemperature(min, max int64) Temperature
 NewShipsInfos() *ShipsInfos
 ```
 
+### TempFile
+```go
+// Create a new temp file
+// File can be downloaded at /temp-files/<filename>/download
+TempFile(filename string) (*os.File, error)
+```
+```go
+f, _ = TempFile("test.txt")
+f.Write("Line1\n")
+f.Write("Line2\n")
+f.Write("Line3\n")
+f.Close()
+```
+
+### ListTempFiles
+```go
+// List all known temp files
+ListTempFiles(filename string) []string
+```
+
+### DeleteTempFile
+```go
+// Delete a temp file
+DeleteTempFile(filename string) error
+```
+
+### DeleteAllTempFiles
+```go
+// Delete all temp files
+DeleteAllTempFiles()
+```
+
 ### JsonDecode
 ```go
 JsonDecode(data []byte) (out interface{}, err error)
