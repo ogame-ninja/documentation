@@ -1141,6 +1141,16 @@ type DMCosts struct {
 }
 ```
 
+### TempFile
+```go
+type TempFile struct {
+}
+
+// Methods
+Write(b []byte) (int, error)
+Close() error
+```
+
 ## Channels (events)
 
 ### OnAttackCh
@@ -2905,7 +2915,7 @@ NewShipsInfos() *ShipsInfos
 ```go
 // Create a new temp file
 // File can be downloaded at /temp-files/<filename>/download
-TempFile(filename string) (*os.File, error)
+TempFile(filename string) (*TempFile, error)
 ```
 ```go
 f, _ = TempFile("test.txt")
