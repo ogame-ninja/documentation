@@ -1940,6 +1940,22 @@ c = GetCachedCelestial("1:2:3")
 UseDM("shipyard", c.GetID())
 ```
 
+### GetItems
+```go
+// GetItems get all items information
+GetItems(celestialID CelestialID) ([]Item, error)
+```
+
+### GetItems
+```go
+// ActivateItem activate an item
+ActivateItem(string, CelestialID) error
+```
+```go
+c = GetCachedCelestial("1:2:3")
+ActivateItem("de922af379061263a56d7204d1c395cefcfb7d75", c.GetID()) // Activate "Bronze Metal Booster"
+```
+
 ### GetFleets
 ```go
 // Get the player's own fleets activities
