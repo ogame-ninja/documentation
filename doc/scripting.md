@@ -1918,7 +1918,7 @@ Print(resources)
 Abandon(interface{}) error
 ```
 
-### UseDM
+### GetDMCosts
 ```go
 // GetDMCosts returns fast build with DM information
 GetDMCosts(celestialID CelestialID) (DMCosts, error)
