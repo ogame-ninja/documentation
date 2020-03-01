@@ -1637,6 +1637,36 @@ OnStateChange(func(botLocked, actor) {
 <-OnQuitCh // Block forever
 ```
 
+### HasCommander
+```go
+// Returns either or not the player has commander.
+HasCommander() bool
+```
+
+### HasAdmiral
+```go
+// Returns either or not the player has admiral.
+HasAdmiral() bool
+```
+
+### HasEngineer
+```go
+// Returns either or not the player has engineer.
+HasEngineer() bool
+```
+
+### HasGeologist
+```go
+// Returns either or not the player has geologist.
+HasGeologist() bool
+```
+
+### HasTechnocrat
+```go
+// Returns either or not the player has technocrat.
+HasTechnocrat() bool
+```
+
 ### GetHomeWorld
 ```go
 GetHomeWorld() Celestial
