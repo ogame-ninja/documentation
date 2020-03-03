@@ -1976,7 +1976,7 @@ UseDM("shipyard", c.GetID())
 GetItems(celestialID CelestialID) ([]Item, error)
 ```
 
-### GetItems
+### ActivateItem
 ```go
 // ActivateItem activate an item
 ActivateItem(string, CelestialID) error
