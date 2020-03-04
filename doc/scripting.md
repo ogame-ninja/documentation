@@ -824,10 +824,10 @@ type EspionageReport struct {
 	LastActivity                 int64
 	CounterEspionage             int64
 	APIKey                       string
-	HasFleet                     bool
-	HasDefenses                  bool
-	HasBuildings                 bool
-	HasResearches                bool
+	HasFleetInformation          bool
+	HasDefensesInformation       bool
+	HasBuildingsInformation      bool
+	HasResearchesInformation     bool
 	HonorableTarget              bool
 	IsBandit                     bool
 	IsStarlord                   bool
