@@ -2101,6 +2101,30 @@ IsScriptRunning(name string) bool
 Print(IsScriptRunning("another.ank"))
 ```
 
+### StartBrain
+```go
+// Start brain
+StartBrain()
+```
+
+### StopBrain
+```go
+// Stop brain
+StopBrain()
+```
+
+### StartHunter
+```go
+// Start hunter
+StartHunter()
+```
+
+### StopHunter
+```go
+// Stop hunter
+StopHunter()
+```
+
 ### StartFarmingBot
 ```go
 // Starts farming bot
