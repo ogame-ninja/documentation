@@ -613,6 +613,7 @@ type DefensesInfos struct {
 }
 
 // Methods
+AttackableValue() int64
 String() string
 ByID(id ID) int64
 Set(id ID, val int64)
@@ -901,7 +902,11 @@ type EspionageReport struct {
 }
 
 // Methods
+ResourcesBuildings() *ResourcesBuildings
+Facilities() *Facilities
+Researches() *Researches
 ShipsInfos() *ShipsInfos
+DefensesInfos() *DefensesInfos
 PlunderRatio(CharacterClass) float64
 Loot(CharacterClass) Resources
 ```
