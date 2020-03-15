@@ -1159,15 +1159,15 @@ Close() error
 ### Item 
 ```go
 type Item struct {
-    Ref          string
-    Name         string
-    Image        string
-    ImageLarge   string
-    Title        string
-    Rarity       string
-    Amount       int64
-    AmountFree   int64
-    AmountBought int64
+	Ref          string
+	Name         string
+	Image        string
+	ImageLarge   string
+	Title        string
+	Rarity       string
+	Amount       int64
+	AmountFree   int64
+	AmountBought int64
 }
 ```
 
