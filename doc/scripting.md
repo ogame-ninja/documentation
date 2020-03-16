@@ -550,6 +550,7 @@ type Fleet struct {
 	Origin         Coordinate
 	Destination    Coordinate
 	Ships          ShipsInfos
+	StartTime      time.Time
 	ArrivalTime    time.Time
 	BackTime       time.Time
 	ArriveIn       int64
@@ -623,6 +624,7 @@ Set(id ID, val int64)
 ```go
 // AttackEvent all information available about an enemy attack
 type AttackEvent struct {
+	ID              int64
 	MissionType     MissionID
 	Origin          Coordinate
 	Destination     Coordinate
@@ -2557,13 +2559,14 @@ Print(a.ExecuteAsync())
 ### CreateUnion
 ```go
 // CreateUnion creates a union
-CreateUnion(Fleet) (int64, error)
+// Second parameter is an array of player names
+CreateUnion(Fleet, []string) (int64, error)
 ```
 
 ```go
 f = NewFleet().SetOrigin("M:1:2:3").SetDestination("M:1:2:4").SetMission(PARK).SetAllShips()
 fleet, _ = f.SendNow()
-unionID, _ = CreateUnion(fleet)
+unionID, _ = CreateUnion(fleet, [])
 Print("Union ID: " + unionID)
 ```
 
