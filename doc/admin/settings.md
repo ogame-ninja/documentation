@@ -1,5 +1,8 @@
 # Admin settings
 
+##### [General]
+Logs retention: how many days of logs do we want to keep in the database.
+
 ##### [Telegram]
 See <a href="https://www.ogame.ninja/faq">FAQ</a> in defender section.
 
