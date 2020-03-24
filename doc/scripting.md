@@ -1572,7 +1572,7 @@ RemoveCron(EntryID)
 func callback() {
     Print("Callback executed")
 }
-entryID = CronExec("0 43 15 * * *", callback)
+entryID, _ = CronExec("0 43 15 * * *", callback)
 Sleep(1000)
 RemoveCron(entryID) // Remove scheduled cronjob 
 ```
