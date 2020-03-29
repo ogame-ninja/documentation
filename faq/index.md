@@ -15,3 +15,4 @@ Tips, tricks and answers to common questions about configuring and using Ninja b
 - [Farmer isn't doing anything ?](/faq/farmer-not-working)
 - [Farmer doesn't use all the slots ?](/faq/farmer-not-using-all-slots)
 - [Can I use the bot using facebook login ?](/faq/can-i-use-the-bot-using-facebook-login)
+- [How to open a ticket in slack ?](/faq/how-to-open-a-ticket-in-slack)
