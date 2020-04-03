@@ -31,6 +31,12 @@ A random delay of 0-5min will be added to selected times.
 If a script named `!sleep.ank` exists, it will be executed before the bot goes to sleep mode.  
 If a script named `!wake.ank` exists, it will be executed after the bot exit the sleep mode.  
 
+###### [automatic fleet save]
+If active, the bot will find the main fleet and fleet save it for the night and make sure it
+comes back for the wake up time.  
+
+This is an experimental feature, keep an eye on it.   
+
 ##### [Delete spy reports once imported]
 If selected, the in-game spy reports will be deleted once they are locally imported.  
 
