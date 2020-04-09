@@ -1,7 +1,9 @@
 ## How to configure telegram
 
 If you wish to use our Telegram notifier, you'll have to get your "Current Chat ID" by messaging the word `/start` to an account
-named `@getmyid_bot`, which will reply to you with your Telegram Chat ID.
+named `@getmyid_bot`, which will reply to you with your Telegram Chat ID.  
+You need to place this chat id in your bot notifications settings page:  
+`/bots/<BOT-ID>/settings/notifications`
 
 After that, if you are a **cloud user**, simply send the word `/start` to the account named `@OGameAttackBot`
 (there is no confirmation message, don't panic).
