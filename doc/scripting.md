@@ -2625,6 +2625,13 @@ GetCombatReportSummaryFor(Coordinate) (CombatReportSummary, error)
 DeleteMessage(msgID int64) error
 ```
 
+### DeleteAllMessagesFromTab
+```go
+// Deletes all messages from a tab in the mail box
+// Espionage: 20, Combat Reports: 21, Expeditions: 22, Unions/Transport: 23, Other: 24
+DeleteAllMessagesFromTab(tabID int64) error
+```
+
 ### Build
 ```go
 // Builds any ogame objects (building, technology, ship, defence)
