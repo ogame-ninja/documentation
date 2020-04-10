@@ -10,6 +10,10 @@ NJA Scripts are running in a supervised environment allowing to :
 
 For scripting <a href="https://github.com/mattn/anko">anko</a> Programming Language is used.
 
+# Compiled script
+
+[Documentation for compiled script](/doc/scripting/compiled)
+
 # Programming Basics
 
 ## Code Comments
