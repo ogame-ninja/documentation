@@ -86,8 +86,8 @@ Print(arr) // [[[a 1] [b 2] [c 3]]]
 
 ```go
 json = import("encoding/json")
-s = `{"a": 1, b": 2.1, "c": "a string", "d": true}`
-out = nil
+s = `{"a": 1, "b": 2.1, "c": "a string", "d": true}`
+out = {}
 json.Unmarshal(s, &out)
 Print(out["a"])
 
@@ -3063,7 +3063,7 @@ DeleteAllTempFiles()
 JsonDecode(data []byte) (out interface{}, err error)
 ```
 ```go
-out, err = JsonDecode(`{"a": 1, b": 2.1, "c": "a string", "d": true}`)
+out, err = JsonDecode(`{"a": 1, "b": 2.1, "c": "a string", "d": true}`)
 Print(out, err)
 ```
 
