@@ -1178,6 +1178,15 @@ type Item struct {
 }
 ```
 
+### Quantifiable
+```go
+// Quantifiable is a tuple with an ID and a number
+type Quantifiable struct {
+	ID  ID
+	Nbr int64
+}
+```
+
 ## Channels (events)
 
 ### OnAttackCh
@@ -2798,6 +2807,7 @@ defenses, _ = celestial.GetDefense()
 ```go
 // GetProduction get what is in the production queue.
 // (ships & defense being built)
+// Returns a list of "quantifiable", the total time remaining before the queue is done, and an error if any
 GetProduction(CelestialID) ([]Quantifiable, int64, error)
 ```
 ```go
