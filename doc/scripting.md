@@ -259,6 +259,7 @@ type Celestial interface {
     GetID() CelestialID
     GetType() CelestialType
     GetName() string
+    GetDiameter() int64
     GetCoordinate() Coordinate
     GetFields() Fields
     GetResources() (Resources, error)
