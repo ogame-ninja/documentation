@@ -20,22 +20,7 @@ Maximum slots that the brain will use. 0 means unlimited.
 Maximum slots that the repatriate will use. 0 means unlimited.
 
 ##### [Max script slots]
-Maximum slots that the scripts will use. 0 means unlimited.
-
-##### [Sleep mode]
-When the bot is in sleep mode, no call will ever be made by the bot to the ogame servers.  
-**WARNING:** In sleep mode, the bot will **not** check for incoming attacks.  
-
-A random delay of 0-5min will be added to selected times.  
-
-If a script named `!sleep.ank` exists, it will be executed before the bot goes to sleep mode.  
-If a script named `!wake.ank` exists, it will be executed after the bot exit the sleep mode.  
-
-###### [automatic fleet save]
-If active, the bot will find the main fleet and fleet save it for the night and make sure it
-comes back for the wake up time.  
-
-This is an experimental feature, keep an eye on it.   
+Maximum slots that the scripts will use. 0 means unlimited.  
 
 ##### [Delete spy reports once imported]
 If selected, the in-game spy reports will be deleted once they are locally imported.  
