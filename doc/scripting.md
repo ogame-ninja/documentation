@@ -2236,7 +2236,7 @@ IsRunningDefenderBot() bool
 
 ### SetDefenderCheckInterval
 ```go
-// Set the defender check interval (in minutes)
+// Set the defender check interval (in seconds)
 SetDefenderCheckInterval(min, max int64)
 ```
 
