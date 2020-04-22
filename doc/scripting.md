@@ -2023,6 +2023,26 @@ c = GetCachedCelestial("1:2:3")
 ActivateItem("de922af379061263a56d7204d1c395cefcfb7d75", c.GetID()) // Activate "Bronze Metal Booster"
 ```
 
+### OfferSellMarketplace
+```go
+// Create a sell offer on the marketplace 
+OfferSellMarketplace(itemID interface{}, quantity, priceType, price, priceRange int64, celestialID CelestialID) error
+```
+```go
+OfferSellMarketplace(LIGHTFIGHTER, 10, 1, 40000, 20, 0) // Sell ships for metal
+OfferSellMarketplace(1, 100000, 2, 200000, 20, 0)       // Sell metal for crystal
+OfferSellMarketplace("de922af379061263a56d7204d1c395cefcfb7d75", 1, 2, 50000, 20, 0) // Sell "Bronze Metal Booster" for crystal
+```
+
+### OfferBuyMarketplace
+```go
+// Create a buy offer on the marketplace
+OfferBuyMarketplace(itemID interface{}, quantity, priceType, price, priceRange int64, celestialID CelestialID) error
+```
+```go
+OfferBuyMarketplace(LIGHTFIGHTER, 10, 1, 40000, 20, 0)
+```
+
 ### GetFleets
 ```go
 // Get the player's own fleets activities
