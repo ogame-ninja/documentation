@@ -2236,6 +2236,24 @@ FarmingBotSessionsCount() int64
 AbortAllFarmingSessions()
 ```
 
+### StartExpeditionsBot
+```go
+// Starts expeditions bot
+StartExpeditionsBot()
+```
+
+### StopExpeditionsBot
+```go
+// Stops expeditions bot
+StopExpeditionsBot()
+```
+
+### IsRunningExpeditionsBot
+```go
+// Returns true in case Expeditions Bot is running, otherwise false
+IsRunningExpeditionsBot() bool
+```
+
 ### StartDefenderBot
 ```go
 // Starts defender bot
