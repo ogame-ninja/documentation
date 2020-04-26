@@ -1379,6 +1379,12 @@ err = AddItemToQueue(planet.GetID(), BOMBER, 0)
 Print(err)
 ```
 
+### ClearAllConstructionQueues
+```go
+// Clear all construction queues of the bot
+ClearAllConstructionQueues() error
+```
+
 ### GetPrice
 ```go
 // Returns the price of 'entity'. 'nbr' is either a building/research level or a defense/ship quantity.
