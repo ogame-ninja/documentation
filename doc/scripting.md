@@ -1546,6 +1546,19 @@ Print("Before")
     Print("callback is executed at ", time.Now())
 }) // Script will block here until callback is done executing at 17h23
 Print("After")
+
+// Evacuate fleet at specified time
+<-ExecAtCh("17:23:00", func() {
+    f = NewFleet()
+    f.SetOrigin("M:1:2:3")
+    f.SetDestination("M:1:2:4")
+    f.SetSpeed(TEN_PERCENT)
+    f.SetMission(PARK)
+    f.SetAllResources()
+    f.SetAllShips()
+    fleet, err = f.SendNow()
+    Print(fleet.ID, err)
+})
 ```
 
 ### IntervalExec
