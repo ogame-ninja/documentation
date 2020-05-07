@@ -2004,6 +2004,18 @@ Print(resources)
 Abandon(interface{}) error
 ```
 
+### CollectAllMarketplaceMessages
+```go
+// CollectAllMarketplaceMessages collect all marketplace messages
+CollectAllMarketplaceMessages() error
+```
+
+### CollectMarketplaceMessage
+```go
+// CollectMarketplaceMessage collect marketplace message
+CollectMarketplaceMessage(msg MarketplaceMessage) error
+```
+
 ### GetDMCosts
 ```go
 // GetDMCosts returns fast build with DM information
