@@ -1935,8 +1935,14 @@ GetCachedPlayer() UserInfos
 
 ### PlayerDataByID
 ```go
-// Get a player information using ogame xml API
+// Get a player information with their player ID using ogame xml API
 PlayerDataByID(playerID int64) (PlayerData, error)
+```
+
+### PlayerDataByName
+```go
+// Get a player information with their nickname using ogame xml API
+PlayerDataByName(nick string) (PlayerData, error)
 ```
 
 ### GetSystemsInRange
