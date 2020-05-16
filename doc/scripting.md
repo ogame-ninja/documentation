@@ -2207,6 +2207,18 @@ StartBrain()
 StopBrain()
 ```
 
+### StartScanner
+```go
+// Start scanner
+StartScanner()
+```
+
+### StopScanner
+```go
+// Stop scanner
+StopScanner()
+```
+
 ### StartHunter
 ```go
 // Start hunter
