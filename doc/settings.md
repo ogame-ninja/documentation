@@ -46,8 +46,7 @@ Keep default value if you don't know what this is.
 #### Browser augments
 
 ##### [Commander UI]
-Inject a "max" link:
-[<img src="/public/views/documentation/img/feature_browser2.jpg" alt="" width="500" />](/public/views/documentation/img/feature_browser2.jpg)
+Inject a "max" link.
 
 ##### [Enable browser augments]
 Inject many features in the browser
