@@ -2835,10 +2835,10 @@ GetResourcesBuildings(celestialID CelestialID) (ResourcesBuildings, error)
 ```
 ```go
 celestial = GetCachedCelestial("1:2:3")
-buildings = GetResourcesBuildings(celestial.GetID())
+buildings, err = GetResourcesBuildings(celestial.GetID())
 
 // This also work
-buildings = celestial.GetResourcesBuildings()
+buildings = celestial.GetResourcesBuildings()[0]
 ```
 
 ### GetFacilities
