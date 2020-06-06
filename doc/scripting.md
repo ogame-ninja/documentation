@@ -362,6 +362,9 @@ String() string
 IsPlanet() bool
 IsMoon() bool
 IsDebris() bool
+Planet() Coordinate
+Moon() Coordinate
+Debris() Coordinate
 ```
 ```go
 // Compare two coordinates
