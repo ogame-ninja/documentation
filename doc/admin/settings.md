@@ -3,6 +3,8 @@
 ##### [General]
 Logs retention: how many days of logs do we want to keep in the database.
 
+Images URL: you can provide a set of images to use in the app (that you have created).
+
 ##### [Telegram]
 See <a href="https://www.ogame.ninja/faq">FAQ</a> in defender section.
 
