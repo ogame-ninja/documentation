@@ -1972,6 +1972,17 @@ Print(GetSystemsInRangeDesc(3, 2)) // [1, 5, 2, 4, 3]
 Print(GetSystemsInRangeDesc(3, 3)) // [499, 6, 1, 5, 2, 4, 3]
 ```
 
+### Shuffle
+```go
+// Shuffle a slice in place
+Shuffle(slice []interface{})
+```
+```go
+a = [1, 2, 3, 4, 5]
+Shuffle(a)
+Print(a)
+```
+
 ### GetResources
 ```go
 GetResources(CelestialID) (Resources, error)
