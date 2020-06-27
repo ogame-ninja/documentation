@@ -2341,6 +2341,16 @@ IsRunningDefenderBot() bool
 SetDefenderCheckInterval(min, max int64)
 ```
 
+### SetDefenderCheckOrigin
+```go
+// Set the defender check origin
+// 1 -> Random planet/moon
+// 2 -> Homeworld
+// 3 -> Latest active planet/moon
+// 4 -> Random moon
+SetDefenderCheckOrigin(originNum int64)
+```
+
 ### DBGetResourceBuildings
 ```go
 // Get resources buildings from database
