@@ -2127,6 +2127,19 @@ GalaxyInfos(galaxy, system int64) (SystemInfos, error)
 systemInfo, _ = GalaxyInfos(4, 116)
 ```
 
+### GetPlanetInfo
+```go
+// GetPlanetInfo get information of a planet and moon
+GetPlanetInfo(coordinate interface{}) (PlanetInfos, error)
+```
+```go
+planetInfos, _ = GetPlanetInfo("4:116:6")
+
+coord = NewCoordinate(4, 116, 6, PLANET_TYPE)
+planetInfos, _ = GetPlanetInfo(coord)
+```
+
+
 ### Dotify
 ```go
 // Pretty print a large number using dot as thousand separator
