@@ -56,6 +56,9 @@ Inject many features in the browser
 - Improve message box UI
 - And many more...
 
+##### [Disable ogame dropdown]
+Disable fancy ogame dropdown. This fixes the jump gate modal when using a mobile.
+
 ##### [Enable TopRaider]
 Inject [TopRaider](http://topraider.eu/) script. (works in browser fullscreen mode only)  
 If the email & password are set, spy reports that are imported in Nja are going to be automatically send to topraider.  
