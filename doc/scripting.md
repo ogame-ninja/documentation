@@ -2178,6 +2178,35 @@ coord = NewCoordinate(4, 116, 6, PLANET_TYPE)
 planetInfos, _ = GetPlanetInfo(coord)
 ```
 
+### GetDepartureTime
+```go
+// Get the departure time to arrive at desired arrival time
+GetDepartureTime(arrival, origin, destination interface{}, ShipsInfos, Speed) Time
+```
+```go
+s1 = NewShipsInfos()
+s1.Set(LARGECARGO, 10)
+
+// Example 1
+departureTime = GetDepartureTime("16:00:00", "4:208:8", "4:212:10", *s1, HUNDRED_PERCENT)
+Print("Departure time should be " + departureTime)
+
+// Example 2
+time = import("time")
+desiredArrivalTime = time.Now().Add(3 * time.Hour)
+departureTime = GetDepartureTime(desiredArrivalTime, "4:208:8", "4:212:10", *s1, HUNDRED_PERCENT)
+Print("Departure time should be " + departureTime)
+
+// Example 3
+origin = NewCoordinate(4, 208, 8, PLANET_TYPE)
+destination = NewCoordinate(4, 212, 10, PLANET_TYPE)
+departureTime = GetDepartureTime(desiredArrivalTime, origin, destination, *s1, HUNDRED_PERCENT)
+Print("Departure time should be " + departureTime)
+
+<-ExecAtCh(departureTime, func() {
+    // Send fleet here
+})
+```
 
 ### Dotify
 ```go
