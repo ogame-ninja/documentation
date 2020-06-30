@@ -2297,6 +2297,18 @@ StartHunter()
 StopHunter()
 ```
 
+### StartSleepMode
+```go
+// Turn on sleep mode
+StartSleepMode()
+```
+
+### StopSleepMode
+```go
+// Turn off sleep mode
+StopSleepMode()
+```
+
 ### StartFarmingBot
 ```go
 // Starts farming bot
