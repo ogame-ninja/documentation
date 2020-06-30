@@ -1191,6 +1191,32 @@ type Quantifiable struct {
 }
 ```
 
+### Highscore
+```go
+// Highscore 
+type Highscore struct {
+	NbPage   int64
+	CurrPage int64
+	Category int64 // 1:Player, 2:Alliance
+	Type     int64 // 0:Total, 1:Economy, 2:Research, 3:Military, 4:Military Built, 5:Military Destroyed, 6:Military Lost, 7:Honor
+	Players  []HighscorePlayer
+}
+```
+
+### HighscorePlayer
+```go
+// HighscorePlayer
+type HighscorePlayer struct {
+	Position     int64
+	ID           int64
+	Name         string
+	Score        int64
+	AllianceID   int64
+	HonourPoints int64
+	Homeworld    Coordinate
+}
+```
+
 ## Channels (events)
 
 ### OnAttackCh
@@ -2092,6 +2118,19 @@ OfferBuyMarketplace(itemID interface{}, quantity, priceType, price, priceRange i
 ```
 ```go
 OfferBuyMarketplace(LIGHTFIGHTER, 10, 1, 40000, 20, 0)
+```
+
+### GetHighscore
+```go
+// Get the highscores information
+// category -> 1:player, 2:alliance
+// typ -> 0:Total, 1:Economy, 2:Research, 3:Military, 4:Military Built, 5:Military Destroyed, 6:Military Lost, 7:Honor
+// page must be greater than or equal to 1
+Highscore(category, typ, page int64) (Highscore, error)
+```
+```go
+highscore, _ = GetHighscore(1, 1, 1) // First highscore page of Players Economy
+Print(highscore.Players[0])
 ```
 
 ### GetFleets
