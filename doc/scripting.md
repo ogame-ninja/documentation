@@ -2208,6 +2208,36 @@ Print("Departure time should be " + departureTime)
 })
 ```
 
+### LowestSpeed
+```go
+// Get the departure time to arrive at desired arrival time
+LowestSpeed(arrival, origin, destination interface{}, ShipsInfos) (speed Speed, fuel int64, departureTime Time, err error)
+```
+```go
+s1 = NewShipsInfos()
+s1.Set(LARGECARGO, 10)
+
+// Example 1
+speed, fuel, departureTime, err = LowestSpeed("16:00:00", "4:208:8", "4:212:10", *s1)
+Print("Departure time should be " + departureTime)
+
+// Example 2
+time = import("time")
+desiredArrivalTime = time.Now().Add(3 * time.Hour)
+speed, fuel, departureTime, err = LowestSpeed(desiredArrivalTime, "4:208:8", "4:212:10", *s1)
+Print("Departure time should be " + departureTime)
+
+// Example 3
+origin = NewCoordinate(4, 208, 8, PLANET_TYPE)
+destination = NewCoordinate(4, 212, 10, PLANET_TYPE)
+speed, fuel, departureTime, err = LowestSpeed(desiredArrivalTime, origin, destination, *s1)
+Print("Departure time should be " + departureTime)
+
+<-ExecAtCh(departureTime, func() {
+    // Send fleet here with proper speed
+})
+```
+
 ### Dotify
 ```go
 // Pretty print a large number using dot as thousand separator
