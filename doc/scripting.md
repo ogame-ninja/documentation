@@ -2324,10 +2324,10 @@ Simulator(payload map[string]map[string]interface{}) (simulator.SimulatorResult,
 ```go
 payload = {
     "Attacker": {
-        "HyperspaceTechnology": 1, // Default to your research
-        "Weapon"              : 1, // Default to your research
-        "Shield"              : 1, // Default to your research
-        "Armour"              : 1, // Default to your research
+        "HyperspaceTechnology": 1, // Default to your tech
+        "Weapon"              : 1, // Default to your tech
+        "Shield"              : 1, // Default to your tech
+        "Armour"              : 1, // Default to your tech
         "LightFighter"        : 100,
         "HeavyFighter"        : 0,
         "Cruiser"             : 0,
@@ -2372,7 +2372,11 @@ payload = {
         "Pathfinder"    : 0,
     },
     "Params": {
-        "Simulations": 5,
+        "Simulations"        : 5,
+        "FleetToDebris"      : 70, // Default to your universe settings
+        "DefenceToDebris"    : 0,  // Default to your universe settings
+        "DefenceRepairFactor": 70, // Default to your universe settings
+        "Plunder"            : 50, // Default to your universe settings
     }
 }
 
