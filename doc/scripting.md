@@ -1217,6 +1217,78 @@ type HighscorePlayer struct {
 }
 ```
 
+
+### SimulatorResult
+
+```go
+// SimulatorResult result returned when running a simulation
+type SimulatorResult struct {
+	TacticalRetreat string
+	Simulations     int
+	AttackerWin     int
+	DefenderWin     int
+	Draw            int
+	Rounds          int
+	AttackerLosses  price
+	AttackerProfit  price
+	DefenderLosses  price
+	DefenderProfit  price
+	Debris          price
+	PossiblePlunder price
+	CapturedPlunder price
+	PctCaptured     int
+	Recycler        int
+	LCNeeded        int
+	SCNeeded        int
+	Moonchance      int
+	Logs            string
+
+	AttackerSmallCargoRemaining     int
+	AttackerLargeCargoRemaining     int
+	AttackerLightFighterRemaining   int
+	AttackerHeavyFighterRemaining   int
+	AttackerCruiserRemaining        int
+	AttackerBattleshipRemaining     int
+	AttackerColonyShipRemaining     int
+	AttackerRecyclerRemaining       int
+	AttackerEspionageProbeRemaining int
+	AttackerBomberRemaining         int
+	AttackerSolarSatelliteRemaining int
+	AttackerDestroyerRemaining      int
+	AttackerDeathstarRemaining      int
+	AttackerBattlecruiserRemaining  int
+	AttackerCrawlerRemaining        int
+	AttackerReaperRemaining         int
+	AttackerPathfinderRemaining     int
+
+	DefenderSmallCargoRemaining      int
+	DefenderLargeCargoRemaining      int
+	DefenderLightFighterRemaining    int
+	DefenderHeavyFighterRemaining    int
+	DefenderCruiserRemaining         int
+	DefenderBattleshipRemaining      int
+	DefenderColonyShipRemaining      int
+	DefenderRecyclerRemaining        int
+	DefenderEspionageProbeRemaining  int
+	DefenderBomberRemaining          int
+	DefenderSolarSatelliteRemaining  int
+	DefenderDestroyerRemaining       int
+	DefenderDeathstarRemaining       int
+	DefenderBattlecruiserRemaining   int
+	DefenderCrawlerRemaining         int
+	DefenderReaperRemaining          int
+	DefenderPathfinderRemaining      int
+	DefenderRocketLauncherRemaining  int
+	DefenderLightLaserRemaining      int
+	DefenderHeavyLaserRemaining      int
+	DefenderGaussCannonRemaining     int
+	DefenderIonCannonRemaining       int
+	DefenderPlasmaTurretRemaining    int
+	DefenderSmallShieldDomeRemaining int
+	DefenderLargeShieldDomeRemaining int
+}
+```
+
 ## Channels (events)
 
 ### OnAttackCh
@@ -2236,6 +2308,76 @@ Print("Departure time should be " + departureTime)
 <-ExecAtCh(departureTime, func() {
     // Send fleet here with proper speed
 })
+```
+
+### Simulator
+```go
+// Simulator runs a battle simulation.
+// 
+// Cloud limits: 500k ships, 5 simulations
+// 25M points / minute. Calling "Simulator" will cost (nb ships * simulations) points.
+//
+// Self-host have no limit
+Simulator(payload map[string]map[string]interface{}) (simulator.SimulatorResult, error)
+```
+
+```go
+payload = {
+    "Attacker": {
+        "HyperspaceTechnology": 1, // Default to your research
+        "Weapon"              : 1, // Default to your research
+        "Shield"              : 1, // Default to your research
+        "Armour"              : 1, // Default to your research
+        "LightFighter"        : 100,
+        "HeavyFighter"        : 0,
+        "Cruiser"             : 0,
+        "Battleship"          : 0,
+        "Battlecruiser"       : 0,
+        "Bomber"              : 0,
+        "Destroyer"           : 0,
+        "Deathstar"           : 0,
+        "SmallCargo"          : 0,
+        "LargeCargo"          : 0,
+        "ColonyShip"          : 0,
+        "Recycler"            : 0,
+        "EspionageProbe"      : 0,
+        "SolarSatellite"      : 0,
+        "Crawler"             : 0,
+        "Reaper"              : 0,
+        "Pathfinder"          : 0,
+    },
+    "Defender": {
+        "Metal"         : 1000,
+        "Crystal"       : 0,
+        "Deuterium"     : 0,
+        "Weapon"        : 1,
+        "Shield"        : 1,
+        "Armour"        : 1,
+        "LightFighter"  : 50,
+        "HeavyFighter"  : 0,
+        "Cruiser"       : 0,
+        "Battleship"    : 0,
+        "Battlecruiser" : 0,
+        "Bomber"        : 0,
+        "Destroyer"     : 0,
+        "Deathstar"     : 0,
+        "SmallCargo"    : 0,
+        "LargeCargo"    : 0,
+        "ColonyShip"    : 0,
+        "Recycler"      : 0,
+        "EspionageProbe": 0,
+        "SolarSatellite": 0,
+        "Crawler"       : 0,
+        "Reaper"        : 0,
+        "Pathfinder"    : 0,
+    },
+    "Params": {
+        "Simulations": 5,
+    }
+}
+
+res, err = Simulator(payload)
+Print(res, err)
 ```
 
 ### Dotify
