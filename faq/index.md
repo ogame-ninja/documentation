@@ -5,6 +5,7 @@ Tips, tricks and answers to common questions about configuring and using Ninja b
 - [How to install the app ?](/faq/how-to-install-the-app)
 - [What is the "chat active/inactive" icon ?](/faq/what-is-the-chat-icon)
 - [How to configure telegram ?](/faq/how-to-configure-telegram)
+- [How to configure slack notifications ?](/faq/how-to-configure-slack-notifications)
 - [How to reset my password ?](/faq/how-to-reset-password)
 - [How to upgrade my app to latest version ?](/faq/how-to-upgrade-app)
 - [What is the "Scanner" ?](/faq/what-is-the-scanner)
