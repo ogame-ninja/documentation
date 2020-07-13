@@ -33,6 +33,12 @@ If a planet/moon is tagged as importer, it will import resources from exporters,
 ##### Exporter?
 If a planet/moon is tagged as exporter, it will make it's resources available to other planets.
 
+##### Export within same galaxy only
+If enabled, the bot will only import resources from exporters that are in the same galaxy.
+
+##### Prevent importing if come back during sleep time
+If enabled, the bot will prevent importing resources if the cargo fleet was to come back during the sleep time. 
+
 ## AI configs
 
 ##### Max metal mine level to build
