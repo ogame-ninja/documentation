@@ -2233,6 +2233,12 @@ GalaxyInfos(galaxy, system int64) (SystemInfos, error)
 ```
 ```go
 systemInfo, _ = GalaxyInfos(4, 116)
+for i = 0; i <= 15; i++ {
+    planetInfo = systemInfo.Position(i)
+    if planetInfo != nil {
+        Print(planetInfo.Name)
+    }
+}
 ```
 
 ### GetPlanetInfo
