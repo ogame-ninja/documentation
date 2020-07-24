@@ -1211,6 +1211,7 @@ type HighscorePlayer struct {
 	AllianceID   int64
 	HonourPoints int64
 	Homeworld    Coordinate
+	Ships        int64 // When getting military type
 }
 ```
 
