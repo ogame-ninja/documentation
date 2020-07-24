@@ -2196,7 +2196,7 @@ OfferBuyMarketplace(LIGHTFIGHTER, 10, 1, 40000, 20, 0)
 // category -> 1:player, 2:alliance
 // typ -> 0:Total, 1:Economy, 2:Research, 3:Military, 4:Military Built, 5:Military Destroyed, 6:Military Lost, 7:Honor
 // page must be greater than or equal to 1
-Highscore(category, typ, page int64) (Highscore, error)
+GetHighscore(category, typ, page int64) (Highscore, error)
 ```
 ```go
 highscore, _ = GetHighscore(1, 1, 1) // First highscore page of Players Economy
