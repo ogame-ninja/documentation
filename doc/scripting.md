@@ -1463,18 +1463,21 @@ RepatriateNow()
 ```go
 // Add something into a planet/moon build queue
 // The "nbr" parameter is only useful for ships and defenses.
+// To "tear down" a building, give a "nbr" of -1.
 AddItemToQueue(celestialID CelestialID, id ID, nbr int64) error
 ```
 
 ```go
 planet = GetCachedPlanets()[0]
-err = AddItemToQueue(planet.GetID(), SOLARPLANT, 0)
+err = AddItemToQueue(planet.GetID(), SOLARPLANT, 0) // Build a "solar plant"
+Print(err)
+err = AddItemToQueue(planet.GetID(), SOLARPLANT, -1) // Tear down a "solar plant"
 Print(err)
 err = AddItemToQueue(planet.GetID(), BOMBER, 1)
 Print(err)
 err = AddItemToQueue(planet.GetID(), ROCKETLAUNCHER, 2)
 Print(err)
-err = AddItemToQueue(planet.GetID(), BOMBER, 0)
+err = AddItemToQueue(planet.GetID(), BOMBER, 0) // Invalid number to add
 Print(err)
 ```
 
