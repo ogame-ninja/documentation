@@ -2483,6 +2483,24 @@ IsScriptRunning(name string) bool
 Print(IsScriptRunning("another.ank"))
 ```
 
+### GetScripts
+```go
+// Returns the names of all scripts for this bot
+GetScripts() []string
+```
+```go
+Print(GetScripts())
+```
+
+### GetRunningScripts
+```go
+// Returns the names of all currently running scripts for this bot
+GetRunningScripts() []string
+```
+```go
+Print(GetRunningScripts())
+```
+
 ### StartBrain
 ```go
 // Start brain
