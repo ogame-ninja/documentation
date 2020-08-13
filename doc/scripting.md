@@ -3459,7 +3459,7 @@ f.Close()
 ### ListTempFiles
 ```go
 // List all known temp files
-ListTempFiles(filename string) []string
+ListTempFiles() []string
 ```
 
 ### DeleteTempFile
