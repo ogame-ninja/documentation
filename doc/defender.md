@@ -95,3 +95,7 @@ If **Active** checkbox is ticked, the celestial will repatriate it's resources t
 You can choose which resources to repatriate.  
 If you want to keep a minimum amount of deuterium on the celestial, you can configure it with **Min deut**.  
 You can also set all the destinations to the same value at once.  
+
+##### [2-steps (planets then moons)]<a name="two-steps"></a>
+When active, the bot will first repatriate planets which have their own moon as a destination.  
+Once done, it will repatriate all other planets and moons to their final destination.   
