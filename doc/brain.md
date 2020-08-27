@@ -37,7 +37,10 @@ If a planet/moon is tagged as exporter, it will make it's resources available to
 If enabled, the bot will only import resources from exporters that are in the same galaxy.
 
 ##### Prevent importing if come back during sleep time
-If enabled, the bot will prevent importing resources if the cargo fleet was to come back during the sleep time. 
+If enabled, the bot will prevent importing resources if the cargo fleet was to come back during the sleep time.
+ 
+##### Delay after exporting resources
+Seconds to wait before continuing brain logic after a successful resource export.
 
 ## AI configs
 
