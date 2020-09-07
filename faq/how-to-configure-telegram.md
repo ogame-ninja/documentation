@@ -10,7 +10,10 @@ Simply send the word `/start` to the account named `@OGameAttackBot`
 (there is no confirmation message, don't panic).
 
 ### Self-host
-You will have to set up your own telegram bot token, you can find out how to do that
-by [clicking here](https://www.siteguarding.com/en/how-to-get-telegram-bot-api-token) and putting your telegram bot
-token ID in [http://127.0.0.1:8080/admin/settings](http://127.0.0.1:8080/admin/settings).  
-You also need to send the word `/start` to your bot.  
+You will have to set up your own telegram bot. ([detailed instructions](https://www.siteguarding.com/en/how-to-get-telegram-bot-api-token))
+
+- Find telegram bot named `@botfather`
+- To create a new bot type `/newbot` and follow instructions.
+- Put your telegram bot token ID in [http://127.0.0.1:8080/admin/settings](http://127.0.0.1:8080/admin/settings). 
+- Type `/start` to your newly created bot.
+    
