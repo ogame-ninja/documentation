@@ -217,6 +217,13 @@ OGAME_SERVER = (ogame server information)
 __FILE__ // Name of current script file
 ```
 ```go
+__IS_CLOUD__ // Either or not the software is running in cloud
+__IS_SELF_HOST__ // Either or not the software is running in self-host
+```
+```go
+__VERSION__ // Ninja version of the software currently running
+```
+```go
 GALAXIES // Number of galaxies in the universe
 SYSTEMS  // Number of systems in a galaxy
 ```
@@ -2399,6 +2406,23 @@ payload = {
 
 res, err = Simulator(payload)
 Print(res, err)
+```
+
+### VersionCompare
+```go
+// Compare compares this version to another version. This
+// returns -1, 0, or 1 if this version is smaller, equal,
+// or larger than the other version, respectively.
+VersionCompare(version1, version2 string) int
+```
+```go
+Print(VersionCompare("0.1.1", "0.9.0")) // -1
+Print(VersionCompare("0.1.1", "0.1.1")) //  0
+Print(VersionCompare("0.1.1", "0.0.1")) //  1
+
+if VersionCompare(__VERSION__, "0.91.8") == -1 {
+    Print("You need version 0.91.8 or higher")
+}
 ```
 
 ### Dotify
