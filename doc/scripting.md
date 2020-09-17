@@ -221,6 +221,11 @@ __IS_CLOUD__ // Either or not the software is running in cloud
 __IS_SELF_HOST__ // Either or not the software is running in self-host
 ```
 ```go
+__LICENSE_UUID__     // UUID of current license
+__LICENSE_USERNAME__ // Username of current license
+__LICENSE_EMAIL__    // Email of current license
+```
+```go
 __VERSION__ // Ninja version of the software currently running
 ```
 ```go
