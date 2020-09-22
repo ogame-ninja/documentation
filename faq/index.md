@@ -19,3 +19,4 @@ Tips, tricks and answers to common questions about configuring and using Ninja b
 - [How to open a ticket in slack ?](/faq/how-to-open-a-ticket-in-slack)
 - [Can I use 2fa with my bot ?](/faq/can-i-use-2fa-with-my-bot)
 - [Can I access my bots using my phone ?](/faq/can-i-access-my-bots-using-my-phone)
+- [What is "suspicious login" ?](/faq/what-is-suspicious-login)
