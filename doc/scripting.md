@@ -2891,6 +2891,12 @@ GetPlayerCoordinates(playerID int64) []Coordinate
 Base64(string) string
 ```
 
+### Base64Decode
+```go
+// Base64Decode decode a base64 encoded string 
+Base64(string) (string, error)
+```
+
 ### GetSortedCelestials
 ```go
 // GetSortedCelestials gets all celestials sorted by proximity to destination.
