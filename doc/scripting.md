@@ -1903,6 +1903,12 @@ Sleep(5 * 60 * 1000) // Sleep 5min
 Login()
 ```
 
+### IsLoggedIn
+```go
+// IsLoggedIn returns true if the bot is currently logged-in, otherwise false
+IsLoggedIn() bool
+```
+
 ### IsUnderAttack
 ```go
 // Returns true if the user is under attack, false otherwise
