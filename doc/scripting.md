@@ -2059,6 +2059,21 @@ PlayerDataByID(playerID int64) (PlayerData, error)
 PlayerDataByName(nick string) (PlayerData, error)
 ```
 
+### FindDebrisFieldWithMinimumTravelTime
+```go
+// Finds debris field that is at a minimum travel time at 10% speed
+FindDebrisFieldWithMinimumTravelTime(origin Coordinate, ships ShipsInfos, minimumTravelTime time.Duration) (destination Coordinate, travelTime time.Duration, fuel int64, err error)
+```
+
+```go
+time = import("time")
+planet = GetCachedPlanets()[0]
+ships, _ = planet.GetShips()
+minimumTravelTime = 7 * time.Hour
+debrisCoordinate, travelTime, fuel, err = FindDebrisFieldWithMinimumTravelTime(planet.GetCoordinate(), ships, minimumTravelTime)
+Print(debrisCoordinate, travelTime, fuel, err)
+```
+
 ### GetSystemsInRange
 ```go
 // GetSystemsInRange returns the systems in a radius around the origin
@@ -2069,6 +2084,18 @@ Print(GetSystemsInRange(3, 0)) // [3]
 Print(GetSystemsInRange(3, 1)) // [2, 3, 4]
 Print(GetSystemsInRange(3, 2)) // [1, 2, 3, 4, 5]
 Print(GetSystemsInRange(3, 3)) // [499, 1, 2, 3, 4, 5, 6]
+```
+
+### GetSystemsInRangeAsc
+```go
+// GetSystemsInRangeDesc returns the systems in a radius around the origin sorted by distance (closer to farther away)
+GetSystemsInRangeAsc(originSystem, radius int64) []int64
+```
+```go
+Print(GetSystemsInRangeAsc(3, 0)) // [3]
+Print(GetSystemsInRangeAsc(3, 1)) // [3, 2, 4]
+Print(GetSystemsInRangeAsc(3, 2)) // [3, 2, 4, 1, 5]
+Print(GetSystemsInRangeAsc(3, 3)) // [3, 2, 4, 1, 5, 499, 6]
 ```
 
 ### GetSystemsInRangeDesc
