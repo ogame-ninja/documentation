@@ -1368,6 +1368,18 @@ for {
 }
 ```
 
+### OnGalaxyScanDone
+```go
+// Triggered when the galaxy scan is completed
+OnGalaxyScanDone chan struct{}
+```
+```go
+for {
+    <-OnGalaxyScanDone
+    Print("Galaxy scan is completed")
+}
+```
+
 ### OnTelegramMessageReceivedCh
 ```go
 // Triggered when a private message is received from telegram
