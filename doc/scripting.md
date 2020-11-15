@@ -1390,6 +1390,12 @@ for {
 }
 ```
 
+### OnFleetDispatch
+```go
+// Triggered when a fleet is dispatched
+OnFleetDispatch chan Fleet
+```
+
 ### OnTelegramMessageReceivedCh
 ```go
 // Triggered when a private message is received from telegram
