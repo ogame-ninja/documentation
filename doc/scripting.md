@@ -2565,6 +2565,24 @@ StopScript("another.ank")
 Print("another.ank stopped")
 ```
 
+### PauseScript
+```go
+// Pause a script
+PauseScript(name string) error
+```
+
+### ResumeScript
+```go
+// Resume a paused script
+ResumeScript(name string) error
+```
+
+### IsPausedScript
+```go
+// Either or not the script is paused
+IsPausedScript(name string) error
+```
+
 ### IsScriptRunning
 ```go
 // Returns true if 'script' is running, otherwise false
