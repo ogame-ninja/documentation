@@ -1263,6 +1263,8 @@ type SimulatorResult struct {
 	SCNeeded        int
 	Moonchance      int
 	Logs            string
+	FlightTime      int
+	Fuel            int
 
 	AttackerSmallCargoRemaining     int
 	AttackerLargeCargoRemaining     int
@@ -2409,6 +2411,13 @@ payload = {
         "Weapon"              : 1, // Default to your tech
         "Shield"              : 1, // Default to your tech
         "Armour"              : 1, // Default to your tech
+        "CombustionDrive"     : 1, // Default to your tech
+        "ImpulseDrive"        : 1, // Default to your tech
+        "HyperspaceDrive"     : 1, // Default to your tech
+        "CharacterClass"      : 1, // NoClass: 0, Collector: 1, General: 2, Discoverer: 3. Default to your class
+        "Galaxy"              : 1,
+        "System"              : 205,
+        "Position"            : 12,
         "LightFighter"        : 100,
         "HeavyFighter"        : 0,
         "Cruiser"             : 0,
@@ -2428,6 +2437,9 @@ payload = {
         "Pathfinder"          : 0,
     },
     "Defender": {
+        "Galaxy"                : 1,
+        "System"                : 102,
+        "Position"              : 11,
         "Metal"                 : 1000,
         "Crystal"               : 0,
         "Deuterium"             : 0,
