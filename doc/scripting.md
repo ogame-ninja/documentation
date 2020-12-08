@@ -505,6 +505,21 @@ type UserInfos struct {
 }
 ```
 
+### PlayerDataShort
+
+```go
+// PlayerDataShort information returned by ogame xml API (/api/players.xml)
+type PlayerDataShort struct {
+	ID             int64
+	Name           string
+	IsAdmin        bool
+	IsInactive     bool
+	IsLongInactive bool
+	Vacation       bool
+	AllianceID     *int64
+}
+```
+
 ### PlayerData
 ```go
 // PlayerData information returned by ogame xml API
@@ -2082,6 +2097,12 @@ GetCachedCelestials() []Celestial
 ```go
 // GetCachedPlayer returns currently logged in cached player information
 GetCachedPlayer() UserInfos
+```
+
+### PlayersData
+```go
+// Get all players information using ogame xml API (/api/players.xml)
+PlayersData() ([]PlayerDataShort, error)
 ```
 
 ### PlayerDataByID
