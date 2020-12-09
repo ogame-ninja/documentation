@@ -1451,6 +1451,63 @@ Sleep(5 * 60 * 1000) // Execution of the script will stop here for 5min
 Print("After")
 ```
 
+### SleepRandMs
+```go
+// Sleep a random duration within a range given in milliseconds
+SleepRandMs(min, max int64)
+```
+```go
+Print("Before")
+SleepRandMs(1000, 3000) // Code execution pause here for a random time between 1000ms and 3000ms
+Print("After")
+```
+
+### SleepRandSec
+```go
+// Sleep a random duration within a range given in seconds
+SleepRandSec(min, max int64)
+```
+```go
+Print("Before")
+SleepRandSec(1, 3) // Code execution pause here for a random time between 1s and 3s
+Print("After")
+```
+
+### SleepRandMin
+```go
+// Sleep a random duration within a range given in minutes
+SleepRandMin(min, max int64)
+```
+```go
+Print("Before")
+SleepRandMin(1, 3) // Code execution pause here for a random time between 1min and 3min
+Print("After")
+```
+
+### SleepRandMin
+```go
+// Sleep a random duration within a range given in hours
+SleepRandHour(min, max int64)
+```
+```go
+Print("Before")
+SleepRandHour(1, 3) // Code execution pause here for a random time between 1hour and 3hours
+Print("After")
+```
+
+### SleepDur
+```go
+// Sleep for duration
+SleepDur(dur time.Duration)
+```
+```go
+time = import("time")
+Print("Before")
+dur = 3 * time.Seconds
+SleepDur(dur) // Code execution pause here for a durayion of 3sec
+Print("After")
+```
+
 ### Random
 ```go
 // Random generates a number between min and max inclusively
