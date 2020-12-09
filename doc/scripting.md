@@ -1451,6 +1451,34 @@ Sleep(5 * 60 * 1000) // Execution of the script will stop here for 5min
 Print("After")
 ```
 
+### SleepMs
+```go
+// Alias to "Sleep" function
+SleepMs(milliseconds int64)
+```
+
+### SleepSec
+```go
+// Sleeps a defined number of seconds
+SleepSec(seconds int64)
+```
+```go
+Print("Before")
+SleepSec(5) // Execution of the script will stop here for 5sec
+Print("After")
+```
+
+### SleepMin
+```go
+// Sleeps a defined number of minutes
+SleepMin(minutes int64)
+```
+```go
+Print("Before")
+SleepMin(5) // Execution of the script will stop here for 5min
+Print("After")
+```
+
 ### SleepRandMs
 ```go
 // Sleep a random duration within a range given in milliseconds
