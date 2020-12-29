@@ -1512,7 +1512,7 @@ SleepRandMin(1, 3) // Code execution pause here for a random time between 1min a
 Print("After")
 ```
 
-### SleepRandMin
+### SleepRandHour
 ```go
 // Sleep a random duration within a range given in hours
 SleepRandHour(min, max int64)
