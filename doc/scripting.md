@@ -3077,6 +3077,12 @@ Print("You need to send " + lc + " large cargo and " + sc + " small cargo") // Y
 CalcFastCargoPF(pfAvail, lcAvail, scAvail, resourcesTotal int64) (pathfinder, largeCargo, smallCargo, cargo int64)
 ```
 
+### CalcPreferredCargo
+```go
+// Calculate ships to transport resources according to your available ships and preferred transport.
+CalcPreferredCargo(preferredID ogame.ID, epAvail, pfAvail, lcAvail, scAvail, resourcesTotal int64, roundUp bool) (ep, pf, lc, sc, cargo int64)
+```
+
 ### GetPlayerCoordinates
 ```go
 // Gets all the coordinates of a player from the local database
