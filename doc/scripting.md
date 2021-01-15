@@ -3335,10 +3335,10 @@ BuildTechnology(celestialID CelestialID, technologyID ID) error
 ```
 ```go
 celestial = GetCachedCelestial("1:2:3")
-BuildTechnology(celestial.GetID(), ENERGYTECHNOLOGY) // Build next MetalMine
+BuildTechnology(celestial.GetID(), ENERGYTECHNOLOGY) // Build next energy technology
 
 // This also work
-celestial.BuildTechnology(ENERGYTECHNOLOGY) // Build next MetalMine
+celestial.BuildTechnology(ENERGYTECHNOLOGY) // Build next energy technology
 ```
 
 ### TearDown
