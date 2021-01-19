@@ -3775,3 +3775,9 @@ Pow(x, y float64) float64
 // Sqrt returns the square root of x.
 Sqrt(x float64) float64
 ```
+
+### Terminate
+```go
+// Terminate the script immediately
+Terminate()
+```
