@@ -2040,6 +2040,12 @@ Login()
 IsLoggedIn() bool
 ```
 
+### IsPioneers
+```go
+// IsPioneers returns true if the bot is uses pioneers lobby
+IsPioneers() bool
+```
+
 ### IsUnderAttack
 ```go
 // Returns true if the user is under attack, false otherwise
