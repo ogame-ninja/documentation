@@ -630,7 +630,7 @@ type ShipsInfos struct {
 
 // Methods
 
-Cargo(techs Researches, probeRaids, isCollector bool) int64 // probeRaids determines if spys in your uni have cargo or not
+Cargo(techs Researches, probeRaids, isCollector, isPioneers bool) int64 // probeRaids determines if spys in your uni have cargo or not
 Has(v ShipsInfos) bool
 FleetValue() int64
 FleetCost() Resources
