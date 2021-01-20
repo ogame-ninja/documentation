@@ -264,7 +264,7 @@ type IVMBot interface {
 	IsPausedScript(name string) bool
 	IsScriptRunning(name string) bool
 	SetScriptRunAtStart(name string, runAtStart bool) error
-	Publish(msg interface{})
+	Publish(msg interface{}) (ok bool)
 }
 ```
 
