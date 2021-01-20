@@ -1479,6 +1479,18 @@ for bot in OwnBots() {
 AllBots() []IVMBot
 ```
 
+### GetBotByID
+```go
+// GetBotByID return a bot or nil if the bot does not exists
+GetBotByID(botID int64) IVMBot
+```
+```go
+bot = GetBotByID(2)
+if bot != nil {
+  Print(bot.GetPlayerName())
+}
+```
+
 ### Sleep
 ```go
 // Sleeps a defined number of milliseconds
