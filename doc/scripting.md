@@ -245,6 +245,28 @@ SYSTEMS  // Number of systems in a galaxy
 
 ## Internal Types
 
+### IVMBot
+```go
+// IVMBot interface for safe usage of Bots features in scripts.
+type IVMBot interface {
+	Start() error
+	Stop()
+	GetID() int64
+	GetUniverse() string
+	GetLang() string
+	GetPlayerName() string
+	GetPlayerID() int64
+	GetServerID() int64
+	StartScript(name string) error
+	StopScript(name string) error
+	PauseScript(name string) error
+	ResumeScript(name string) error
+	IsPausedScript(name string) bool
+	IsScriptRunning(name string) bool
+	SetScriptRunAtStart(name string, runAtStart bool) error
+}
+```
+
 ### ID
 ```go
 // ID represent an ogame id
@@ -1439,6 +1461,23 @@ for {
 ```
 
 ## Global API
+
+### OwnBots
+```go
+// OwnBots returns a list of the bots that you have created
+OwnBots() []IVMBot
+```
+```go
+for bot in OwnBots() {
+    Print(bot.GetID(), bot.GetPlayerName())
+}
+```
+
+### AllBots
+```go
+// AllBots returns a list of the bots that you can access (own bots + shared bots)
+AllBots() []IVMBot
+```
 
 ### Sleep
 ```go
