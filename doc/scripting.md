@@ -264,6 +264,7 @@ type IVMBot interface {
 	IsPausedScript(name string) bool
 	IsScriptRunning(name string) bool
 	SetScriptRunAtStart(name string, runAtStart bool) error
+	Publish(msg interface{})
 }
 ```
 
@@ -1434,6 +1435,12 @@ for {
 ```go
 // Triggered when a fleet is dispatched
 OnFleetDispatch chan Fleet
+```
+
+### OnBotCh
+```go
+// Triggered when a bot publish a message directly to the current bot
+OnBotCh chan interface{}
 ```
 
 ### OnTelegramMessageReceivedCh
