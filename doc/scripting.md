@@ -263,6 +263,7 @@ type IVMBot interface {
 	ResumeScript(name string) error
 	IsPausedScript(name string) bool
 	IsScriptRunning(name string) bool
+	DeleteScript(name string) error
 	SetScriptRunAtStart(name string, runAtStart bool) error
 	Publish(msg interface{}) (ok bool)
 }
