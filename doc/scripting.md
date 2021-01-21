@@ -3617,6 +3617,16 @@ Print("Time:", ShortDur(secs))
 Print("Fuel:", Dotify(fuel))
 ```
 
+### DestroyRockets
+```go
+// DestroyRockets destroys anti-ballistic & inter-planetary missiles
+DestroyRockets(planetID PlanetID, abm, ipm int64) error
+```
+```go
+celestial = GetCachedCelestial("1:2:3")
+DestroyRockets(celestial.GetID(), 1, 2) // Destroy 1 ABM and 2 IPM
+```
+
 ### SendIPM
 ```go
 // SendIPM sends IPM
