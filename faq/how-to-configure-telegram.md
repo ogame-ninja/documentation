@@ -16,4 +16,12 @@ You will have to set up your own telegram bot. ([detailed instructions](https://
 - To create a new bot type `/newbot` and follow instructions.
 - Put your telegram bot token ID in [http://127.0.0.1:8080/admin/settings](http://127.0.0.1:8080/admin/settings). 
 - Type `/start` to your newly created bot.
-    
+
+---
+
+### Telegram Group ChatID
+
+- Create a Group
+- Add your Bot to your Channel
+- Add @getmyid_bot to your Channel and get the ChatID for the Groupchat.
+- If you have your Chat ID remove the @getmyid_bot from the Group.
