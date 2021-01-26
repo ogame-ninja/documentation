@@ -47,6 +47,10 @@ You can create a script with the exact name:
 `!wake.ank` will be executed after the bot exit the sleep mode.  
 
 
+## Special Functions
+
+If your script has a function `func OnExit() {}`, it will be executed after the script is done being executed.
+
 ## Loops
 
 ```go
