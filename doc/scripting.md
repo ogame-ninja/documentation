@@ -1586,6 +1586,17 @@ SleepRandHour(1, 3) // Code execution pause here for a random time between 1hour
 Print("After")
 ```
 
+### SleepUntil
+```go
+// Sleep until a specified time
+SleepUntil(timeStr string)
+```
+```go
+Print("Before")
+SleepDur("01:02:03") // Code execution pause here until 1h2.3
+Print("After")
+```
+
 ### SleepDur
 ```go
 // Sleep for duration
