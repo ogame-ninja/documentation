@@ -3488,6 +3488,12 @@ buildings, err = GetResourcesBuildings(celestial.GetID())
 buildings, err = celestial.GetResourcesBuildings()
 ```
 
+### GetTechs
+```go
+// GetTechs will return all information with a single call to ogame
+GetTechs(celestialID CelestialID) (ResourcesBuildings, Facilities, ShipsInfos, DefensesInfos, Researches, error)
+```
+
 ### GetFacilities
 ```go
 // GetFacilities gets all facilities information of a planet
