@@ -1733,6 +1733,26 @@ Print(ConstructionTime(LARGECARGO, 20, facilities))     // 16m0s
 Print(ConstructionTime(ROCKETLAUNCHER, 20, facilities)) // 2m40s
 ```
 
+### GetRequirements
+```go
+// Get direct requirements of a given ID
+GetRequirements(id ogame.ID) map[ogame.ID]int64
+```
+```go
+Print(GetRequirements(LIGHTLASERnot )) // map[Shipyard:2 LaserTechnology:3]
+```
+
+### IsAvailable
+```go
+// IsAvailable return either or not an ID is available given the buildings & researches
+IsAvailable(id ogame.ID, celestialID ogame.CelestialID, supplies ogame.ResourcesBuildings, facilities ogame.Facilities, researches ogame.Researches, energy int64) bool
+```
+```go
+c = GetCachedCelestial("1:2:3")
+supplies, facilities, _, _, researches, _ = GetTechs(c.GetID())
+Print(IsAvailable(LIGHTLASER, c.GetID(), supplies, facilities, researches, 0))
+```
+
 ### SolarSatelliteProduction
 ```go
 // Returns the energy production of solar satellite.
