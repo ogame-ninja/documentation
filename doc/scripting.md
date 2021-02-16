@@ -667,6 +667,8 @@ ByID(id ID) int64
 String() string
 ToPtr() *ShipsInfos
 Add(v ShipsInfos)
+AddShips(shipID ID, nb int64)
+SubShips(shipID ID, nb int64)
 Set(id ID, val int64)
 ```
 
