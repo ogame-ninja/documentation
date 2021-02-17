@@ -837,6 +837,7 @@ type Researches struct {
 }
 
 // Methods
+ToPtr() *Researches
 ByID(id ID) int64
 String() string
 ```
