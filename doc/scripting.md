@@ -2477,6 +2477,21 @@ OfferBuyMarketplace(itemID interface{}, quantity, priceType, price, priceRange i
 OfferBuyMarketplace(LIGHTFIGHTER, 10, 1, 40000, 20, 0)
 ```
 
+### AttackStrength
+```go
+AttackStrength(ships ogame.ShipsInfos, researches ogame.Researches) (attackStrength int64)
+```
+
+### AttackStrengthUsingOwnResearches
+```go
+AttackStrengthUsingOwnResearches(ships ogame.ShipsInfos) (attackStrength int64)
+```
+```go
+celestial = GetCachedCelestials()[0]
+ships, _ = celestial.GetShips()
+Print(AttackStrengthUsingOwnResearches(ships))
+```
+
 ### GetHighscore
 ```go
 // Get the highscores information
