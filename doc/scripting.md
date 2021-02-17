@@ -2479,17 +2479,27 @@ OfferBuyMarketplace(LIGHTFIGHTER, 10, 1, 40000, 20, 0)
 
 ### AttackStrength
 ```go
-AttackStrength(ships ogame.ShipsInfos, researches ogame.Researches) (attackStrength int64)
+// Return the attack strength of an entity
+AttackStrength(id ogame.ID, researches ogame.Researches) (attackStrength int64)
+```
+```go
+researches = DBGetResearches()
+Print(AttackStrength(LIGHTFIGHTER, researches))
 ```
 
-### AttackStrengthUsingOwnResearches
+### ShipsAttackStrength
 ```go
-AttackStrengthUsingOwnResearches(ships ogame.ShipsInfos) (attackStrength int64)
+ShipsAttackStrength(ships ogame.ShipsInfos, researches ogame.Researches) (attackStrength int64)
+```
+
+### ShipsAttackStrengthUsingOwnResearches
+```go
+ShipsAttackStrengthUsingOwnResearches(ships ogame.ShipsInfos) (attackStrength int64)
 ```
 ```go
 celestial = GetCachedCelestials()[0]
 ships, _ = celestial.GetShips()
-Print(AttackStrengthUsingOwnResearches(ships))
+Print(ShipsAttackStrengthUsingOwnResearches(ships))
 ```
 
 ### GetHighscore
