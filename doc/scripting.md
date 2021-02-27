@@ -1403,6 +1403,18 @@ for {
 }
 ```
 
+### OnFarmSessionAllSpySent
+```go
+// Triggered when all targets are spied
+OnFarmSessionAllSpySent chan *FarmSession
+```
+```go
+for {
+    s = <-OnFarmSessionAllSpySent
+    Print("All targets spied for session " + s.ID)
+}
+```
+
 ### OnFarmSessionAttacksSent
 ```go
 // Triggered when all attacks are sent
