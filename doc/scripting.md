@@ -2070,6 +2070,14 @@ OnStateChange(func(botLocked, actor) {
 <-OnQuitCh // Block forever
 ```
 
+### RecruitOfficer
+```go
+// Recruit an officer.
+// Typ -> 2: Commander | 3: Admiral | 4: Engineer | 5: Geologist | 6: Technocrat
+// Days: 7 or 90
+RecruitOfficer(typ, days int64) error
+```
+
 ### HasCommander
 ```go
 // Returns either or not the player has commander.
