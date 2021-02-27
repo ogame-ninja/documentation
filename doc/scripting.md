@@ -1082,6 +1082,17 @@ Pause()
 Resume()
 ```
 
+### FarmAttack
+```go
+type FarmAttack struct {
+	Session     *FarmSession
+	CelestialID ogame.CelestialID
+	Ships       ogame.ShipsInfos
+	Where       ogame.Coordinate
+	Speed       ogame.Speed
+}
+```
+
 ### FleetBuilder
 ```go
 type FleetBuilder struct {
@@ -1412,6 +1423,18 @@ OnFarmSessionAllSpySent chan *FarmSession
 for {
     s = <-OnFarmSessionAllSpySent
     Print("All targets spied for session " + s.ID)
+}
+```
+
+### OnFarmSessionBeforeAttack
+```go
+// Triggered before an attack is sent
+OnFarmSessionBeforeAttack chan FarmAttack
+```
+```go
+for {
+    a = <-OnFarmSessionBeforeAttack
+    Print("Sending an attack " + a.Session.ID)
 }
 ```
 
