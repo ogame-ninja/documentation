@@ -1037,6 +1037,21 @@ type ResourceSettings struct {
 String() string
 ```
 
+### PhalanxReport
+```go
+type PhalanxReport struct {
+	ID        int64
+	SessionID int64
+	Data      phalanxReportData
+	CreatedAt time.Time
+}
+```
+
+### phalanxReportData
+```go
+type phalanxReportData []ogame.Fleet
+```
+
 ### FarmSession
 ```go
 type FarmSession struct {
@@ -1400,6 +1415,18 @@ ExecIn(2000, func() {
 })
 <-OnQuitCh
 Print("Exiting")
+```
+
+### OnPhalanxReport
+```go
+// Triggered when a phalanx report is created
+OnPhalanxReport chan PhalanxReport
+```
+```go
+for {
+    report = <-OnPhalanxReport
+    Print("new phalanx report : " + report)
+}
 ```
 
 ### OnFarmSessionStart
