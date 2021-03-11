@@ -2974,6 +2974,31 @@ StartSleepMode()
 StopSleepMode()
 ```
 
+### StartPhalanxSession
+```go
+// Starts a new phalanx session
+StartPhalanxSession(origin ogame.MoonID, target ogame.Coordinate, phalanxDelay int64) (sessionID int64, err error)
+```
+
+```go
+moon = GetCachedCelestial("M:1:2:3")
+target = NewCoordinate(1, 2, 4, PLANET_TYPE)
+id, err = StartPhalanxSession(moon.GetID(), target, 3)
+Print(id, err)
+for {
+    select {
+    case report = <-OnPhalanxReport:
+        Print(report)
+    }
+}
+```
+
+### StopPhalanxSession
+```go
+// Stops a phalanx session
+StopPhalanxSession(sessionID int64)
+```
+
 ### StartFarmingBot
 ```go
 // Starts farming bot
