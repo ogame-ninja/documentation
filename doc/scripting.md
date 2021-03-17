@@ -3245,7 +3245,7 @@ Print(parsedTime, err)
 GetNextDatetimeAt(hour, min, sec int64) (time.Time, error)
 ```
 ```go
-nextDatetime, err = ParseNextDatetimeAt(23, 20, 31)
+nextDatetime, err = GetNextDatetimeAt(23, 20, 31)
 Print(nextDatetime, err)
 ```
 
