@@ -2377,7 +2377,7 @@ PlayerDataByName(nick string) (PlayerData, error)
 
 ### FindDebrisFieldWithMinimumTravelTime
 ```go
-// Finds debris field that is at a minimum travel time at 10% speed
+// Finds debris field that is at a minimum travel time at slowest speed
 FindDebrisFieldWithMinimumTravelTime(origin Coordinate, ships ShipsInfos, minimumTravelTime time.Duration) (destination Coordinate, travelTime time.Duration, fuel int64, err error)
 ```
 
@@ -2388,6 +2388,21 @@ ships, _ = planet.GetShips()
 minimumTravelTime = 7 * time.Hour
 debrisCoordinate, travelTime, fuel, err = FindDebrisFieldWithMinimumTravelTime(planet.GetCoordinate(), ships, minimumTravelTime)
 Print(debrisCoordinate, travelTime, fuel, err)
+```
+
+### FindEmptyPlanetWithMinimumTravelTime
+```go
+// Finds empty planet that is at a minimum travel time at slowest speed
+FindEmptyPlanetWithMinimumTravelTime(origin Coordinate, ships ShipsInfos, minimumTravelTime time.Duration) (destination Coordinate, travelTime time.Duration, fuel int64, err error)
+```
+
+```go
+time = import("time")
+planet = GetCachedPlanets()[0]
+ships, _ = planet.GetShips()
+minimumTravelTime = 7 * time.Hour
+emptyPlanetCoordinate, travelTime, fuel, err = FindEmptyPlanetWithMinimumTravelTime(planet.GetCoordinate(), ships, minimumTravelTime)
+Print(emptyPlanetCoordinate, travelTime, fuel, err)
 ```
 
 ### GetSystemsInRange
