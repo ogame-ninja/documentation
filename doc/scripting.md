@@ -225,6 +225,9 @@ MOON_TYPE   = 3
 TELEGRAM_CHAT_ID = (alias to telegram chat id bot setting)
 ```
 ```go
+DISCORD_WEBHOOK = (alias to discord webhook from bot setting)
+```
+```go
 OGAME_SERVER = (ogame server information)
 ```
 ```go
@@ -3378,6 +3381,15 @@ SendTelegram(chatID int64, msg string) error
 ```go
 SendTelegram(TELEGRAM_CHAT_ID, "Attack detected") // use chat id from bot setting
 SendTelegram(1234567, "Attack detected")
+```
+
+### SendDiscord
+```go
+// Send a discord notification
+SendDiscord(webhook, msg string) error
+```
+```go
+SendDiscord(DISCORD_WEBHOOK, "Attack detected") // use discord webhook from bot setting
 ```
 
 ### NewFleet
