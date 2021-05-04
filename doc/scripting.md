@@ -1744,6 +1744,12 @@ RepatriateNow()
 RepatriateNow()
 ```
 
+### TriggerFleetSave
+```go
+// Trigger fleet save using "sleep mode" configurations
+TriggerFleetSave()
+```
+
 ### AddItemToQueue
 ```go
 // Add something into a planet/moon build queue
@@ -1931,7 +1937,7 @@ for {
 ### ExecAt
 ```go
 // Schedules a one time callback execution at specific time. ExecAt is asynchronous.
-ExecAt(hourMinSec string, clb func()) context.CancelFunc
+ExecAt(at interface{}, clb func()) context.CancelFunc
 ```
 ```go
 time = import("time")
@@ -1944,7 +1950,7 @@ ExecAt("17:23:00", func() {
 ### ExecAtCh
 ```go
 // Schedules a one time callback execution at specific time.
-ExecAtCh(hourMinSec string, clb func()) <-chan struct{}
+ExecAtCh(at interface{}, clb func()) <-chan struct{}
 ```
 ```go
 time = import("time")
@@ -1965,6 +1971,12 @@ Print("After")
     f.SetAllShips()
     fleet, err = f.SendNow()
     Print(fleet.ID, err)
+})
+
+// Works with time.Time objects
+execTime = time.Now().Add(10 * time.Second)
+<-ExecAtCh(execTime, func() {
+	Print("callback is executed at ", time.Now())
 })
 ```
 
