@@ -1277,6 +1277,18 @@ type Item struct {
 }
 ```
 
+### ActiveItem 
+```go
+type ActiveItem struct {
+	ID            int64
+	Ref           string
+	Name          string
+	TimeRemaining int64
+	TotalDuration int64
+	ImgSmall      string
+}
+```
+
 ### Quantifiable
 ```go
 // Quantifiable is a tuple with an ID and a number
@@ -2546,6 +2558,12 @@ UseDM("shipyard", c.GetID())
 ```go
 // GetItems get all items information
 GetItems(celestialID CelestialID) ([]Item, error)
+```
+
+### GetActiveItems
+```go
+// GetActiveItems get all active items information
+GetActiveItems(celestialID CelestialID) ([]ActiveItem, error)
 ```
 
 ### ActivateItem
