@@ -3786,7 +3786,7 @@ SetResourceSettings(PlanetID, ResourceSettings) error
 ```
 ```go
 celestial = GetCachedCelestial("1:2:3")
-settings = NewResourceSettings(100, 100, 80, 100, 10, 0)
+settings = NewResourceSettings(100, 100, 80, 100, 10, 0, 0)
 SetResourceSettings(celestial.GetID(), settings)
 ```
 
@@ -3952,7 +3952,7 @@ NewResources(metal, crystal, deuterium int64) Resources
 ### NewResourceSettings
 ```go
 // Represent an ogame ResourceSettings
-NewResourceSettings(metalMine, crystalMine, deuteriumSynthesizer, solarPlant, fusionReactor, solarSatellite int64) ResourceSettings
+NewResourceSettings(metalMine, crystalMine, deuteriumSynthesizer, solarPlant, fusionReactor, solarSatellite, crawler int64) ResourceSettings
 ```
 
 ### NewCoordinate
