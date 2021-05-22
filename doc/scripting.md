@@ -1121,6 +1121,9 @@ SetOrigin(v interface{}) *FleetBuilder
 SetDestination(v interface{}) *FleetBuilder
 SetSpeed(speed Speed) *FleetBuilder
 SetResources(resources Resources) *FleetBuilder
+SetMetal(metal int64) *FleetBuilder
+SetCrystal(crystal int64) *FleetBuilder
+SetDeuterium(deuterium int64) *FleetBuilder
 SetAllResources() *FleetBuilder
 SetAllMetal() *FleetBuilder
 SetAllCrystal() *FleetBuilder
