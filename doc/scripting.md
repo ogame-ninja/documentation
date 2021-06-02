@@ -1765,6 +1765,16 @@ RepatriateNow()
 TriggerFleetSave()
 ```
 
+### GetNextSleepTime
+```go
+GetNextSleepTime() *time.Time
+```
+
+### GetNextWakeTime
+```go
+GetNextWakeTime() *time.Time
+```
+
 ### AddItemToQueue
 ```go
 // Add something into a planet/moon build queue
