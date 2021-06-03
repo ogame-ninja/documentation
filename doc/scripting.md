@@ -1586,6 +1586,22 @@ if bot != nil {
 }
 ```
 
+### StartRemoteScript
+```go
+StartRemoteScript(addr string, botID int64, apiKey, script string) error
+```
+```go
+Print(StartRemoteScript("https://something.ogame.ninja", 1, "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", "main.ank"))
+```
+
+### StopRemoteScript
+```go
+StopRemoteScript(addr string, botID int64, apiKey, script string) error
+```
+```go
+Print(StopRemoteScript("https://something.ogame.ninja", 1, "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", "main.ank"))
+```
+
 ### Sleep
 ```go
 // Sleeps a defined number of milliseconds
