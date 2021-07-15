@@ -355,7 +355,7 @@ BuildCancelable(id ID) error
 GetResourceSettings() (ResourceSettings, error)
 BuildShips(shipID ID, nbr int64) error
 GetResourcesProductions() (Resources, error)
-FlightTime(destination Coordinate, speed Speed, ships ShipsInfos) (secs, fuel int64)
+FlightTime(destination Coordinate, speed Speed, ships ShipsInfos, mission MissionID) (secs, fuel int64)
 SendIPM(planetID PlanetID, coord Coordinate, nbr int64, priority ID) (int64, error)
 ```
 
@@ -2717,7 +2717,7 @@ planetInfos, _ = GetPlanetInfo(coord)
 ### GetDepartureTime
 ```go
 // Get the departure time to arrive at desired arrival time
-GetDepartureTime(arrival, origin, destination interface{}, ShipsInfos, Speed) Time
+GetDepartureTime(arrival, origin, destination interface{}, ShipsInfos, Speed, MissionID) Time
 ```
 ```go
 s1 = NewShipsInfos()
@@ -3847,13 +3847,13 @@ Print("Distance:", dist)
 ### FlightTime
 ```go
 // FlightTime calculate flight time and fuel needed
-FlightTime(origin, destination Coordinate, speed Speed, ships ShipsInfos) (secs, fuel int64)
+FlightTime(origin, destination Coordinate, speed Speed, ships ShipsInfos, mission MissionID) (secs, fuel int64)
 ```
 ```go
 celestial = GetCachedCelestial("1:2:3")
 ships, _ = celestial.GetShips()
 coord1 = NewCoordinate(1, 2, 4, PLANET_TYPE)
-secs, fuel = FlightTime(celestial.GetCoordinate(), coord1, HUNDRED_PERCENT, ships)
+secs, fuel = FlightTime(celestial.GetCoordinate(), coord1, HUNDRED_PERCENT, ships, TRANSPORT)
 Print("Time:", ShortDur(secs))
 Print("Fuel:", Dotify(fuel))
 ```
@@ -3862,7 +3862,7 @@ origin = NewCoordinate(1, 2, 3, PLANET_TYPE)
 coord1 = NewCoordinate(1, 2, 4, PLANET_TYPE)
 ships = NewShipsInfos()
 ships.Set(RECYCLER, 20)
-secs, fuel = FlightTime(origin, coord1, HUNDRED_PERCENT, *ships)
+secs, fuel = FlightTime(origin, coord1, HUNDRED_PERCENT, *ships, PARK)
 Print("Time:", ShortDur(secs))
 Print("Fuel:", Dotify(fuel))
 ```
