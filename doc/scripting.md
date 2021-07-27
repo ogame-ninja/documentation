@@ -1422,6 +1422,12 @@ OnAttackDoneCh chan AttackEvent
 OnAttackCancelledCh chan AttackEvent
 ```
 
+### OnRepatriateCompletedCh
+```go
+// Triggered when repatriate process is completed
+OnRepatriateCompletedCh chan Resources
+```
+
 ### OnQuitCh
 ```go
 // Triggered when `Exit` is called
