@@ -250,6 +250,39 @@ GALAXIES // Number of galaxies in the universe
 SYSTEMS  // Number of systems in a galaxy
 ```
 
+## Packages
+
+```go
+encoding/json
+fmt
+io/ioutil
+math
+math/rand
+net/http // Self-host only
+net/url
+regexp
+sort
+strconv
+strings
+sync
+time
+```
+
+### Http requests (self-host only)
+
+```go
+http = import("net/http")
+ioutil = import("io/ioutil")
+
+res, _ = http.Get("https://www.google.com")
+by, _ = ioutil.ReadAll(res.Body)
+Print(Bytes2Str(by))
+
+res, _ = http.PostForm("https://httpbin.org/post", {"abc": ["def"]})
+by, _ = ioutil.ReadAll(res.Body)
+Print(Bytes2Str(by))
+```
+
 ## Internal Types
 
 ### IVMBot
@@ -2914,6 +2947,12 @@ Print(ShortDur(10000)) // 2h46m40s
 ```go
 // Return a short inline description of the ships. eg: "LightFighter: 10, SmallCargo: 3"
 ShortShipsInfos(ships ShipsInfos) string
+```
+
+### Bytes2Str
+```go
+// Convert a []byte to string
+Bytes2Str([]byte) string
 ```
 
 ### ID2Str
