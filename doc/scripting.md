@@ -338,6 +338,18 @@ GENERAL    // 2
 DISCOVERER // 3
 ```
 
+### AllianceClass
+```go
+type AllianceClass int64
+```
+
+```go
+NO_ALLIANCE_CLASS // 0
+WARRIOR           // 1
+TRADER            // 2
+RESEARCHER        // 3
+```
+
 ### Celestial
 ```go
 // Celestial ...
@@ -935,6 +947,7 @@ type EspionageReport struct {
 	ID                           int64
 	Username                     string
 	CharacterClass               CharacterClass
+	AllianceClass                AllianceClass
 	LastActivity                 int64
 	CounterEspionage             int64
 	APIKey                       string
@@ -2320,6 +2333,7 @@ Print(isUnderAttack)
 
 ### CharacterClass
 ```go
+// Returns the bot's character class
 CharacterClass() CharacterClass
 ```
 ```go
