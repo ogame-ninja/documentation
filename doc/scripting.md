@@ -1386,13 +1386,13 @@ type SimulatorResult struct {
 	DefenderWin     int
 	Draw            int
 	Rounds          int
-	AttackerLosses  price
-	AttackerProfit  price
-	DefenderLosses  price
-	DefenderProfit  price
-	Debris          price
-	PossiblePlunder price
-	CapturedPlunder price
+	AttackerLosses  Resources
+	AttackerProfit  Resources
+	DefenderLosses  Resources
+	DefenderProfit  Resources
+	Debris          Resources
+	PossiblePlunder Resources
+	CapturedPlunder Resources
 	PctCaptured     int
 	Recycler        int
 	LCNeeded        int
