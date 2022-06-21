@@ -2740,6 +2740,20 @@ for attack in attacks {
 }
 ```
 
+### GetAttacksUsing
+```go
+// GetAttacksUsing get enemy fleets attacking you using specified celestial for the check
+GetAttacks(CelestialID) []AttackEvent
+```
+
+```go
+celestial = GetCachedCelestial("1:2:3")
+attacks = GetAttacksUsing(celestial.GetID())
+for attack in attacks {
+    Print(attack)
+}
+```
+
 ### GalaxyInfos
 ```go
 // GalaxyInfos get information of all planets and moons of a solar system
@@ -2747,6 +2761,22 @@ GalaxyInfos(galaxy, system int64) (SystemInfos, error)
 ```
 ```go
 systemInfo, _ = GalaxyInfos(4, 116)
+for i = 1; i <= 15; i++ {
+    planetInfo = systemInfo.Position(i)
+    if planetInfo != nil {
+        Print(planetInfo.Name)
+    }
+}
+```
+
+### GalaxyInfosUsing
+```go
+// GalaxyInfos get information of all planets and moons of a solar system using specified celestial for the check
+GalaxyInfosUsing(galaxy, system int64, celestialID CelestialID) (SystemInfos, error)
+```
+```go
+celestial = GetCachedCelestial("1:2:3")
+systemInfo, _ = GalaxyInfosUsing(4, 116, celestial.GetID())
 for i = 1; i <= 15; i++ {
     planetInfo = systemInfo.Position(i)
     if planetInfo != nil {
