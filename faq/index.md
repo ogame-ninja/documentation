@@ -21,3 +21,4 @@ Tips, tricks and answers to common questions about configuring and using Ninja b
 - [Can I access my bots using my phone ?](/faq/can-i-access-my-bots-using-my-phone)
 - [What is "suspicious login" ?](/faq/what-is-suspicious-login)
 - [How to synchronize my system clock ?](/faq/how-to-synchronize-my-system-clock)
+- [How to setup systemd?](/faq/how-to-setup-systemd)
