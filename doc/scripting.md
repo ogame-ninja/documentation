@@ -2797,6 +2797,16 @@ coord = NewCoordinate(4, 116, 6, PLANET_TYPE)
 planetInfos, _ = GetPlanetInfo(coord)
 ```
 
+### GetPlanetInfoUsing
+```go
+// GetPlanetInfo get information of a planet and moon
+GetPlanetInfoUsing(coordinate interface{}, celestialID CelestialID) (PlanetInfos, error)
+```
+```go
+celestial = GetCachedCelestial("1:2:3")
+planetInfos, _ = GetPlanetInfoUsing("4:116:6", celestial.GetID())
+```
+
 ### GetDepartureTime
 ```go
 // Get the departure time to arrive at desired arrival time
