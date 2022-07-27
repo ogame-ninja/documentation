@@ -3997,6 +3997,18 @@ BuyOfferOfTheDay() error
 Print(BuyOfferOfTheDay())
 ```
 
+### IsVacationModeEnabled
+```go
+// IsVacationModeEnabled returns either or not the bot is in vacation mode
+IsVacationModeEnabled() bool
+```
+
+### SetVacationMode
+```go
+// SetVacationMode puts the account in vacation mode
+SetVacationMode() error
+```
+
 ### GetAuction
 ```go
 // GetAuction gets current auction information
