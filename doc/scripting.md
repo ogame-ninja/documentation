@@ -1448,6 +1448,78 @@ type SimulatorResult struct {
 }
 ```
 
+### ExpeditionsConfigs
+
+```go
+// ExpeditionsConfigs ...
+type ExpeditionsConfigs struct {
+	Strategy                 int64
+	WaveDelayMin             int64
+	WaveDelayMax             int64
+	DelayMin                 int64
+	DelayMax                 int64
+	MinimumPathfinders       int64
+	PathfindersHome          int64
+	LargeCargoHome           int64
+	SmallCargoHome           int64
+	EarlyPathfinders         int64
+	EarlyPFSecsMin           int64
+	EarlyPFSecsMax           int64
+	MinSpeedEarlyPathfinders ogame.Speed
+	RecycleDebris            bool
+	Sheets                   []Sheet
+}
+```
+
+### Sheet
+
+```go
+
+// Sheet ...
+type Sheet struct {
+	UUID                   string
+	Name                   string
+	Active                 bool
+	IgnoreMinimumDeuterium bool
+	SlotsAllowed           int64
+	Origin                 ogame.CelestialID
+	SystemFrom             int64
+	SystemTo               int64
+	ExpeditionSpeed        ogame.Speed
+	Duration               int64
+	SmallCargo             int64
+	LargeCargo             int64
+	LightFighter           int64
+	HeavyFighter           int64
+	Cruiser                int64
+	Battleship             int64
+	ColonyShip             int64
+	Recycler               int64
+	EspionageProbe         int64
+	Bomber                 int64
+	Destroyer              int64
+	Deathstar              int64
+	Battlecruiser          int64
+	Reaper                 int64
+	Pathfinder             int64
+	SmallCargoAuto         bool
+	LargeCargoAuto         bool
+	LightFighterAuto       bool
+	HeavyFighterAuto       bool
+	CruiserAuto            bool
+	BattleshipAuto         bool
+	ColonyShipAuto         bool
+	RecyclerAuto           bool
+	EspionageProbeAuto     bool
+	BomberAuto             bool
+	DestroyerAuto          bool
+	DeathstarAuto          bool
+	BattlecruiserAuto      bool
+	ReaperAuto             bool
+	PathfinderAuto         bool
+}
+```
+
 ## Channels (events)
 
 ### OnAttackCh
@@ -4115,6 +4187,24 @@ NewTemperature(min, max int64) Temperature
 ```go
 // Represent an ogame ShipsInfos
 NewShipsInfos() *ShipsInfos
+```
+
+### GetExpeditionsConfigs
+```go
+GetExpeditionsConfigs() ExpeditionsConfigs
+```
+
+```go
+configs = GetExpeditionsConfigs()
+celestial = GetCachedPlanets()[0]
+configs.Sheets[0].Origin = celestial.GetID()
+configs.Sheets[0].LightFighter = 12
+SetExpeditionsConfigs(configs)
+```
+
+### SetExpeditionsConfigs
+```go
+SetExpeditionsConfigs(ExpeditionsConfigs)
 ```
 
 ### TempFile
