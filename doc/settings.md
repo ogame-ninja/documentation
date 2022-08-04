@@ -49,12 +49,17 @@ Keep default value if you don't know what this is.
 Inject a "max" link.
 
 ##### [Enable browser augments]
+
 Inject many features in the browser
-- List of players planets in galaxy page
+
 - Color players in Highscore page
 - Add resources production / time to fill storage in overview
 - Improve message box UI
 - And many more...
+
+##### [Enable galaxy browser augments]
+
+- List of players planets in galaxy page
 
 ##### [Disable ogame dropdown]
 Disable fancy ogame dropdown. This fixes the jump gate modal when using a mobile.
