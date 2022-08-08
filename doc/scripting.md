@@ -4189,6 +4189,15 @@ NewTemperature(min, max int64) Temperature
 NewShipsInfos() *ShipsInfos
 ```
 
+### SendSavedFleet
+```go
+SendSavedFleet(int64) (Fleet, error)
+```
+
+```go
+fleet, err = SendSavedFleet(1)
+```
+
 ### GetExpeditionsConfigs
 ```go
 GetExpeditionsConfigs() ExpeditionsConfigs
