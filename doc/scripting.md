@@ -969,6 +969,17 @@ ByID(id ID) int64
 String() string
 ```
 
+### TechnologyDetails
+```go
+type TechnologyDetails struct {
+	TechnologyID       ID
+	ProductionDuration time.Duration
+	Price              Resources
+	Level              int64
+	TearDownEnabled    bool
+}
+```
+
 ### ResourcesBuildings
 ```go
 // ResourcesBuildings represent a planet resource buildings
@@ -3965,6 +3976,18 @@ fleets, slots = GetFleets()
 for fleet in fleets {
     CancelFleet(fleet.ID)
 }
+```
+
+### TechnologyDetails
+```go
+// TechnologyDetails extract details from ajax window when clicking supplies/facilities/techs/lf...
+TechnologyDetails(CelestialID, ID) (TechnologyDetails, error)
+```
+
+```go
+celestial = GetCachedCelestial("1:2:3")
+details, err = TechnologyDetails(celestial.GetID(), METALMINE)
+Print(details)
 ```
 
 ### GetResourcesBuildings
