@@ -4107,9 +4107,17 @@ ConstructionsBeingBuilt(CelestialID) (buildingID ID, buildingCountdown int64, re
 ```go
 celestial = GetCachedCelestial("1:2:3")
 buildingID, buildingCountdown, researchID, researchCountdown = ConstructionsBeingBuilt(celestial.GetID())
+```
 
-// This also work
-buildingID, buildingCountdown, researchID, researchCountdown = celestial.ConstructionsBeingBuilt()
+### ConstructionsBeingBuiltLf
+
+```go
+// ConstructionsBeingBuiltLf returns the building & research being built, and the time remaining (secs)
+ConstructionsBeingBuiltLf(CelestialID) (buildingID ID, buildingCountdown int64, researchID ID, researchCountdown int64, lfBuildingID ID, lfBuildingCountdown int64, lfResearchID ID, lfResearchCountdown int64)
+```
+```go
+celestial = GetCachedCelestial("1:2:3")
+buildingID, buildingCountdown, researchID, researchCountdown, lfBuildingID, lfBuildingCountdown, lfResearchID, lfResearchCountdown = ConstructionsBeingBuiltLf(celestial.GetID())
 ```
 
 ### GetResourceSettings
