@@ -4033,10 +4033,10 @@ GetLfBuildings(CelestialID) (LfBuildings, error)
 ```
 ```go
 celestial = GetCachedCelestial("1:2:3")
-facilities = GetFacilities(celestial.GetID())
+lfBuildings = GetLfBuildings(celestial.GetID())
 
 // This also work
-facilities = celestial.GetFacilities()
+lfBuildings = celestial.GetLfBuildings()
 ```
 
 ### GetResearch
