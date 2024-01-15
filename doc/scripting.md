@@ -4349,6 +4349,16 @@ SendSavedFleet(int64) (Fleet, error)
 fleet, err = SendSavedFleet(1)
 ```
 
+### SendDiscoveryFleet
+```go
+SendDiscoveryFleet(ogame.Coordinate) error
+```
+
+```go
+coord = NewCoordinate(1, 2, 3, PLANET_TYPE)
+Print(SendDiscoveryFleet(coord))
+```
+
 ### GetExpeditionsConfigs
 ```go
 GetExpeditionsConfigs() ExpeditionsConfigs
