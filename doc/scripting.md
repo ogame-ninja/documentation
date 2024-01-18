@@ -1366,6 +1366,24 @@ type TelegramMessage struct {
 		Username  string
 		Type      string
 	}
+	ReplyToMessage struct {
+		MessageID int
+		From      struct {
+			ID           int64
+			IsBot        bool
+			FirstName    string
+			LastName     string
+			LanguageCode string
+		}
+		Chat struct {
+			ID        int64
+			FirstName string
+			LastName  string
+			Type      string
+		}
+		Date int
+		Text string
+	}
 	Date int64
 	Text string
 }
