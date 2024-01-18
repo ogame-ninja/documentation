@@ -256,6 +256,9 @@ __LICENSE_BOTS_ALLOWED__ // Number of bots allowed by current license
 __VERSION__ // Ninja version of the software currently running
 ```
 ```go
+CookieDomain // Domain of the cookie. Cloud instances should have a value of "subdomain.ogame.ninja"
+```
+```go
 GALAXIES // Number of galaxies in the universe
 SYSTEMS  // Number of systems in a galaxy
 ```
