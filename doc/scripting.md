@@ -1794,6 +1794,12 @@ for {
 
 ## Global API
 
+### BotsCount
+```go
+// BotsCount returns the total number of bots in the database
+BotsCount() int64
+```
+
 ### OwnBots
 ```go
 // OwnBots returns a list of the bots that you have created
