@@ -2509,6 +2509,14 @@ Login()
 IsLoggedIn() bool
 ```
 
+### GetUniverseName
+```go
+GetUniverseName() string
+```
+```go
+Print(GetUniverseName()) // Wurren
+```
+
 ### IsPioneers
 ```go
 // IsPioneers returns true if the bot is uses pioneers lobby
@@ -4377,14 +4385,51 @@ SendSavedFleet(int64) (Fleet, error)
 fleet, err = SendSavedFleet(1)
 ```
 
-### SendDiscoveryFleet
+### CoordinatesAvailableForDiscoveryFleet
+
 ```go
-SendDiscoveryFleet(ogame.Coordinate) error
+// origin is from which planet you want to look at the galaxy page.
+// if origin is nil, the currently active planet will be used.
+// origin can be anything that can be turned into a Celestial
+CoordinatesAvailableForDiscoveryFleet(origin Celestial, galaxy, system int64) ([]Coordinate, error)
 ```
 
 ```go
-coord = NewCoordinate(1, 2, 3, PLANET_TYPE)
-Print(SendDiscoveryFleet(coord))
+coords, err = CoordinatesAvailableForDiscoveryFleet(nil, 1, 2)
+```
+
+### SendDiscoveryFleet
+
+```go
+// origin can be anything that can be turned into a Celestial
+// destination can be anything that can be turned into a Coordinate
+SendDiscoveryFleet(origin Celestial, destination Coordinate) error
+```
+
+```go
+origin = GetCachedPlanets()[0]
+destination = NewCoordinate(1, 2, 3, PLANET_TYPE)
+Print(SendDiscoveryFleet(origin, destination))
+
+// This also works
+SendDiscoveryFleet("1:2:3", "4:5:6")
+```
+
+### IntoCoordinate
+
+```go
+// Turn any of the following into a Coordinate: string, Coordinate, Celestial, Planet, Moon, CelestialID, PlanetID, MoonID
+// Returns an error if the input is invalid. Invalid type, or failed to parse a string into a coordinate.
+IntoCoordinate(any) (Coordinate, error)
+```
+
+```go
+coord, err = IntoCoordinate("1:2:3")
+
+celestial = GetCachedPlanets()[0]
+coord, err = IntoCoordinate(celestial)
+coord, err = IntoCoordinate(celestial.GetID())
+coord, err = IntoCoordinate(celestial.GetCoordinate())
 ```
 
 ### GetExpeditionsConfigs
