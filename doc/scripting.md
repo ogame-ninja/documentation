@@ -4415,21 +4415,21 @@ Print(SendDiscoveryFleet(origin, destination))
 SendDiscoveryFleet("1:2:3", "4:5:6")
 ```
 
-### IntoCoordinate
+### ConvertIntoCoordinate
 
 ```go
 // Turn any of the following into a Coordinate: string, Coordinate, Celestial, Planet, Moon, CelestialID, PlanetID, MoonID
 // Returns an error if the input is invalid. Invalid type, or failed to parse a string into a coordinate.
-IntoCoordinate(any) (Coordinate, error)
+ConvertIntoCoordinate(any) (Coordinate, error)
 ```
 
 ```go
-coord, err = IntoCoordinate("1:2:3")
+coord, err = ConvertIntoCoordinate("1:2:3")
 
 celestial = GetCachedPlanets()[0]
-coord, err = IntoCoordinate(celestial)
-coord, err = IntoCoordinate(celestial.GetID())
-coord, err = IntoCoordinate(celestial.GetCoordinate())
+coord, err = ConvertIntoCoordinate(celestial)
+coord, err = ConvertIntoCoordinate(celestial.GetID())
+coord, err = ConvertIntoCoordinate(celestial.GetCoordinate())
 ```
 
 ### GetExpeditionsConfigs
