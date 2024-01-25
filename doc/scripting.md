@@ -2125,6 +2125,35 @@ Print(err)
 ClearAllConstructionQueues() error
 ```
 
+### GetSlot
+```go
+// GetSlot wait for a slot from the pool
+GetSlot(initiator string) <-chan struct{}
+```
+```go
+origin = "1:2:3"
+initiator = "someName"
+SetMaxSlotsFor(initiator, 2) // Set the max number of slots for "someName" to 2
+
+<-GetSlot(initiator)
+fleet, _ = SendDiscoveryFleet2(origin, "1:2:1")
+CreateFleet(fleet.ID, initiator) // Ensure the bot knows that the fleet.ID is created by "someName"
+
+<-GetSlot(initiator)
+fleet, _ = SendDiscoveryFleet2(origin, "1:2:2")
+CreateFleet(fleet.ID, initiator)
+
+<-GetSlot(initiator) // Will wait here until a slot is available for "someName"
+fleet, _ = SendDiscoveryFleet2(origin, "1:2:3")
+CreateFleet(fleet.ID, initiator)
+```
+
+### CreateFleet
+```go
+// CreateFleet register a FleetID in the database so that the bot knows that the fleet is created by the initiator
+CreateFleet(fleetID ogame.FleetID, initiator string)
+```
+
 ### GetPrice
 ```go
 // Returns the price of 'entity'. 'nbr' is either a building/research level or a defense/ship quantity.
