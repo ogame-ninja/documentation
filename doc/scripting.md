@@ -3870,6 +3870,17 @@ for {
 Print(answer)
 ```
 
+```go
+// Adding rows dynamically
+keyboard = NewInlineKeyboardMarkup()
+for b in AllBots() {
+    btn = NewInlineKeyboardButtonData(b.GetPlayerName(), Itoa(b.GetID()))
+    row = NewInlineKeyboardRow(btn)
+    keyboard.Add(row)
+}
+sentMsg, _ = SendTelegramReplyMarkup(TELEGRAM_CHAT_ID, "Some message", keyboard)
+```
+
 ### NewInlineKeyboardMarkup
 ```go
 // NewInlineKeyboardMarkup creates a new inline keyboard.
