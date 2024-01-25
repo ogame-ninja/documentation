@@ -3824,7 +3824,7 @@ btn3 = NewInlineKeyboardButtonData("Bot2 [1:2:5]", "2")
 btn4 = NewInlineKeyboardButtonData("Bot3 [1:2:6]", "3")
 row = NewInlineKeyboardRow(btn1, btn2, btn3, btn4)
 keyboard = NewInlineKeyboardMarkup(row)
-SendTelegramMarkup(TELEGRAM_CHAT_ID, "Some message", keyboard)
+SendTelegramReplyMarkup(TELEGRAM_CHAT_ID, "Some message", keyboard)
 
 m = <-OnTelegramUpdateReceivedCh
 if m.CallbackQuery.ID != "" {
@@ -3852,6 +3852,13 @@ NewInlineKeyboardRow(buttons ...InlineKeyboardButton) []InlineKeyboardButton
 // NewInlineKeyboardMarkup creates a new inline keyboard.
 // See SendTelegramReplyMarkup for example
 NewInlineKeyboardMarkup(rows ...[]InlineKeyboardButton) InlineKeyboardMarkup
+```
+
+### NewKeyboardButtonRow
+```go
+// NewKeyboardButtonRow creates a row of keyboard buttons.
+// See SendTelegramReplyMarkup for example
+NewKeyboardButtonRow(buttons ...KeyboardButton) []KeyboardButton
 ```
 
 ### NewKeyboardButton
