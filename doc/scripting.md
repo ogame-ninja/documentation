@@ -1393,6 +1393,54 @@ type TelegramMessage struct {
 }
 ```
 
+### TelegramCallbackQuery
+```go
+type TelegramCallbackQuery struct {
+	ID   string `json:"id"`
+	From struct {
+		ID           int64  `json:"id"`
+		IsBot        bool   `json:"is_bot"`
+		FirstName    string `json:"first_name"`
+		LastName     string `json:"last_name"`
+		LanguageCode string `json:"language_code"`
+	} `json:"from"`
+	Message struct {
+		MessageID int `json:"message_id"`
+		From      struct {
+			ID        int64  `json:"id"`
+			IsBot     bool   `json:"is_bot"`
+			FirstName string `json:"first_name"`
+			Username  string `json:"username"`
+		} `json:"from"`
+		Chat struct {
+			ID        int64  `json:"id"`
+			FirstName string `json:"first_name"`
+			LastName  string `json:"last_name"`
+			Type      string `json:"type"`
+		} `json:"chat"`
+		Date        int    `json:"date"`
+		Text        string `json:"text"`
+		ReplyMarkup struct {
+			InlineKeyboard [][]struct {
+				Text         string `json:"text"`
+				CallbackData string `json:"callback_data"`
+			} `json:"inline_keyboard"`
+		} `json:"reply_markup"`
+	} `json:"message"`
+	ChatInstance string `json:"chat_instance"`
+	Data         string `json:"data"`
+}
+```
+
+### TelegramUpdate
+```go
+type TelegramUpdate struct {
+	UpdateID      int64                 `json:"update_id"`
+	Message       TelegramMessage       `json:"message"`
+	CallbackQuery TelegramCallbackQuery `json:"callback_query"`
+}
+```
+
 ### DMCost
 ```go
 // DMCost information for fast build using DM
@@ -1769,6 +1817,18 @@ OnFleetDispatch chan Fleet
 ```go
 // Triggered when a bot publish a message directly to the current bot
 OnBotCh chan interface{}
+```
+
+### OnTelegramUpdateReceivedCh
+```go
+// Triggered when an update is received from telegram
+OnTelegramUpdateReceivedCh chan TelegramUpdate
+```
+```go
+for {
+    m = <-OnTelegramUpdateReceivedCh
+    Print(m)
+}
 ```
 
 ### OnTelegramMessageReceivedCh
@@ -3733,6 +3793,15 @@ SendMail(subject, body, to string) error
 SendMail("Attack detected", "I'm under attack at x:x:x", "you@gmail.com")
 ```
 
+### SendDiscord
+```go
+// Send a discord notification
+SendDiscord(webhook, msg string) error
+```
+```go
+SendDiscord(DISCORD_WEBHOOK, "Attack detected") // use discord webhook from bot setting
+```
+
 ### SendTelegram
 ```go
 // Send a telegram notification
@@ -3743,13 +3812,67 @@ SendTelegram(TELEGRAM_CHAT_ID, "Attack detected") // use chat id from bot settin
 SendTelegram(1234567, "Attack detected")
 ```
 
-### SendDiscord
+### SendTelegramReplyMarkup
 ```go
-// Send a discord notification
-SendDiscord(webhook, msg string) error
+// Send a telegram notification
+SendTelegramReplyMarkup(chatID int64, msg string, replyMarkup any) error
 ```
 ```go
-SendDiscord(DISCORD_WEBHOOK, "Attack detected") // use discord webhook from bot setting
+btn1 = NewInlineKeyboardButtonData("Bot0 [1:2:3]", "0")
+btn2 = NewInlineKeyboardButtonData("Bot1 [1:2:4]", "1")
+btn3 = NewInlineKeyboardButtonData("Bot2 [1:2:5]", "2")
+btn4 = NewInlineKeyboardButtonData("Bot3 [1:2:6]", "3")
+row = NewInlineKeyboardRow(btn1, btn2, btn3, btn4)
+keyboard = NewInlineKeyboardMarkup(row)
+SendTelegramMarkup(TELEGRAM_CHAT_ID, "Some message", keyboard)
+
+m = <-OnTelegramUpdateReceivedCh
+if m.CallbackQuery.ID != "" {
+    AnswerCallbackQuery(m.CallbackQuery.ID, "We received the data")
+    Print(m.CallbackQuery.Data)
+}
+```
+
+### NewInlineKeyboardMarkup
+```go
+// NewInlineKeyboardMarkup creates a new inline keyboard.
+// See SendTelegramReplyMarkup for example
+NewInlineKeyboardMarkup(rows ...[]InlineKeyboardButton) InlineKeyboardMarkup
+```
+
+### NewInlineKeyboardRow
+```go
+// NewInlineKeyboardRow creates an inline keyboard row with buttons.
+// See SendTelegramReplyMarkup for example
+NewInlineKeyboardRow(buttons ...InlineKeyboardButton) []InlineKeyboardButton
+```
+
+### NewInlineKeyboardMarkup
+```go
+// NewInlineKeyboardMarkup creates a new inline keyboard.
+// See SendTelegramReplyMarkup for example
+NewInlineKeyboardMarkup(rows ...[]InlineKeyboardButton) InlineKeyboardMarkup
+```
+
+### NewKeyboardButton
+```go
+// NewKeyboardButton creates a regular keyboard button.
+// See SendTelegramReplyMarkup for example
+NewKeyboardButton(text string) KeyboardButton
+```
+
+### NewReplyKeyboard
+```go
+// NewReplyKeyboard creates a new regular keyboard with sane defaults.
+// See SendTelegramReplyMarkup for example
+NewReplyKeyboard(rows ...[]KeyboardButton) ReplyKeyboardMarkup
+```
+
+### AnswerCallbackQuery
+```go
+// AnswerCallbackQuery sends a response to an inline query callback.
+// See SendTelegramReplyMarkup for example
+AnswerCallbackQuery(callbackQueryID string, text string) error
 ```
 
 ### NewFleet
