@@ -3815,7 +3815,7 @@ SendTelegram(1234567, "Attack detected")
 ### SendTelegramReplyMarkup
 ```go
 // Send a telegram notification
-SendTelegramReplyMarkup(chatID int64, msg string, replyMarkup any) error
+SendTelegramReplyMarkup(chatID int64, msg string, replyMarkup any) (tgbotapi.Message, error)
 ```
 ```go
 btn1 = NewInlineKeyboardButtonData("Bot0 [1:2:3]", "0")
@@ -3824,12 +3824,17 @@ btn3 = NewInlineKeyboardButtonData("Bot2 [1:2:5]", "2")
 btn4 = NewInlineKeyboardButtonData("Bot3 [1:2:6]", "3")
 row = NewInlineKeyboardRow(btn1, btn2, btn3, btn4)
 keyboard = NewInlineKeyboardMarkup(row)
-SendTelegramReplyMarkup(TELEGRAM_CHAT_ID, "Some message", keyboard)
+sentMsg, _ = SendTelegramReplyMarkup(TELEGRAM_CHAT_ID, "Some message", keyboard)
 
-m = <-OnTelegramUpdateReceivedCh
-if m.CallbackQuery.ID != "" {
-    AnswerCallbackQuery(m.CallbackQuery.ID, "We received the data")
-    Print(m.CallbackQuery.Data)
+for {
+    m = <-OnTelegramUpdateReceivedCh
+    if m.CallbackQuery.ID != "" {
+        if m.CallbackQuery.Message.MessageID == sentMsg.MessageID {
+            AnswerCallbackQuery(m.CallbackQuery.ID, "We received the data")
+            Print(m.CallbackQuery.Data)
+            break
+        }
+    }
 }
 ```
 
