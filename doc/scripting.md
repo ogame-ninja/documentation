@@ -3826,16 +3826,19 @@ row = NewInlineKeyboardRow(btn1, btn2, btn3, btn4)
 keyboard = NewInlineKeyboardMarkup(row)
 sentMsg, _ = SendTelegramReplyMarkup(TELEGRAM_CHAT_ID, "Some message", keyboard)
 
+answer = ""
 for {
     m = <-OnTelegramUpdateReceivedCh
     if m.CallbackQuery.ID != "" {
         if m.CallbackQuery.Message.MessageID == sentMsg.MessageID {
             AnswerCallbackQuery(m.CallbackQuery.ID, "We received the data")
-            Print(m.CallbackQuery.Data)
+            answer = m.CallbackQuery.Data
             break
         }
     }
 }
+
+Print(answer)
 ```
 
 ### NewInlineKeyboardMarkup
