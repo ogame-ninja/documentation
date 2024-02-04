@@ -309,7 +309,8 @@ type IVMBot interface {
 	GetLang() string
 	GetPlayerName() string
 	GetPlayerID() int64
-	GetServerID() int64
+	GetServerID() int64 // nja internal database id
+	GetServerNumber() int64 // s152-en --> 152
 	StartScript(name string) error
 	StopScript(name string) error
 	PauseScript(name string) error
