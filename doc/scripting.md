@@ -1684,6 +1684,7 @@ type Sheet struct {
 	BattlecruiserAuto      bool
 	ReaperAuto             bool
 	PathfinderAuto         bool
+	AutoFleet              bool // Let the bot build a fleet
 }
 ```
 
