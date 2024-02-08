@@ -3542,6 +3542,24 @@ StopExpeditionsBot()
 IsRunningExpeditionsBot() bool
 ```
 
+### StartColonizerBot
+```go
+// Starts colonizer bot
+StartColonizerBot()
+```
+
+### StopColonizerBot
+```go
+// Stops colonizer bot
+StopColonizerBot()
+```
+
+### IsRunningColonizerBot
+```go
+// Returns true in case Colonizer Bot is running, otherwise false
+IsRunningColonizerBot() bool
+```
+
 ### StartDefenderBot
 ```go
 // Starts defender bot
