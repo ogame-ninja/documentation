@@ -1861,6 +1861,15 @@ for {
 
 ## Global API
 
+### BotID
+```go
+// BotID contains the current bot ID
+BotID int64
+```
+```go
+Print(BotID) // 1
+```
+
 ### BotsCount
 ```go
 // BotsCount returns the total number of bots in the database
