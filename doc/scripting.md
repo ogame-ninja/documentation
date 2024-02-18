@@ -3569,6 +3569,24 @@ StopColonizerBot()
 IsRunningColonizerBot() bool
 ```
 
+### StartDiscoveryBot
+```go
+// Starts discovery bot
+StartDiscoveryBot()
+```
+
+### StopDiscoveryBot
+```go
+// Stops discovery bot
+StopDiscoveryBot()
+```
+
+### IsRunningDiscoveryBot
+```go
+// Returns true in case Discovery Bot is running, otherwise false
+IsRunningDiscoveryBot() bool
+```
+
 ### StartDefenderBot
 ```go
 // Starts defender bot
