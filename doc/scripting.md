@@ -2575,10 +2575,33 @@ DisableNJA()
 
 ### IsNJAEnabled
 ```go
+// Either or not communication with ogame server is enabled
 IsNJAEnabled() bool
 ```
 ```go
 if IsNJAEnabled() {
+    Print("yes")
+}
+```
+
+### IsActive
+```go
+// Either or not the application will start the bot when it starts
+IsActive() bool
+```
+```go
+if IsActive() {
+    Print("yes")
+}
+```
+
+### IsStarted
+```go
+// Either or not the bot is currently started
+IsStarted() bool
+```
+```go
+if IsStarted() {
     Print("yes")
 }
 ```
