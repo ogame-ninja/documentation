@@ -1013,10 +1013,11 @@ String() string
 ```go
 // EspionageReportSummary summary of espionage report
 type EspionageReportSummary struct {
-	ID     int64
-	Type   EspionageReportType
-	From   string
-	Target Coordinate
+	ID             int64
+	Type           EspionageReportType
+	From           string
+	Target         Coordinate
+	LootPercentage float64
 }
 ```
 
