@@ -380,7 +380,7 @@ type Celestial interface {
     GetResources() (Resources, error)
     GetResourcesDetails() (ResourcesDetails, error)
     GetFacilities() (Facilities, error)
-    SendFleet([]Quantifiable, Speed, Coordinate, MissionID, Resources, int64) (Fleet, error)
+    SendFleet(ShipsInfos, Speed, Coordinate, MissionID, Resources, int64) (Fleet, error)
     EnsureFleet([]Quantifiable, Speed, Coordinate, MissionID, Resources, int64) (Fleet, error)
     GetDefense() (DefensesInfos, error)
     GetShips() (ShipsInfos, error)
