@@ -724,10 +724,13 @@ type ShipsInfos struct {
 
 // Methods
 
-Cargo(techs Researches, probeRaids, isCollector, isPioneers bool) int64 // probeRaids determines if spys in your uni have cargo or not
+Cargo(techs IResearches, lfBonuses LfBonuses, characterClass CharacterClass, multiplier float64, probeRaids bool) int64 // probeRaids determines if spys in your uni have cargo or not
+Speed(techs IResearches, lfBonuses LfBonuses, characterClass CharacterClass) int64
+ToQuantifiables() []Quantifiable
+FromQuantifiables(in []Quantifiable) (out ShipsInfos)
 Has(v ShipsInfos) bool
-FleetValue() int64
-FleetCost() Resources
+FleetValue(LfBonuses) int64
+FleetCost(LfBonuses) Resources
 CountShips() int64
 ByID(id ID) int64
 String() string
@@ -736,6 +739,9 @@ Add(v ShipsInfos)
 AddShips(shipID ID, nb int64)
 SubShips(shipID ID, nb int64)
 Set(id ID, val int64)
+Equal(other ShipsInfos) bool
+HasShips() bool
+HasFlyableShips() bool
 ```
 
 ### DefensesInfos
@@ -980,6 +986,34 @@ type Researches struct {
 ToPtr() *Researches
 ByID(id ID) int64
 String() string
+```
+
+### LfBonuses
+
+```go
+type LfBonuses struct {
+	LfShipBonuses   LfShipBonuses
+	CostTimeBonuses CostTimeBonuses
+}
+
+type CostTimeBonuses map[ID]CostTimeBonus
+
+type LfShipBonuses map[ID]LfShipBonus
+
+type CostTimeBonus struct {
+	Cost     float64
+	Duration float64
+}
+
+type LfShipBonus struct {
+	ID                  ID
+	StructuralIntegrity float64
+	ShieldPower         float64
+	WeaponPower         float64
+	Speed               float64
+	CargoCapacity       float64
+	FuelConsumption     float64
+}
 ```
 
 ### TechnologyDetails
@@ -4271,6 +4305,20 @@ fleets, slots = GetFleets()
 for fleet in fleets {
     CancelFleet(fleet.ID)
 }
+```
+
+### GetLfBonuses
+
+```go
+// GetLfBonuses get the lifeform bonuses from ogame
+GetLfBonuses() (ogame.LfBonuses, error)
+```
+
+### GetCachedLfBonuses
+
+```go
+// GetCachedLfBonuses get the last lifeform bonuses known
+GetCachedLfBonuses() (ogame.LfBonuses, error)
 ```
 
 ### TechnologyDetails
