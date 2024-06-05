@@ -3827,6 +3827,31 @@ nextDatetime, err = GetNextDatetimeAt(23, 20, 31)
 Print(nextDatetime, err)
 ```
 
+### ShipSpeed
+```go
+ShipSpeed(ID) int64
+```
+
+### ShipCargo
+```go
+ShipCargo(ID) int64
+```
+
+### Speed
+```go
+Speed(shipsInfos ShipsInfos) int64
+```
+
+```go
+s1 = NewShipsInfos()
+s1.Set(LARGECARGO, 10)
+Print(Speed(*s1))
+
+celestial = GetCachedCelestials()[0]
+s2, _ = celestial.GetShips()
+Print(Speed(s2))
+```
+
 ### Cargo
 ```go
 Cargo(shipsInfos ShipsInfos) int64
