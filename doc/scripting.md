@@ -663,6 +663,7 @@ type Auction struct {
 	DeficitBid          int64
 	HighestBidder       string
 	HighestBidderUserID int64
+	Ref                 string
 	CurrentItem         string
 	CurrentItemLong     string
 	Inventory           int64
