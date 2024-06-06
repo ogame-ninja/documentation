@@ -1,6 +1,6 @@
 ## Browser is loading forever?
 
-If you are not "self-hosting", you can skip reading this page.
+If you are not "self-hosting", you can skip reading this page.  
 
 This is happening because the browser can only open 6 simultaneous connections to the same server.  
 Some pages in ogame open 5 connections at the same time (fleet page), and the bot opens at least 1 for the websocket.  
