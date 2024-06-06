@@ -8,7 +8,9 @@ So if another tab is open, the maximum connections is reached, and the browser r
 
 ### Solution 1: use https for multiplexing connections (for self-hosting)
 
-Start the application with the flag `--tls` (eg: `./path/to/nja --tls`)  
+Go to the admin section, settings.
+Enable `Start self signed tls certificate server`
+Restart the application
 Then open the browser at `https://localhost:8080`  
 And you should not longer have issues with the browser loading forever  
 
