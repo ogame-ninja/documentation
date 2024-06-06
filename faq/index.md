@@ -22,3 +22,4 @@ Tips, tricks and answers to common questions about configuring and using Ninja b
 - [What is "suspicious login" ?](/faq/what-is-suspicious-login)
 - [How to synchronize my system clock ?](/faq/how-to-synchronize-my-system-clock)
 - [How to setup systemd?](/faq/how-to-setup-systemd)
+- [Browser is loading forever?](/faq/browser-is-loading-forever)
