@@ -1,6 +1,6 @@
 ## Browser is loading forever?
 
-If you are not "self-hosting", you can skip reading this page.  
+If you are not "self-hosting", you can skip reading this page.
 
 This is happening because the browser can only open 6 simultaneous connections to the same server.  
 Some pages in ogame open 5 connections at the same time (fleet page), and the bot opens at least 1 for the websocket.  
@@ -18,3 +18,9 @@ Get and use firefox https://www.mozilla.org/en-US/firefox/
 Open a new tab and go to `about:config`  
 Search for `network.http.max-persistent-connections-per-server` and put `20` instead of the default `6`  
 And that will solve the browser not loading
+
+### Solution 3: use reverse tunnel
+
+Go to your admin section, and toggle on the "reverse tunnel"  
+Then when you use `https://<your-username>.me.ogame.ninja` you should no longer have the browser loading forever issue.  
+That being said, it should much slower than Solution 1  
