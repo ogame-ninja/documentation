@@ -3828,6 +3828,11 @@ nextDatetime, err = GetNextDatetimeAt(23, 20, 31)
 Print(nextDatetime, err)
 ```
 
+### ShipFuel
+```go
+ShipFuel(ID) int64
+```
+
 ### ShipSpeed
 ```go
 ShipSpeed(ID) int64
