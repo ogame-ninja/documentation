@@ -2299,6 +2299,12 @@ price = GetPrice(METALMINE, 3)
 Print("The price of metal mine level 3 is ", price) // [135|33|0]
 ```
 
+### GetPriceLfResearch
+```go
+// The price for lifeform research depends on some lifeform building on the planet that tries to build the research.
+func(celestiaID CelestialID, id ogame.ID, nbr int64) Resources
+```
+
 ### ConstructionTime
 ```go
 // ConstructionTime returns the duration it takes to build a given level.
