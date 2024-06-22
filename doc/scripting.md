@@ -3003,7 +3003,7 @@ Print(emptyPlanetCoordinate, travelTime, fuel, err)
 ### FindAbandonedPlanetWithMinimumTravelTime
 ```go
 // Finds an abandoned planet that is at a minimum travel time at slowest speed
-FindAbandonedPlanetWithMinimumTravelTime(origin Coordinate, ships ShipsInfos, minimumTravelTime time.Duration) (destination Coordinate, travelTime time.Duration, fuel int64, err error)
+FindAbandonedPlanetWithMinimumTravelTime(origin Coordinate, ships ShipsInfos, minimumTravelTime time.Duration, withMoon bool) (destination Coordinate, travelTime time.Duration, fuel int64, err error)
 ```
 
 ```go
