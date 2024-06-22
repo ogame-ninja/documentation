@@ -2213,6 +2213,21 @@ RepatriateNow()
 RepatriateNow()
 ```
 
+### RepatriateSetAllDestinations
+```go
+// Set the repatriate destination for all planets and moons 
+RepatriateSetAllDestinations(wrapper.IntoCelestial)
+```
+```go
+RepatriateSetAllDestinations("1:2:3")
+
+planet = GetCachedPlanets()[0]
+RepatriateSetAllDestinations(planet)
+
+coord, _ = ParseCoord("1:2:3")
+RepatriateSetAllDestinations(coord)
+```
+
 ### TriggerFleetSave
 ```go
 // Trigger fleet save using "sleep mode" configurations
