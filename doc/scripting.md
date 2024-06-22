@@ -2999,6 +2999,22 @@ emptyPlanetCoordinate, travelTime, fuel, err = FindEmptyPlanetWithMinimumTravelT
 Print(emptyPlanetCoordinate, travelTime, fuel, err)
 ```
 
+
+### FindAbandonedPlanetWithMinimumTravelTime
+```go
+// Finds an abandoned planet that is at a minimum travel time at slowest speed
+FindAbandonedPlanetWithMinimumTravelTime(origin Coordinate, ships ShipsInfos, minimumTravelTime time.Duration) (destination Coordinate, travelTime time.Duration, fuel int64, err error)
+```
+
+```go
+time = import("time")
+planet = GetCachedPlanets()[0]
+ships, _ = planet.GetShips()
+minimumTravelTime = 7 * time.Hour
+abandonedPlanetCoordinate, travelTime, fuel, err = FindAbandonedPlanetWithMinimumTravelTime(planet.GetCoordinate(), ships, minimumTravelTime)
+Print(abandonedPlanetCoordinate, travelTime, fuel, err)
+```
+
 ### GetSystemsInRange
 ```go
 // GetSystemsInRange returns the systems in a radius around the origin
