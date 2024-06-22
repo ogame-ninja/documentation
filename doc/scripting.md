@@ -2448,6 +2448,18 @@ for {
 }
 ```
 
+### ExecInCh
+```go
+// Schedules an execution after 'execIn' milliseconds
+ExecInCh(milliseconds int64, clb func()) <-chan struct{}
+```
+
+### ExecInSync
+```go
+// Synchronous version of ExecIn
+ExecInSync(milliseconds int64, clb func()) context.CancelFunc
+```
+
 ### ExecAt
 ```go
 // Schedules a one time callback execution at specific time. ExecAt is asynchronous.
@@ -2492,6 +2504,12 @@ execTime = time.Now().Add(10 * time.Second)
 <-ExecAtCh(execTime, func() {
 	Print("callback is executed at ", time.Now())
 })
+```
+
+### ExecAtSync
+```go
+// Synchronous version of ExecAt
+ExecAtSync(at any, clb func())
 ```
 
 ### IntervalExec
