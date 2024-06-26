@@ -9,9 +9,9 @@ So if another tab is open, the maximum connections is reached, and the browser r
 ### Solution 1: use https for multiplexing connections (for self-hosting)
 
 Go to the admin section, settings.
-Enable `Start self signed tls certificate server`
+Enable `Start https web server`
 Restart the application
-Then open the browser at `https://localhost:8080`  
+Then open the browser at `https://localhost:8081`  
 And you should not longer have issues with the browser loading forever  
 
 ### Solution 2: use firefox and change the configs (not the best)
