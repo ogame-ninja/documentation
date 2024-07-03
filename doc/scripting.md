@@ -1078,6 +1078,10 @@ type LfResearchDetails struct {
 	ArtefactsCollected int64
 	ArtefactsLimit     int64
 }
+
+// Methods
+// AvailableSlot return the slotNumber (1-18) available for research. 0 if none is available.
+AvailableSlot() int64
 ```
 
 ### LfSlot
