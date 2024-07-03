@@ -4615,6 +4615,36 @@ Print(researches)
 GetLfResearchDetails(ogame.CelestialID) (LfResearchDetails, error)
 ```
 
+### SelectLfResearchSelect
+```go
+// SelectLfResearchSelect select a lifeform research
+SelectLfResearchSelect(planetID ogame.PlanetID, slotNumber int64) error
+```
+
+### SelectLfResearchRandom
+```go
+// SelectLfResearchRandom select a random lifeform research
+SelectLfResearchRandom(planetID ogame.PlanetID, slotNumber int64) error
+```
+
+### SelectLfResearchArtifacts
+```go
+// SelectLfResearchArtifacts select a lifeform research using artifacts
+SelectLfResearchArtifacts(planetID ogame.PlanetID, slotNumber int64, techID ogame.ID) error
+```
+
+### FreeResetTree
+```go
+// FreeResetTree reset a lifeform research tier tree
+FreeResetTree(planetID ogame.PlanetID, tier int64) error
+```
+
+### BuyResetTree
+```go
+// BuyResetTree reset a lifeform research tier tree using darkmatter
+BuyResetTree(planetID ogame.PlanetID, tier int64) error
+```
+
 ### GetShips
 ```go
 // GetShips gets all ships units information of a planet
