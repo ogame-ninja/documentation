@@ -1068,6 +1068,30 @@ type LfResearches struct {
 }
 ```
 
+### LfResearchDetails
+
+```go
+// LfResearchDetails ...
+type LfResearchDetails struct {
+	LfResearches
+	Slots              [18]LfSlot
+	ArtefactsCollected int64
+	ArtefactsLimit     int64
+}
+```
+
+### LfSlot
+
+```go
+// LfSlot ...
+type LfSlot struct {
+	TechID  ID
+	Level   int64
+	Allowed bool
+	Locked  bool
+}
+```
+
 ### LfBonuses
 
 ```go
@@ -4583,6 +4607,12 @@ GetLfResearch(ogame.CelestialID) (LfResearches, error)
 celestial = GetCachedCelestial("1:2:3")
 researches, _ = GetLfResearch(celestial.GetID())
 Print(researches)
+```
+
+### GetLfResearchDetails
+```go
+// GetLfResearchDetails gets the player lifeform research detailed information
+GetLfResearchDetails(ogame.CelestialID) (LfResearchDetails, error)
 ```
 
 ### GetShips
