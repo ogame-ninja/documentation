@@ -230,6 +230,13 @@ NINETY_FIVE_PERCENT  = 9.5
 PLANET_TYPE = 1
 DEBRIS_TYPE = 2
 MOON_TYPE   = 3
+
+// Lifeform types
+NONE_LF_TYPE = 0
+HUMANS       = 1
+ROCKTAL      = 2
+MECHAS       = 3
+KAELESH      = 4
 ```
 ```go
 TELEGRAM_CHAT_ID = (alias to telegram chat id bot setting)
