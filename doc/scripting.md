@@ -2205,33 +2205,61 @@ Print("Example", 123, true)
 ### print
 ```go
 // Same as Print
-print(args ...interface{})
+print(args ...any)
 ```
 
 ### LogDebug
 ```go
 // Same as Print
-LogDebug(args ...interface{})
+LogDebug(args ...any)
 ```
 
 ### LogInfo
 ```go
 // Creates an Info log
-LogInfo(args ...interface{})
+LogInfo(args ...any)
 ```
 
 ### LogWarn
 ```go
 // Creates an Warn log
-LogWarn(args ...interface{})
+LogWarn(args ...any)
 ```
 
 ### LogError
 ```go
 // Creates an Error log
-LogError(args ...interface{})
+LogError(args ...any)
 ```
 
+### Printf
+```go
+Printf(format string, args ...interface{})
+```
+
+```go
+Printf("I have %d ships", 10) // I have 10 ships
+```
+
+### LogDebugf
+```go
+LogDebugf(format string, args ...any)
+```
+
+### LogInfof
+```go
+LogInfof(format string, args ...any)
+```
+
+### LogWarnf
+```go
+LogWarnf(format string, args ...any)
+```
+
+### LogErrorf
+```go
+LogErrorf(format string, args ...any)
+```
 
 ### ClearOut
 ```go
