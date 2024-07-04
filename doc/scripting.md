@@ -2336,6 +2336,11 @@ CreateFleet(fleet.ID, initiator)
 CreateFleet(fleetID ogame.FleetID, initiator string)
 ```
 
+### GetPlanetLifeformType
+```go
+GetPlanetLifeformType(wrapper.IntoPlanet) ogame.LifeformType
+```
+
 ### GetPrice
 ```go
 // Returns the price of 'entity'. 'nbr' is either a building/research level or a defense/ship quantity.
