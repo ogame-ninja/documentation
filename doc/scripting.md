@@ -329,7 +329,7 @@ type IVMBot interface {
 	IsScriptRunning(name string) bool
 	DeleteScript(name string) error
 	SetScriptRunAtStart(name string, runAtStart bool) error
-	Publish(msg interface{}) (ok bool)
+	Publish(msg any) (ok bool)
 }
 ```
 
@@ -681,7 +681,7 @@ type Auction struct {
 		Deuterium float64
 		Honor     int64
 	}
-	Resources map[string]interface{}
+	Resources map[string]any
 }
 ```
 
@@ -1418,8 +1418,8 @@ type FleetBuilder struct {
 }
 
 // Methods
-SetOrigin(v interface{}) *FleetBuilder
-SetDestination(v interface{}) *FleetBuilder
+SetOrigin(v any) *FleetBuilder
+SetDestination(v any) *FleetBuilder
 SetSpeed(speed Speed) *FleetBuilder
 SetResources(resources Resources) *FleetBuilder
 SetMetal(metal int64) *FleetBuilder
@@ -1449,7 +1449,7 @@ type FarmSessionBuilder struct {
 }
 
 // Methods
-SetOrigin(v interface{}) *FarmSessionBuilder
+SetOrigin(v any) *FarmSessionBuilder
 SetRange(galaxy, systemFrom, systemTo int64) *FarmSessionBuilder
 SetProbes(nbProbes int64) *FarmSessionBuilder
 SetAdditionalCargo(pctCargo int64) *FarmSessionBuilder
@@ -1974,7 +1974,7 @@ OnFleetDispatch chan Fleet
 ### OnBotCh
 ```go
 // Triggered when a bot publish a message directly to the current bot
-OnBotCh chan interface{}
+OnBotCh chan any
 ```
 
 ### OnTelegramUpdateReceivedCh
@@ -2196,7 +2196,7 @@ Print("Done sleeping")
 ### Print
 ```go
 // Print some variables
-Print(args ...interface{})
+Print(args ...any)
 ```
 ```go
 Print("Example", 123, true)
@@ -2234,7 +2234,7 @@ LogError(args ...any)
 
 ### Printf
 ```go
-Printf(format string, args ...interface{})
+Printf(format string, args ...any)
 ```
 
 ```go
@@ -2546,7 +2546,7 @@ ExecInSync(milliseconds int64, clb func()) context.CancelFunc
 ### ExecAt
 ```go
 // Schedules a one time callback execution at specific time. ExecAt is asynchronous.
-ExecAt(at interface{}, clb func()) context.CancelFunc
+ExecAt(at any, clb func()) context.CancelFunc
 ```
 ```go
 time = import("time")
@@ -2559,7 +2559,7 @@ ExecAt("17:23:00", func() {
 ### ExecAtCh
 ```go
 // Schedules a one time callback execution at specific time.
-ExecAtCh(at interface{}, clb func()) <-chan struct{}
+ExecAtCh(at any, clb func()) <-chan struct{}
 ```
 ```go
 time = import("time")
@@ -2929,7 +2929,7 @@ SendMessageAlliance(537, "Sup!")
 ### GetCelestial
 ```go
 // GetCelestial get the player's planet/moon
-GetCelestial(interface{}) (Celestial, error)
+GetCelestial(any) (Celestial, error)
 ```
 ```go
 coord = NewCoordinate(1, 2, 3, PLANET_TYPE)
@@ -2950,7 +2950,7 @@ Print("We have " + len(celestials) + " celestials")
 ### GetPlanet
 ```go
 // GetPlanet get the player's planet
-GetPlanet(interface{}) (Planet, error)
+GetPlanet(any) (Planet, error)
 ```
 ```go
 coord = NewCoordinate(1, 2, 3, PLANET_TYPE)
@@ -2971,7 +2971,7 @@ Print("We have " + len(planets) + " planets")
 ### GetMoon
 ```go
 // GetMoon get the player's planets
-GetMoon(interface{}) (Moon, error)
+GetMoon(any) (Moon, error)
 ```
 ```go
 coord = NewCoordinate(1, 2, 3, MOON_TYPE)
@@ -3004,7 +3004,7 @@ GetCachedMoons() []Moon
 ### GetCachedCelestial
 ```go
 // GetCachedCelestial return celestial from cached value
-GetCachedCelestial(interface{}) Celestial
+GetCachedCelestial(any) Celestial
 ```
 
 ### GetCachedCelestials
@@ -3137,7 +3137,7 @@ Print(GetSystemsInRangeDesc(3, 3)) // [499, 6, 1, 5, 2, 4, 3]
 ### Shuffle
 ```go
 // Shuffle a slice in place
-Shuffle(slice []interface{})
+Shuffle(slice []any)
 ```
 ```go
 a = [1, 2, 3, 4, 5]
@@ -3183,7 +3183,7 @@ Print(resources)
 ### Abandon
 ```go
 // Abandon a planet
-Abandon(interface{}) error
+Abandon(any) error
 ```
 
 ### CollectAllMarketplaceMessages
@@ -3245,7 +3245,7 @@ ActivateItem("de922af379061263a56d7204d1c395cefcfb7d75", c.GetID()) // Activate 
 ### OfferSellMarketplace
 ```go
 // Create a sell offer on the marketplace 
-OfferSellMarketplace(itemID interface{}, quantity, priceType, price, priceRange int64, celestialID CelestialID) error
+OfferSellMarketplace(itemID any, quantity, priceType, price, priceRange int64, celestialID CelestialID) error
 ```
 ```go
 OfferSellMarketplace(LIGHTFIGHTER, 10, 1, 40000, 20, 0) // Sell ships for metal
@@ -3256,7 +3256,7 @@ OfferSellMarketplace("de922af379061263a56d7204d1c395cefcfb7d75", 1, 2, 50000, 20
 ### OfferBuyMarketplace
 ```go
 // Create a buy offer on the marketplace
-OfferBuyMarketplace(itemID interface{}, quantity, priceType, price, priceRange int64, celestialID CelestialID) error
+OfferBuyMarketplace(itemID any, quantity, priceType, price, priceRange int64, celestialID CelestialID) error
 ```
 ```go
 OfferBuyMarketplace(LIGHTFIGHTER, 10, 1, 40000, 20, 0)
@@ -3372,7 +3372,7 @@ for i = 1; i <= 15; i++ {
 ### GetPlanetInfo
 ```go
 // GetPlanetInfo get information of a planet and moon
-GetPlanetInfo(coordinate interface{}) (PlanetInfos, error)
+GetPlanetInfo(coordinate any) (PlanetInfos, error)
 ```
 ```go
 planetInfos, _ = GetPlanetInfo("4:116:6")
@@ -3384,7 +3384,7 @@ planetInfos, _ = GetPlanetInfo(coord)
 ### GetPlanetInfoUsing
 ```go
 // GetPlanetInfo get information of a planet and moon
-GetPlanetInfoUsing(coordinate interface{}, celestialID CelestialID) (PlanetInfos, error)
+GetPlanetInfoUsing(coordinate any, celestialID CelestialID) (PlanetInfos, error)
 ```
 ```go
 celestial = GetCachedCelestial("1:2:3")
@@ -3394,7 +3394,7 @@ planetInfos, _ = GetPlanetInfoUsing("4:116:6", celestial.GetID())
 ### GetDepartureTime
 ```go
 // Get the departure time to arrive at desired arrival time
-GetDepartureTime(arrival, origin, destination interface{}, ShipsInfos, Speed, MissionID) Time
+GetDepartureTime(arrival, origin, destination any, ShipsInfos, Speed, MissionID) Time
 ```
 ```go
 s1 = NewShipsInfos()
@@ -3424,7 +3424,7 @@ Print("Departure time should be " + departureTime)
 ### LowestSpeed
 ```go
 // Get the departure time to arrive at desired arrival time
-LowestSpeed(arrival, origin, destination interface{}, ShipsInfos) (speed Speed, fuel int64, departureTime Time, err error)
+LowestSpeed(arrival, origin, destination any, ShipsInfos) (speed Speed, fuel int64, departureTime Time, err error)
 ```
 ```go
 s1 = NewShipsInfos()
@@ -3459,7 +3459,7 @@ Print("Departure time should be " + departureTime)
 // 25M points / minute. Calling "Simulator" will cost (nb ships * simulations) points.
 //
 // Self-host have no limit
-Simulator(payload map[string]map[string]interface{}) (simulator.SimulatorResult, error)
+Simulator(payload map[string]map[string]any) (simulator.SimulatorResult, error)
 ```
 
 ```go
@@ -3574,7 +3574,7 @@ Print(Dotify(1000000)) // 1.000.000
 ### ShortDur
 ```go
 // Pretty print a duration
-ShortDur(v interface{}) string
+ShortDur(v any) string
 ```
 ```go
 Print(ShortDur(121)) // 2m1s
@@ -3940,7 +3940,7 @@ DBGetResearches() Researches
 ### Put
 ```go
 // Put data into storage
-Put(key string, val interface{}) error
+Put(key string, val any) error
 ```
 
 ```go
@@ -3953,7 +3953,7 @@ Put("key4", [1, 2, 3])
 ### Get
 ```go
 // Get data from storage
-Get(key string) (interface{}, error)
+Get(key string) (any, error)
 ```
 
 ```go
@@ -5077,7 +5077,7 @@ DeleteAllTempFiles()
 
 ### JsonDecode
 ```go
-JsonDecode(data []byte) (out interface{}, err error)
+JsonDecode(data []byte) (out any, err error)
 ```
 ```go
 out, err = JsonDecode(`{"a": 1, "b": 2.1, "c": "a string", "d": true}`)
