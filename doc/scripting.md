@@ -296,12 +296,12 @@ http = import("net/http")
 ioutil = import("io/ioutil")
 
 res, _ = http.Get("https://www.google.com")
-by, _ = io.ReadAll(res.Body)
+by, _ = ioutil.ReadAll(res.Body)
 defer res.Body.Close()
 Print(Bytes2Str(by))
 
 res, _ = http.PostForm("https://httpbin.org/post", {"abc": ["def"]})
-by, _ = io.ReadAll(res.Body)
+by, _ = ioutil.ReadAll(res.Body)
 defer res.Body.Close()
 Print(Bytes2Str(by))
 ```
