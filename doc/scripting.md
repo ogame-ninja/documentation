@@ -1675,7 +1675,8 @@ type Highscore struct {
 	NbPage   int64
 	CurrPage int64
 	Category int64 // 1:Player, 2:Alliance
-	Type     int64 // 0:Total, 1:Economy, 2:Research, 3:Military, 4:Military Built, 5:Military Destroyed, 6:Military Lost, 7:Honor
+	Type     int64 // 0:Total, 1:Economy, 2:Research, 3:Military, 4:Military Built, 5:Military Destroyed,
+	               // 6:Military Lost, 7:Honor, 8:Lifeform, 9:Lifeform Economy, 10:Lifeform Technology, 11:Lifeform Discoveries
 	Players  []HighscorePlayer
 }
 ```
