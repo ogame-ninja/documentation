@@ -10,6 +10,10 @@ Default value will be the first planet in your planets list in ogame.
 The bot will try to use the defined transport ship whenever it needs to transport resources.  
 eg: brain importing resource, repatriate, "import & build" button...
 
+##### [Nb probes]
+Number of probes to use for spying players.  
+Can be useful if your account is not activated and you cannot access the ogame preferences.
+
 ##### [Slots reserved for player]
 Is this amount of fleet slots that the bot will keep available for the player to use.    
 **Exception:** Defender will use them if it needs it. 
