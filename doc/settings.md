@@ -19,13 +19,20 @@ Is this amount of fleet slots that the bot will keep available for the player to
 **Exception:** Defender will use them if it needs it. 
 
 ##### [Max farmer slots]
-Maximum slots that the farmer will use. 0 means unlimited.
+Maximum slots that the farmer will use.
 
 ##### [Max brain slots]
-Maximum slots that the brain will use. 0 means unlimited.
+Maximum slots that the brain will use.
 
 ##### [Max repatriate slots]
-Maximum slots that the repatriate will use. 0 means unlimited.
+Maximum slots that the repatriate will use.
+
+##### [Max colonizer slots]
+Maximum slots that the colonizer will use.
+
+##### [Max discovery slots]
+Maximum slots that the discovery will use.  
+If "leave open" is ticked, then this amount of slots will be kept available.
 
 ##### [Max script slots]
 Maximum slots that the scripts will use. 0 means unlimited.  
