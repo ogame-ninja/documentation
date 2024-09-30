@@ -116,7 +116,7 @@ If you receive a message that looks like:
 ```go
 22:20:11 ERROR [[9:24] syntax error]
 ```
-It means that you have a syntax error at line **9**, charaSendMessagecter **24**.  
+It means that you have a syntax error at line **9**, character **24**.  
 
 ### does not support member operation
 ```go
