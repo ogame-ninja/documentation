@@ -5044,6 +5044,22 @@ SetExpeditionsConfigs(configs)
 SetExpeditionsConfigs(ExpeditionsConfigs)
 ```
 
+### NewSheet
+
+```go
+NewSheet() *Sheet
+```
+
+```go
+configs = GetExpeditionsConfigs()
+celestial = GetCachedPlanets()[0]
+sheet = NewSheet()
+sheet.Origin = celestial.GetID()
+sheet.LightFighter = 12
+configs.Sheets += *sheet
+SetExpeditionsConfigs(configs)
+```
+
 ### TempFile
 ```go
 // Create a new temp file
