@@ -1972,6 +1972,12 @@ for {
 OnFleetDispatch chan Fleet
 ```
 
+### OnSystemInfos
+```go
+// Triggered when a SystemInfos is intercepted by the bot
+OnSystemInfos chan SystemInfos
+```
+
 ### OnBotCh
 ```go
 // Triggered when a bot publish a message directly to the current bot
