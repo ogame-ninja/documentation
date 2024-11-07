@@ -14,6 +14,6 @@ Get the 2fa secret using:
 
 When you create your bot, set your 2fa secret in the advanced settings.
 
-If you already have a bot, you can update it's 2fa secret in the bot settings.
+If you already have a bot, you can update its 2fa secret in the bot settings.
 
 For more information about 2fa, see [https://www.ogame.ninja/2fa](https://www.ogame.ninja/2fa)
