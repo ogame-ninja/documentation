@@ -1843,6 +1843,19 @@ type Sheet struct {
 }
 ```
 
+### HunterTargetActiveEvent
+
+```go
+// HunterTargetActiveEvent used when a player become active.
+// A player become active when his previous activity is higher than the current one. eg: 23->15
+type HunterTargetActiveEvent struct {
+	PreviousActivity int64
+	PlayerID         int64
+	PlayerName       string
+	AllianceTag      string
+}
+```
+
 ## Channels (events)
 
 ### OnAttackCh
@@ -2017,6 +2030,20 @@ OnChatMessageReceivedCh chan ChatMsg
 for {
     m = <-OnChatMessageReceivedCh
     Print("From: " + m.SenderName + ", msg: " + m.Text)
+}
+```
+
+### OnHunterTargetActiveCh
+```go
+// Triggered when a private message is received in ogame (unstable)
+OnHunterTargetActiveCh chan HunterTargetActiveEvent
+```
+```go
+for {
+    evt = <-OnHunterTargetActiveCh
+	if evt.PreviousActivity > 30 { // Only print if the player last activity was over 30min ago
+        Print("Player: " + evt.PlayerName + ", became active")
+    }
 }
 ```
 
