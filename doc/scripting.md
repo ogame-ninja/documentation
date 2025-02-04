@@ -3647,6 +3647,9 @@ ShortDur(v any) string
 ```go
 Print(ShortDur(121)) // 2m1s
 Print(ShortDur(10000)) // 2h46m40s
+
+time = import("time")
+Print(ShortDur(time.Now().Add(121*time.Second))) // 2m1s
 ```
 
 ### ShortShipsInfos
