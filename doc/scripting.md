@@ -8,7 +8,7 @@ NJA Scripts are running in a supervised environment allowing to :
 - stop/start/create scripts at any moment
 - schedule tasks
 
-For scripting <a href="https://github.com/mattn/anko">anko</a> Programming Language is used.
+For scripting, <a href="https://github.com/mattn/anko">anko</a> Programming Language is used.
 
 # Compiled script
 
