@@ -5139,6 +5139,17 @@ configs.Sheets += *sheet
 SetExpeditionsConfigs(configs)
 ```
 
+### IdealExpeditionCargoShips
+```go
+// IdealExpeditionCargoShips returns the ideal amount of cargo ships to send in expedition to collect the maximum amount of resources
+IdealExpeditionCargoShips(cargoShipID ogame.ID) int64
+```
+```go
+Print(IdealExpeditionCargoShips(SMALLCARGO)) // 15000
+Print(IdealExpeditionCargoShips(LARGECARGO)) // 3000
+Print(IdealExpeditionCargoShips(PATHFINDER)) // 7500
+```
+
 ### TempFile
 ```go
 // Create a new temp file
