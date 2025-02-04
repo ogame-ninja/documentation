@@ -4060,6 +4060,15 @@ Print(ParseCoord("D:1:2:3"))   // [D:1:2:3]
 Print(ParseCoord("[D:1:2:3]")) // [D:1:2:3]
 ```
 
+### Now
+```go
+// Now is a shortcut for time.Now to avoid having to import the "time" package
+Now() time.Time
+```
+```go
+Print(Now().Format("Jan 02, 15h04.05")) // Feb 03, 20h10.27
+```
+
 ### NowTimeString
 ```go
 // NowTimeString returns time.Now in a time string format "XX:XX:XX"
