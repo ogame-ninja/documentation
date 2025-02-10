@@ -2403,17 +2403,17 @@ origin = "1:2:3"
 initiator = "someName"
 SetMaxSlotsFor(initiator, 2) // Set the max number of slots for "someName" to 2
 
-<-GetSlot(initiator)
+slotHandler = <-GetSlot(initiator)
 fleet, _ = SendDiscoveryFleet2(origin, "1:2:1")
-CreateFleet(fleet.ID, initiator) // Ensure the bot knows that the fleet.ID is created by "someName"
+slotHandler(fleet) // Ensure the bot knows that the fleet is created by "someName"
 
-<-GetSlot(initiator)
+slotHandler = <-GetSlot(initiator)
 fleet, _ = SendDiscoveryFleet2(origin, "1:2:2")
-CreateFleet(fleet.ID, initiator)
+slotHandler(fleet)
 
-<-GetSlot(initiator) // Will wait here until a slot is available for "someName"
+slotHandler = <-GetSlot(initiator) // Will wait here until a slot is available for "someName"
 fleet, _ = SendDiscoveryFleet2(origin, "1:2:3")
-CreateFleet(fleet.ID, initiator)
+slotHandler(fleet)
 ```
 
 ### CreateFleet
