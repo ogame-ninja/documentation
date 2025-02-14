@@ -1882,6 +1882,18 @@ type EmpireCelestial struct {
 
 ## Channels (events)
 
+### OnStateChangeCh
+```go
+// Triggered when the bot change state
+OnStateChangeCh chan StateChange
+```
+```go
+for {
+    payload = <-OnStateChangeCh
+    Printf("State change: %s %t", payload.Actor, payload.Locked)
+}
+```
+
 ### OnAttackCh
 ```go
 // Triggered when a new attack is detected
@@ -2770,19 +2782,6 @@ Unix(sec int64, nsec int64) Time
 ```go
 ts = GetTimestamp()
 Print(Unix(ts, 0))
-```
-
-### OnStateChange
-```go
-// Register a callback which is executed every time the bot change state
-OnStateChange(clb func(locked bool, actor string))
-```
-```go
-OnStateChange(func(botLocked, actor) {
-    Print(botLocked, actor)    
-})
-
-<-OnQuitCh // Block forever
 ```
 
 ### RecruitOfficer
