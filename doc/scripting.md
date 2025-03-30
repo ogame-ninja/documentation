@@ -3955,6 +3955,12 @@ StopDefenderBot()
 IsRunningDefenderBot() bool
 ```
 
+### IsRunningBrainBot
+```go
+// Returns true if Brain is running, false otherwise
+IsRunningBrainBot() bool
+```
+
 ### SetDefenderCheckInterval
 ```go
 // Set the defender check interval (in seconds)
