@@ -1,6 +1,6 @@
 ## 403 forbidden when creating a new bot?
 
-The `403 forbidden` error can occurs for 3 main reasons.
+The `403 forbidden` error can occur for 3 main reasons.
 
 1. You are using the wrong gameforge email/password, and the bot fails to login.
 
