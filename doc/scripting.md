@@ -636,6 +636,7 @@ type PlayerData struct {
 	PointsMilitaryDestroyed   int64
 	PointsMilitaryLost        int64
 	PointsHonor               int64
+	PointsLifeform            int64
 	PositionTotal             int64
 	PositionEconomy           int64
 	PositionResearch          int64
@@ -644,6 +645,7 @@ type PlayerData struct {
 	PositionMilitaryDestroyed int64
 	PositionMilitaryLost      int64
 	PositionHonor             int64
+	PositionLifeform          int64
 	MilitaryShips             int64
 	Celestials                []struct {
 		ID         ogame.CelestialID
@@ -656,6 +658,10 @@ type PlayerData struct {
 		Tag  string
 	}
 }
+
+// Methods
+DefensivePoints() int64
+OffensivePoints() int64
 ```
 
 ### Auction
