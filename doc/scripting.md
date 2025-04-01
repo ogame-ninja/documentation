@@ -3341,10 +3341,30 @@ OfferBuyMarketplace(itemID any, quantity, priceType, price, priceRange int64, ce
 OfferBuyMarketplace(LIGHTFIGHTER, 10, 1, 40000, 20, 0)
 ```
 
+### StructuralIntegrity
+```go
+// Return the structural integrity of an entity
+StructuralIntegrity(id ogame.ID, researches ogame.IResearches) (structuralIntegrity int64)
+```
+```go
+researches = DBGetResearches()
+Print(StructuralIntegrity(LIGHTFIGHTER, researches))
+```
+
+### ShieldPower
+```go
+// Return the shield power of an entity
+ShieldPower(id ogame.ID, researches ogame.IResearches) (shieldPower int64)
+```
+```go
+researches = DBGetResearches()
+Print(ShieldPower(LIGHTFIGHTER, researches))
+```
+
 ### AttackStrength
 ```go
 // Return the attack strength of an entity
-AttackStrength(id ogame.ID, researches ogame.Researches) (attackStrength int64)
+AttackStrength(id ogame.ID, researches ogame.IResearches) (attackStrength int64)
 ```
 ```go
 researches = DBGetResearches()
