@@ -756,6 +756,9 @@ Set(id ID, val int64)
 Equal(other ShipsInfos) bool
 HasShips() bool
 HasFlyableShips() bool
+GetWeaponPower(IResearches) int64
+GetShieldPower(IResearches) int64
+GetStructuralIntegrity(IResearches) int64
 ```
 
 ### DefensesInfos
@@ -779,6 +782,9 @@ AttackableValue() int64
 String() string
 ByID(id ID) int64
 Set(id ID, val int64)
+GetWeaponPower(IResearches) int64
+GetShieldPower(IResearches) int64
+GetStructuralIntegrity(IResearches) int64
 ```
 
 ### AttackEvent
