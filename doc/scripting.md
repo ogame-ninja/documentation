@@ -5187,6 +5187,15 @@ Print(IdealExpeditionCargoShips(LARGECARGO)) // 3000
 Print(IdealExpeditionCargoShips(PATHFINDER)) // 7500
 ```
 
+### SkipSuspiciousLoginWait
+```go
+// Skip suspicious login wait
+SkipSuspiciousLoginWait()
+```
+```go
+SkipSuspiciousLoginWait()
+```
+
 ### TempFile
 ```go
 // Create a new temp file
