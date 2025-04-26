@@ -1782,6 +1782,161 @@ type SimulatorResult struct {
 }
 ```
 
+### CelestialBrainConfigs
+
+```go
+// CelestialBrainConfigs ...
+type CelestialBrainConfigs struct {
+	MaxMetalMine                  int64
+	MaxCrystalMine                int64
+	MaxDeuteriumSynthesizer       int64
+	MaxMetalStorage               int64
+	MaxCrystalStorage             int64
+	MaxDeuteriumTank              int64
+	MaxRoboticsFactory            int64
+	MaxShipyard                   int64
+	MaxResearchLab                int64
+	MaxMissileSilo                int64
+	MaxNaniteFactory              int64
+	MaxSolarPlant                 int64
+	MaxFusionReactor              int64
+	MaxMoonRoboticsFactory        int64
+	MaxMoonShipyard               int64
+	MaxSensorPhalanx              int64
+	MaxJumpGate                   int64
+	MaxTerraformer                int64
+	MaxAllianceDepot              int64
+	MaxSpaceDock                  int64
+	FusionReactorActive           bool
+	PrioritizeNaniteFactoryActive bool
+	SolarSatellitesActive         bool
+	LifeformBuildingsActive       bool
+	LifeformResearchesActive      bool
+
+	MaxResidentialSector          int64
+	MaxBiosphereFarm              int64
+	MaxResearchCentre             int64
+	MaxAcademyOfSciences          int64
+	MaxNeuroCalibrationCentre     int64
+	MaxHighEnergySmelting         int64
+	MaxFoodSilo                   int64
+	MaxFusionPoweredProduction    int64
+	MaxSkyscraper                 int64
+	MaxBiotechLab                 int64
+	MaxMetropolis                 int64
+	MaxPlanetaryShield            int64
+	MaxMeditationEnclave          int64
+	MaxCrystalFarm                int64
+	MaxRuneTechnologium           int64
+	MaxRuneForge                  int64
+	MaxOriktorium                 int64
+	MaxMagmaForge                 int64
+	MaxDisruptionChamber          int64
+	MaxMegalith                   int64
+	MaxCrystalRefinery            int64
+	MaxDeuteriumSynthesiser       int64
+	MaxMineralResearchCentre      int64
+	MaxAdvancedRecyclingPlant     int64
+	MaxAssemblyLine               int64
+	MaxFusionCellFactory          int64
+	MaxRoboticsResearchCentre     int64
+	MaxUpdateNetwork              int64
+	MaxQuantumComputerCentre      int64
+	MaxAutomatisedAssemblyCentre  int64
+	MaxHighPerformanceTransformer int64
+	MaxMicrochipAssemblyLine      int64
+	MaxProductionAssemblyHall     int64
+	MaxHighPerformanceSynthesiser int64
+	MaxChipMassProduction         int64
+	MaxNanoRepairBots             int64
+	MaxSanctuary                  int64
+	MaxAntimatterCondenser        int64
+	MaxVortexChamber              int64
+	MaxHallsOfRealisation         int64
+	MaxForumOfTranscendence       int64
+	MaxAntimatterConvector        int64
+	MaxCloningLaboratory          int64
+	MaxChrysalisAccelerator       int64
+	MaxBioModifier                int64
+	MaxPsionicModulator           int64
+	MaxShipManufacturingHall      int64
+	MaxSupraRefractor             int64
+
+	MaxIntergalacticEnvoys               int64
+	MaxHighPerformanceExtractors         int64
+	MaxFusionDrives                      int64
+	MaxStealthFieldGenerator             int64
+	MaxOrbitalDen                        int64
+	MaxResearchAI                        int64
+	MaxHighPerformanceTerraformer        int64
+	MaxEnhancedProductionTechnologies    int64
+	MaxLightFighterMkII                  int64
+	MaxCruiserMkII                       int64
+	MaxImprovedLabTechnology             int64
+	MaxPlasmaTerraformer                 int64
+	MaxLowTemperatureDrives              int64
+	MaxBomberMkII                        int64
+	MaxDestroyerMkII                     int64
+	MaxBattlecruiserMkII                 int64
+	MaxRobotAssistants                   int64
+	MaxSupercomputer                     int64
+	MaxVolcanicBatteries                 int64
+	MaxAcousticScanning                  int64
+	MaxHighEnergyPumpSystems             int64
+	MaxCargoHoldExpansionCivilianShips   int64
+	MaxMagmaPoweredProduction            int64
+	MaxGeothermalPowerPlants             int64
+	MaxDepthSounding                     int64
+	MaxIonCrystalEnhancementHeavyFighter int64
+	MaxImprovedStellarator               int64
+	MaxHardenedDiamondDrillHeads         int64
+	MaxSeismicMiningTechnology           int64
+	MaxMagmaPoweredPumpSystems           int64
+	MaxIonCrystalModules                 int64
+	MaxOptimisedSiloConstructionMethod   int64
+	MaxDiamondEnergyTransmitter          int64
+	MaxObsidianShieldReinforcement       int64
+	MaxRuneShields                       int64
+	MaxRocktalCollectorEnhancement       int64
+	MaxCatalyserTechnology               int64
+	MaxPlasmaDrive                       int64
+	MaxEfficiencyModule                  int64
+	MaxDepotAI                           int64
+	MaxGeneralOverhaulLightFighter       int64
+	MaxAutomatedTransportLines           int64
+	MaxImprovedDroneAI                   int64
+	MaxExperimentalRecyclingTechnology   int64
+	MaxGeneralOverhaulCruiser            int64
+	MaxSlingshotAutopilot                int64
+	MaxHighTemperatureSuperconductors    int64
+	MaxGeneralOverhaulBattleship         int64
+	MaxArtificialSwarmIntelligence       int64
+	MaxGeneralOverhaulBattlecruiser      int64
+	MaxGeneralOverhaulBomber             int64
+	MaxGeneralOverhaulDestroyer          int64
+	MaxExperimentalWeaponsTechnology     int64
+	MaxMechanGeneralEnhancement          int64
+	MaxHeatRecovery                      int64
+	MaxSulphideProcess                   int64
+	MaxPsionicNetwork                    int64
+	MaxTelekineticTractorBeam            int64
+	MaxEnhancedSensorTechnology          int64
+	MaxNeuromodalCompressor              int64
+	MaxNeuroInterface                    int64
+	MaxInterplanetaryAnalysisNetwork     int64
+	MaxOverclockingHeavyFighter          int64
+	MaxTelekineticDrive                  int64
+	MaxSixthSense                        int64
+	MaxPsychoharmoniser                  int64
+	MaxEfficientSwarmIntelligence        int64
+	MaxOverclockingLargeCargo            int64
+	MaxGravitationSensors                int64
+	MaxOverclockingBattleship            int64
+	MaxPsionicShieldMatrix               int64
+	MaxKaeleshDiscovererEnhancement      int64
+}
+```
+
 ### ExpeditionsConfigs
 
 ```go
@@ -5140,6 +5295,26 @@ celestial = GetCachedPlanets()[0]
 coord, err = ConvertIntoCoordinate(celestial)
 coord, err = ConvertIntoCoordinate(celestial.GetID())
 coord, err = ConvertIntoCoordinate(celestial.GetCoordinate())
+```
+
+### getBrainBatchUpdateSettings
+```go
+GetBrainBatchUpdateSettings() *CelestialBrainConfigs
+```
+
+```go
+Print(GetBrainBatchUpdateSettings())
+```
+
+### BrainBatchUpdate
+```go
+BrainBatchUpdate(*CelestialBrainConfigs, ogame.CelestialType)
+```
+
+```go
+conf = GetBrainBatchUpdateSettings()
+conf.MaxCrystalMine = 3
+BrainBatchUpdate(conf, PLANET_TYPE)
 ```
 
 ### GetExpeditionsConfigs
