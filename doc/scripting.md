@@ -2651,12 +2651,12 @@ Print(GetRequirements(LIGHTLASERnot )) // map[Shipyard:2 LaserTechnology:3]
 ### IsAvailable
 ```go
 // IsAvailable return either or not an ID is available given the buildings & researches
-IsAvailable(id ogame.ID, celestialID ogame.CelestialID, supplies ogame.ResourcesBuildings, facilities ogame.Facilities, researches ogame.Researches, energy int64) bool
+IsAvailable(id ogame.ID, celestialID ogame.CelestialID, supplies ogame.ResourcesBuildings, lfBuildings ogame.LfBuildings, lfResearches ogame.LfResearches, facilities ogame.Facilities, researches ogame.Researches, energy int64) bool
 ```
 ```go
 c = GetCachedCelestial("1:2:3")
-supplies, facilities, _, _, researches, _ = GetTechs(c.GetID())
-Print(IsAvailable(LIGHTLASER, c.GetID(), supplies, facilities, researches, 0))
+supplies, facilities, _, _, researches, _, lfBuildings, lfResearches = GetTechs2(c.GetID())
+Print(IsAvailable(LIGHTLASER, c.GetID(), supplies, lfBuildings, lfResearches, facilities, researches, 0))
 ```
 
 ### SolarSatelliteProduction
