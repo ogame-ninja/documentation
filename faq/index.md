@@ -25,3 +25,4 @@ Tips, tricks and answers to common questions about configuring and using Ninja b
 - [Browser is loading forever?](/faq/browser-is-loading-forever)
 - [Bot link in chat?](/faq/bot-link-in-chat)
 - [new bot 403 forbidden?](/faq/new-bot-403-forbidden)
+- [reverse tunnel not working?](/faq/reverse-tunnel-not-working)
