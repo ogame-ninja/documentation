@@ -40,6 +40,12 @@ Maximum slots that the scripts will use. 0 means unlimited.
 ##### [Delete spy reports once imported]
 If selected, the in-game spy reports will be deleted once they are locally imported.  
 
+##### [Log login IP]
+If selected, the bot will log the public IP used by the bot at the time it login to ogame.
+
+##### [Log proxy password]
+The bot will log the proxy settings when it login to ogame. If this option is enabled, it will also log the password field.
+
 ##### [Email for notifications]
 Email that will be used for notifications for this bot.
 
