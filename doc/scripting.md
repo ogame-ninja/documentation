@@ -2047,6 +2047,28 @@ type EmpireCelestial struct {
 }
 ```
 
+### Chapter
+
+```go
+// Chapter is a "directives" chapter (ID are 4001...4007)
+type Chapter struct {
+	ID       int64
+	ClaimAll *int64
+	Tasks    []ChapterTask
+}
+```
+
+### ChapterTask
+
+```go
+// ChapterTask ...
+type ChapterTask struct {
+	ID        int64
+	Completed bool
+	Collected bool
+}
+```
+
 ## Channels (events)
 
 ### OnStateChangeCh
@@ -5369,6 +5391,24 @@ SkipSuspiciousLoginWait()
 ```
 ```go
 SkipSuspiciousLoginWait()
+```
+
+### GetChapter
+```go
+// GetChapter returns the information about a "directives" chapter.
+// Chapter IDs are 4001...4007
+GetChapter(chapterID int64) (ogame.Chapter, error)
+```
+
+### ChapterCollectReward
+```go
+ChapterCollectReward(taskID int64) error
+```
+
+### chapterClaimAll
+```go
+// Skip suspicious login wait
+ChapterClaimAll(chapterID int64) error
 ```
 
 ### TempFile
