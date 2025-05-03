@@ -5405,10 +5405,27 @@ GetChapter(chapterID int64) (ogame.Chapter, error)
 ChapterCollectReward(taskID int64) error
 ```
 
+```go
+chapter, _ = GetChapter(4006)
+for task in chapter.Tasks {
+	if task.Completed && !task.Collected {
+        ChapterCollectReward(task.ID)
+		SleepRandMs(700, 1700)
+    }
+}
+```
+
 ### chapterClaimAll
 ```go
 // Skip suspicious login wait
 ChapterClaimAll(chapterID int64) error
+```
+
+```go
+chapter, _ = GetChapter(4006)
+if task.ClaimAll != nil {
+    ChapterClaimAll(*chapter.ClaimAll)
+}
 ```
 
 ### TempFile
