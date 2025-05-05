@@ -2661,6 +2661,29 @@ Print(ConstructionTime(LARGECARGO, 20, facilities))     // 16m0s
 Print(ConstructionTime(ROCKETLAUNCHER, 20, facilities)) // 2m40s
 ```
 
+### TechnologyConstructionTime
+```go
+// TechnologyConstructionTime returns the duration it takes to build a given technology level.
+TechnologyConstructionTime(techID ogame.ID, techLevel, labLevel int64) time.Duration
+```
+```go
+celestial = GetCachedCelestials()[0]
+labLevel, _ = CalculateIrnLabLevel(celestial)
+Print(TechnologyConstructionTime(ESPIONAGETECHNOLOGY, 10, labLevel)) // 31m25s
+```
+
+### CalculateIrnLabLevel
+```go
+// CalculateIrnLabLevel calculates the lab level that we should use for a planet. "Intergalactic Research Network".
+CalculateIrnLabLevel(wrapper.IntoPlanet) (int64, error)
+```
+
+```go
+celestial = GetCachedCelestials()[0]
+labLevel, _ = CalculateIrnLabLevel(celestial)
+labLevel, _ = CalculateIrnLabLevel("1:2:3")
+```
+
 ### GetRequirements
 ```go
 // Get direct requirements of a given ID
