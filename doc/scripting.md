@@ -3590,7 +3590,7 @@ Print(ShipsAttackStrengthUsingOwnResearches(ships))
 ```go
 // Get the highscores information
 // category -> 1:player, 2:alliance
-// typ -> 0:Total, 1:Economy, 2:Research, 3:Military, 4:Military Built, 5:Military Destroyed, 6:Military Lost, 7:Honor
+// typ -> 0:Total, 1:Economy, 2:Research, 3:Military, 4:Military Lost, 5:Military Built, 6:Military Destroyed, 7:Honor, 8:Lifeform, 9:Lifeform Economy, 10:Lifeform Technology, 11:Lifeform Discoveries
 // page must be greater than or equal to 1
 GetHighscore(category, typ, page int64) (Highscore, error)
 ```
