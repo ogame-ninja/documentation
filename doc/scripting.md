@@ -3195,6 +3195,16 @@ SendMessageAlliance(associationID int64, message string) error
 SendMessageAlliance(537, "Sup!")
 ```
 
+### CountColonies
+```go
+// CountColonies returns colonies count/possible
+CountColonies() (int64, int64)
+```
+```go
+count, possible = CountColonies()
+Print("currently have " + count + " colonies; " + possible + " more can be colonized")
+```
+
 ### GetCelestial
 ```go
 // GetCelestial get the player's planet/moon
