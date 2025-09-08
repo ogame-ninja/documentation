@@ -4668,6 +4668,7 @@ f.SetAttackFromNearestMoon(false)
 f.SetDeleteCombatReports(true)
 f.SetFarmSpeed(HUNDRED_PERCENT)
 f.SetPriorityRatio(1, 1, 1)
+f.SetAttackDelay(0, 0)
 session, err = f.BuildFarmSession()
 Print(session.ID, err)
 ```
