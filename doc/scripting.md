@@ -1478,6 +1478,9 @@ SetAttackFromNearestPlanet(enabled bool) *FarmSessionBuilder
 SetAttackFromNearestMoon(enabled bool) *FarmSessionBuilder
 SetFarmSpeed(Speed) *FarmSessionBuilder
 SetPriorityRatio(metal, crystal, deuterium float64) *FarmSessionBuilder
+SetAttackDelay(attackDelayMin, attackDelayMax int64) *FarmSessionBuilder
+SetAttackPlayersWithDefenses(bool) *FarmSessionBuilder
+SetIgnoreSleepMode(bool) *FarmSessionBuilder
 BuildFarmSession() (*FarmSession, error)
 ```
 
