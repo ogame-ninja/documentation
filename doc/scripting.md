@@ -2072,6 +2072,15 @@ type ChapterTask struct {
 }
 ```
 
+```go
+// DarkMatterPrice ...
+type DarkMatterPrice struct {
+	Currency string
+	Price    float64
+	Amount   int64
+}
+```
+
 ## Channels (events)
 
 ### OnStateChangeCh
@@ -5463,6 +5472,16 @@ chapter, _ = GetChapter(4006)
 if task.ClaimAll != nil {
     ChapterClaimAll(*chapter.ClaimAll)
 }
+```
+
+### GetDarkMatterPrices
+```go
+GetDarkMatterPrices() ([]DarkMatterPrice, error)
+```
+
+```go
+prices, _ = GetDarkMatterPrices()
+Print(prices)
 ```
 
 ### TempFile
