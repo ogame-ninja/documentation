@@ -2083,6 +2083,19 @@ type DarkMatterPrice struct {
 }
 ```
 
+### HunterTarget
+
+```go
+// HunterTarget ...
+type HunterTarget struct {
+	ID        int64
+	ServerID  ServerID
+	PlayerID  PlayerID
+	CreatedAt time.Time
+	UpdatedAt time.Time
+}
+```
+
 ## Channels (events)
 
 ### OnStateChangeCh
@@ -5484,6 +5497,18 @@ GetDarkMatterPrices() ([]DarkMatterPrice, error)
 ```go
 prices, _ = GetDarkMatterPrices()
 Print(prices)
+```
+
+
+### GetHunterTargets
+
+```go
+GetHunterTargets() []database.HunterTarget
+```
+
+```go
+targets := GetHunterTargets()
+Print(targets)
 ```
 
 ### TempFile
