@@ -5499,7 +5499,6 @@ prices, _ = GetDarkMatterPrices()
 Print(prices)
 ```
 
-
 ### GetHunterTargets
 
 ```go
@@ -5509,6 +5508,12 @@ GetHunterTargets() []database.HunterTarget
 ```go
 targets := GetHunterTargets()
 Print(targets)
+```
+
+### AddHunterTarget
+
+```go
+AddHunterTarget(playerID int64) error
 ```
 
 ### TempFile
