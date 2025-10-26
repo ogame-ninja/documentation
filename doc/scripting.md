@@ -2072,6 +2072,8 @@ type ChapterTask struct {
 }
 ```
 
+### DarkMatterPrice
+
 ```go
 // DarkMatterPrice ...
 type DarkMatterPrice struct {
